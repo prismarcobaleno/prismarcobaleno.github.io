@@ -1,0 +1,241 @@
+
+
+html{ 
+      font-family: "Roboto Mono", "DejaVu Sans Mono", monospace;
+      }
+      
+/* a {
+  position: relative;
+}
+a[href*="://"]:after, a[href^="//"] {
+  content: url(https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/link-external-small-ltr-progressive.svg);
+  width: 1ch;
+  height: 1ch;
+  display: inline-block;
+  position: absolute;
+  top: -0.5ch; 
+}
+
+
+<img lang=it src="https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/link-external-small-ltr-progressive.svg" alt="Link Esterno">
+*/
+
+
+   
+
+details {
+  padding: 1px; 
+  display: inline;
+  min-width: 99%;
+    border-radius: 2px;
+}
+
+summary {
+  padding: 1px;
+  border-radius: 2px;
+  cursor: pointer;
+} 
+
+.niente {list-style-type: ' ';}
+details[open] > .niente {
+  list-style-type: inherit;
+}
+
+summary:hover, summary:focus, summary:active, .cd:hover, .cd:focus, .cd:active {
+filter: saturate(250%) ;
+filter: contrast(170%);
+filter: drop-shadow(1px);
+border: 1px solid gray;
+}
+
+
+h4 { margin: 0.5%;}
+
+.mar { margin: 2%;}
+
+.pad {padding:1%}
+
+.mar-lati { margin-left: 2%;
+	margin-right: 2% }
+
+.flesso{
+display: flex}
+
+ul li {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;}
+      
+li {}
+      
+
+.o {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);}
+
+.asp {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/wait.png);}
+
+.w {list-style-type: '🎥 ' }
+
+.c {list-style-type: '🌟 ';}
+
+.cd {list-style-type: '💿 ';}
+
+.dvd {list-style-type: '💿 ';}
+details[open] > .dvd {list-style-type: '📀 ';}
+.dvd:hover, .dvd:focus, .dvd:active {
+list-style-type: '📀 ';}
+
+.menu {list-style-type: '📁 ';}
+details[open] > .menu {list-style-type: '📂 ';}
+
+
+.note {list-style-type: '🎶 ';}
+details[open] > .dvd {list-style-type: '🎵 ';}
+.note:hover, .note:focus, .note:active {
+list-style-type: '🎵 ';}
+
+.play {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/doc_music.png)}
+
+.cassetta { list-style-type: '📼 ';}
+
+.lib {list-style-type: '📘 ';}
+details[open] > .lib {list-style-type: '📖 ';}
+
+
+
+ { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.z {
+padding: 0.5%;
+border-radius: 2px;
+border: 2px solid skyblue;
+background: rgba(100, 200, 230, 0.2);
+} 
+
+.az {
+padding: 0.5%;
+border: 1px solid skyblue;
+background: rgba(100, 200, 230, 0.1);
+max-width:100%
+}
+
+
+
+.v {
+overflow: auto;
+padding: 0.5%;
+border: 2px solid purple;
+border-radius: 2px;
+background: rgba(200, 20, 70, 0.1);
+}
+
+.vi {
+ border: 1px solid purple;
+ background: rgba(200, 20, 70, 0.1);
+}
+
+
+.vi:hover, .vi:focus, .vi:active {
+  border: 1px solid violet;
+}
+
+.gri {
+overflow: auto;
+padding: 0.5%;
+border: 2px solid darkgray;
+border-radius: 2px;
+background: rgba(20, 20, 20, 0.1);
+}
+
+.grigio {
+ border: 1px solid gray;
+ background: rgba(20, 20, 20, 0.1);
+}
+
+.grigio:hover, .grigio:focus, .grigio:active {
+border: 1px solid black;}
+
+
+.s {
+overflow: auto;
+padding: 0.5%;
+border: 2px solid darkorange;
+border-radius: 2px;
+background: rgba(200, 200, 100, 0.2);
+}
+
+
+
+.gi:hover, .gi:focus, .gi:active {
+  border: 1px solid yellow;
+  background: rgba(200, 200, 100, 0.2)
+}
+
+
+.g {
+overflow: auto;
+padding: 0.5%;
+border: 2px solid darkgreen;
+border-radius: 1px;
+background: rgba(0, 50, 0, 0.1);
+}
+
+.ve {
+ border: 1px solid darkgreen;
+ background: rgba(0, 50, 0, 0.05);
+}
+
+.ve:hover, .ve:focus, .ve:active {
+  border: 1px solid lightgreen;
+  background: rgba(00, 250, 00, 0.1);
+}
+
+
+.gi {  
+  border: 1px solid goldenrod;
+  background: rgba(200, 200, 70, 0.1);
+}
+
+.ro {
+ border: 1px solid red;
+ background: rgba(230, 0, 0, 0.1);
+}
+
+
+
+
+h1 {text-align:center;}
+
+.bordo {border: 1px solid gray}
+
+hr {color: darkgreen}
+
+
+.codice {
+font-family: monospace;
+color: white;
+background: #222222 ;
+padding: 1%;
+}
+
+pre {margin: 0.5%;
+font-family: "Roboto Mono",  "DejaVu Sans Mono", monospace;
+}
+	
+
+.rosa {
+filter: saturate(100%) ;
+filter: contrast(90%);
+filter: drop-shadow(0px);
+
+border-radius: 1em
+}
+
+.rosa:hover, .rosa:focus, .rosa:active {
+filter: saturate(250%) ;
+filter: contrast(130%);
+filter: drop-shadow(1px);
+
+}
+
+
+
