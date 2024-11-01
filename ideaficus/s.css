@@ -73,9 +73,11 @@ display: flex}
 ul li {
       image-rendering: pixelated;
       image-rendering: -moz-crisp-edges;
-      image-rendering: crisp-edges;}
-      
-li {}
+      image-rendering: crisp-edges;
+}
+
+li {      margin-left: -0.4em;}
+li summary {  margin-left: -0.9em;}
       
 
 .o {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);}
