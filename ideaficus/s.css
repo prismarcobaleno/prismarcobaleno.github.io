@@ -79,7 +79,10 @@ li {}
 
 .cd {list-style-type: '💿 ';}
 
-.dvd {list-style-type: '💿 ';}
+.dvd {list-style-type: '💿 ';
+margin-left: -1em;
+margin-top: 0.5em}
+
 details[open] > .dvd {list-style-type: '📀 ';}
 .dvd:hover, .dvd:focus, .dvd:active {
 list-style-type: '📀 ';}
