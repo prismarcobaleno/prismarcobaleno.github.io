@@ -79,6 +79,8 @@ ul li {
 
 
 li summary {  margin-left: -0.8em;}
+
+li summary .no {margin-left: 0.2em;}
       
 
 .o {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);}
