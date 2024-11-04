@@ -60,7 +60,7 @@ font-weight: normal;}
 
 h4 { margin: 0.5%;}
 
-.mar { margin: 2%;}
+.mar { margin: 1%;}
 
 .pad {padding:1%}
 
@@ -154,6 +154,23 @@ background: rgba(200, 20, 70, 0.1);
 .vi:hover, .vi:focus, .vi:active {
   border: 1px solid violet;
 }
+
+.rubino {
+overflow: auto;
+padding: 0.5%;
+ border: 2px solid darkred;
+ background: rgba(250, 70, 70, 0.1);
+}
+
+.rus {
+border: 1px solid darkred;
+border-radius: 2px;
+background: rgba(250, 70, 70, 0.1);
+}
+.rus:hover, .rus:focus, .rus:active {
+  border: 1px solid red;
+}
+
 
 .gri {
 overflow: auto;
