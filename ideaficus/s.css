@@ -229,6 +229,8 @@ background: rgba(0, 50, 0, 0.1);
   background: rgba(200, 200, 70, 0.1);
 }
 
+/* gi è parente di giallo, ma deve stare sotto ve per far funzionare il trucchetto di tmoi.html con quell'unica canzone dorata*/
+
 .ro {
  border: 1px solid red;
  background: rgba(230, 0, 0, 0.1);
