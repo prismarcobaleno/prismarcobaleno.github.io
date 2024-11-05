@@ -89,13 +89,20 @@ li summary .no {margin-left: 0.2em;}
 
 .w {list-style-type: '🎥 ' }
 
-.c {list-style-type: '🌟 ';}
+.c {list-style-type: '🌟 ';
+
+}
+
+.spazio{
+margin-top: 0.5em;}
 
 .cd {list-style-type: '💿 ';}
 
 .dvd {list-style-type: '💿 ';
 margin-left: -1em;
 margin-top: 0.5em}
+
+
 
 details[open] > .dvd {list-style-type: '📀 ';}
 .dvd:hover, .dvd:focus, .dvd:active {
