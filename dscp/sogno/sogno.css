@@ -1,0 +1,107 @@
+html {  
+      background-image: url("https://images.pexels.com/photos/3114462/pexels-photo-3114462.jpeg?auto=compress");
+      background-attachment: fixed;
+      background-size: 100% 400%
+      }
+
+body { margin: 5%;
+      background: black;
+      color: white;
+      background: black;
+      color: white;
+      font-family: Courier, Sans-serif;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      word-spacing: 0.2em;}
+
+h1 {
+  font-size: 1.5em;
+  }
+  
+summary {
+    font-weight: bold;
+  }
+  
+.sfondo {
+  background: black;
+  display: inline;
+  }
+/* così che c'ha uno sfondo nero e si legge anche sopra all'immagine delle stelline */
+
+
+  /* link */
+  a:link{
+    color: #DDDD33; /*GIALLO*/
+    text-decoration: none; 
+    font-weight: bold;
+    border-bottom: 1px solid yellow;
+    }
+  
+  /* link visitato */
+  a:visited {
+    color: darkorange;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    }
+    
+  /* mouse sul link */
+  a:hover {
+    color: darkorange;
+    text-decoration: none;
+    }
+  
+  /* link selezionato */
+  a:active {
+    color: red;
+     text-decoration: none;
+    }
+    
+summary { font-weight: bold; }
+      
+img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  max-width: 90%;
+  height: auto;
+  }
+      
+.scatolina {
+  max-height: 400px;
+  background: black;
+  border-radius: 3px;
+  color: white;
+  overflow: auto;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  padding-top: 1%;
+  
+  } 
+
+.scatola { 
+  background: #06310a;
+  color: white;
+  overflow: auto;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  padding-top: 1%;
+  border-radius: 3px;
+  }
+      
+.scatoletta { 
+  margin-right: 20%;
+  
+  background: #06310a;
+  color: white;
+  overflow: auto;
+  margin: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  padding-top: 1%;
+  border-radius: 3px;
+  }
