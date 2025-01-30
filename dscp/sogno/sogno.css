@@ -1,17 +1,17 @@
+
 html {  
+  margin: 5%;
+    background: black;
       color: white;
-      background: black;
+      font-family: Courier, Sans-serif;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      word-spacing: 0.2em;
       background-image: url("https://images.pexels.com/photos/3114462/pexels-photo-3114462.jpeg?auto=compress");
       background-attachment: fixed;
       background-size: 100% 400%
       }
-
-body { margin: 5%;
-      font-family: Courier, Sans-serif;
-      letter-spacing: 0.1em;
-      line-height: 1.5;
-      word-spacing: 0.2em;}
-
+      
 h1 {
   font-size: 1.5em;
   }
