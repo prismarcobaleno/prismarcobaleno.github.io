@@ -1,12 +1,12 @@
 html {  
+      color: white;
+      background: black;
       background-image: url("https://images.pexels.com/photos/3114462/pexels-photo-3114462.jpeg?auto=compress");
       background-attachment: fixed;
       background-size: 100% 400%
       }
 
 body { margin: 5%;
-      background: black;
-      color: white;
       background: black;
       color: white;
       font-family: Courier, Sans-serif;
