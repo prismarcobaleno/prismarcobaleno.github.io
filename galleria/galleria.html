@@ -137,7 +137,7 @@ http://stackoverflow.com/a/34696029/383904
 #s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
 #s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
 #s5:target ~ .prevNext >*:nth-child(5) {visibility: visible;}
-#s6:target ~ .prevNext >*:nth-child(5) {visibility: visible;}
+#s6:target ~ .prevNext >*:nth-child(6) {visibility: visible;}
 /* More slides? Add here more rules */
 
 /* SLIDER ANIMATION POSITIONS */
@@ -152,7 +152,7 @@ http://stackoverflow.com/a/34696029/383904
 /* More slides? Add here more rules */
 
 
-/* YOU'RE THE DESIGNER! 
+/* 
    ____________________
    All above was mainly to get it working :)
    CSSgal CUSTOM STYLES / OVERRIDES HERE: */
@@ -179,11 +179,20 @@ http://stackoverflow.com/a/34696029/383904
 
 
 </style>
-        <div id="container"><div id="header" style="height: 50px;"></div>
+        <div id="container">
 
-        <div id="headerArea" class="header box">
-	     <h1>Title</h1>
-	</div>
+        <div id="headerArea">
+                <div id="header" style="height: 50px;"></div>
+                <nav id="navbar">
+                    <ul><h1>Home</h1>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul><br>
+                </nav>
+            </div>
             <div id="flex" style="height: 100%; ">
 
 
@@ -220,17 +229,17 @@ http://stackoverflow.com/a/34696029/383904
 			<br><h3 class="fondo">Proper Sea View Point In Uyombo Matsangoni Coast Kenya</h3>
 		</div>
     <div style="background-image: url(https://i.ibb.co/zVxDk9NN/Whats-App-Image-2025-07-01-at-7-10-34-PM.jpg;)">
-			<br><h3 class="fondo">A Very Beautiful Island Found In The Village Are In Matsangoni Uyombo Coast Kenya</h3>
+			<br><h3 class="fondo">A Very Beautiful Island <br>Found In The Village Are <br>In Matsangoni Uyombo Coast Kenya</h3>
 		</div>
   </div>
   
   <div class="prevNext">
-    <div><a href="#s6">prev</a><a href="#s2">next</a></div>
-    <div><a href="#s1">prev</a><a href="#s3">next</a></div>
-    <div><a href="#s2">prev</a><a href="#s4">next</a></div>
-    <div><a href="#s3">prev</a><a href="#s5">next</a></div>
-    <div><a href="#s4">prev</a><a href="#s6">next</a></div>
-    <div><a href="#s5">prev</a><a href="#s1">next</a></div>
+    <div><a href="#s6">prev6</a><a href="#s2">next2</a></div>
+    <div><a href="#s1">prev1</a><a href="#s3">next3</a></div>
+    <div><a href="#s2">prev2</a><a href="#s4">next4</a></div>
+    <div><a href="#s3">prev3</a><a href="#s5">next5</a></div>
+    <div><a href="#s4">prev4</a><a href="#s6">next6</a></div>
+    <div><a href="#s5">prev5</a><a href="#s1">next1</a></div>
   </div>
 
   <div class="bullets">
@@ -326,7 +335,7 @@ http://stackoverflow.com/a/34696029/383904
 
 
             #navbar {
-                height: 3em;
+                height: 4em;
                 background-color: lightgreen;
                 width: 100%;
             }
@@ -404,8 +413,11 @@ http://stackoverflow.com/a/34696029/383904
                 color: darkblue;
             }
 
-            h1 {
+            h1 {display:inline;
+            	background: darkblue;
+            	color: white;
                 font-size: 25px;
+		text-align: center;
             }
 
             .box {
