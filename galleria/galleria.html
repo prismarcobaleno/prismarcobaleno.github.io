@@ -1,21 +1,118 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uyombo Visits</title>
     <meta property="og:title" content="Uyombo Visits">
-    <meta property="og:image" content="https://i.ibb.co/tPMgbt4H/Whats-App-Image-2025-07-01-at-5-20-18-PM.jpg">
+    <meta property="og:image" content="https://i.ibb.co/zVxDk9NN/Whats-App-Image-2025-07-01-at-7-10-34-PM.jpg"> 
+    <link rel="icon" type="image/png" href="https://i.ibb.co/zVxDk9NN/Whats-App-Image-2025-07-01-at-7-10-34-PM.jpg" >
     <!-- 
     <meta property="og:description" content=" "> 
-    <link rel="icon" type="image/png" href="" >
-    
- <link href="https://caleidoscopio.neocities.org/stile.css" rel="stylesheet" type="text/css" media="all">
     -->
+  </head>
+  
+  <body>
+		
+        <div id="container">
+        	<div id="headerArea">
+			<div id="header" style="height: 50px;"></div>
+			
+			 <nav id="navbar">
+		            <ul><li><h1><a href="#">Uyombo Visits</a></h1></li>
+		                <li><h2><a href="#footer">Contact</a></h2></li>
+		            </ul>
+		        </nav>
+                </div> 
+                
+            <div id="flex" style="height: 100%; ">
+                <main><br>
+<div class="CSSgal border">
+  <!-- configuration of photos-->
+  <s id="s1"></s> 
+  <s id="s2"></s>
+  <s id="s3"></s>
+  <s id="s4"></s>
+  <s id="s5"></s>
+  <s id="s6"></s>
+  <div class="slider"><!-- Put link and text for each image here -->
+    <div style="background-image: url(https://i.ibb.co/Ps5J8zJr/Whats-App-Image-2025-07-01-at-5-18-09-PM.jpg;)">
+			<br><h3 class="fondo ">Short Beach At Bandarini Uyombo Coast Kenya</h3>
+		</div>
+    <div style="background-image: url(https://i.ibb.co/r2V0vDqj/Whats-App-Image-2025-07-01-at-5-19-02-PM.jpg;)">
+			<br><h3 class="fondo">Long Beach Tour At Uyombo Beach</h3>
+		</div>
+    <div style="background-image: url(https://i.ibb.co/tPMgbt4H/Whats-App-Image-2025-07-01-at-5-20-18-PM.jpg;)">
+			<br><h3 class="fondo">An Amazing Rock At The Long Beach</h3>
+		</div>
+    <div style="background-image: url(https://i.ibb.co/HffS3jpY/Whats-App-Image-2025-07-01-at-5-21-41-PM.jpg;)">
+			<br><h3 class="fondo">Uyombo Coast Street Tour</h3>
+		</div>
+    <div style="background-image: url(https://i.ibb.co/hxjqGkxy/Whats-App-Image-2025-07-01-at-7-17-50-PM.jpg;)">
+			<br><h3 class="fondo">A Very Beautiful Island <br>Found In The Village Are <br>In Matsangoni Uyombo Coast Kenya</h3>
+		</div>
+    <div style="background-image: url(https://i.ibb.co/zVxDk9NN/Whats-App-Image-2025-07-01-at-7-10-34-PM.jpg;)">
+			<br><h3 class="fondo">Proper Sea View Point In Uyombo Matsangoni Coast Kenya</h3>
+		</div>
+  </div>
+  
+  <div class="prevNext"><!-- Prev / next buttons. Remember that the numbers are not simply increasing, they wrap around!-->
+    <div><a href="#s6">prev</a><a href="#s2">next</a></div>
+    <div><a href="#s1">prev</a><a href="#s3">next</a></div>
+    <div><a href="#s2">prev</a><a href="#s4">next</a></div>
+    <div><a href="#s3">prev</a><a href="#s5">next</a></div>
+    <div><a href="#s4">prev</a><a href="#s6">next</a></div>
+    <div><a href="#s5">prev</a><a href="#s1">next</a></div>
+  </div>
 
-  </head><body>
-<style>
+  <div class="bullets"><!-- Round buttons at the bottom of the image: -->
+    <a href="#s1">1</a>
+    <a href="#s2">2</a>
+    <a href="#s3">3</a>
+    <a href="#s4">4</a>
+    <a href="#s5">5</a>
+    <a href="#s6">6</a>
+  </div>
+ <style>/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s5:target ~ .prevNext >*:nth-child(5) {visibility: visible;}
+#s6:target ~ .prevNext >*:nth-child(6) {visibility: visible;}
+/* More slides? Add here more lines */
+
+/* SLIDER ANIMATION POSITIONS */
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s5:target ~ .slider {transform: translateX(-400%); -webkit-transform: translateX(-400%);}
+#s6:target ~ .slider {transform: translateX(-500%); -webkit-transform: translateX(-500%);}
+/* More slides? Add here more lines. */
+
+</style>
+</div>
+
+
+</main></div>
+
+            <footer id="footer" style="margin-top: 1%; margin-bottom: 1%">
+            Contacts: examplenumber, examplemail
+            </footer>
+        </div><br><br>
+        
+<!-- END OF VISIBLE PAGE. AFTER IS THE CSS ! It styles and colours the webpage.-->
+        
+        <style>
 *{box-sizing: border-box; -webkit-box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; font: 16px/1.3 sans-serif; }
@@ -174,76 +271,10 @@ http://stackoverflow.com/a/34696029/383904
 
 
 </style>
-        <div id="container">
-
-        <div id="headerArea">
-                <div id="header" style="height: 50px;"></div>
-                <nav id="navbar">
-                    <ul><h1>Uyombo Visits</h1>
-                        <li><a href="#s1">Gallery</a></li>
-                        <li><a href="#footer">Contacts</a></li>
-                    </ul><br>
-                </nav>
-            </div>
-            <div id="flex" style="height: 100%; ">
-                <main><BR>
-<div class="CSSgal">
-  <!-- configuration -->
-  <s id="s1"></s> 
-  <s id="s2"></s>
-  <s id="s3"></s>
-  <s id="s4"></s>
-  <s id="s5"></s>
-  <s id="s6"></s>
-  <div class="slider"><!-- Put link and text for each image here -->
-    <div style="background-image: url(https://i.ibb.co/Ps5J8zJr/Whats-App-Image-2025-07-01-at-5-18-09-PM.jpg;)">
-			<br><h3 class="fondo ">Short Beach At Bandarini Uyombo Coast Kenya</h3>
-		</div>
-    <div style="background-image: url(https://i.ibb.co/r2V0vDqj/Whats-App-Image-2025-07-01-at-5-19-02-PM.jpg;)">
-			<br><h3 class="fondo">Long Beach Tour At Uyombo Beach</h3>
-		</div>
-    <div style="background-image: url(https://i.ibb.co/tPMgbt4H/Whats-App-Image-2025-07-01-at-5-20-18-PM.jpg;)">
-			<br><h3 class="fondo">An Amazing Rock At The Long Beach</h3>
-		</div>
-    <div style="background-image: url(https://i.ibb.co/HffS3jpY/Whats-App-Image-2025-07-01-at-5-21-41-PM.jpg;)">
-			<br><h3 class="fondo">Uyombo Coast Street Tour</h3>
-		</div>
-    <div style="background-image: url(https://i.ibb.co/hxjqGkxy/Whats-App-Image-2025-07-01-at-7-17-50-PM.jpg;)">
-			<br><h3 class="fondo">Proper Sea View Point In Uyombo Matsangoni Coast Kenya</h3>
-		</div>
-    <div style="background-image: url(https://i.ibb.co/zVxDk9NN/Whats-App-Image-2025-07-01-at-7-10-34-PM.jpg;)">
-			<br><h3 class="fondo">A Very Beautiful Island <br>Found In The Village Are <br>In Matsangoni Uyombo Coast Kenya</h3>
-		</div>
-  </div>
-  
-  <div class="prevNext"><!-- Prev / next buttons -->
-    <div><a href="#s6">prev6</a><a href="#s2">next2</a></div>
-    <div><a href="#s1">prev1</a><a href="#s3">next3</a></div>
-    <div><a href="#s2">prev2</a><a href="#s4">next4</a></div>
-    <div><a href="#s3">prev3</a><a href="#s5">next5</a></div>
-    <div><a href="#s4">prev4</a><a href="#s6">next6</a></div>
-    <div><a href="#s5">prev5</a><a href="#s1">next1</a></div>
-  </div>
-
-  <div class="bullets"><!-- Round buttons at the bottom of the image: -->
-    <a href="#s1">1</a>
-    <a href="#s2">2</a>
-    <a href="#s3">3</a>
-    <a href="#s4">4</a>
-    <a href="#s5">5</a>
-    <a href="#s6">6</a>
-  </div>
-
-</div>
-
-
-</main></div>
-
-            <footer id="footer" style="margin-top: 1%;">
-            Contacts: examplenumber, examplemail
-            </footer>
-        </div>
-        <!-- THIS IS THE CSS ! It styles and colours the webpage.-->
+        
+        
+        
+        
         <style>
 
             :root {
@@ -285,6 +316,7 @@ http://stackoverflow.com/a/34696029/383904
                 background-size: 65px;
                 color: black;
                 background-image: var(--body-bg-image);
+                background-attachment: fixed;
             }
 
             * {
@@ -295,7 +327,7 @@ http://stackoverflow.com/a/34696029/383904
 
    
             #container {
-                max-width: 90%;
+                max-width: 95%;
                height: 100%;
                 margin: 0 auto;
                
@@ -318,8 +350,10 @@ http://stackoverflow.com/a/34696029/383904
 
             #navbar {
                 height: 4em;
-                background-color: lightgreen;
+                background-color: lightblue;
+                border-radius: 2px;
                 width: 100%;
+                margin-bottom: 10px;
             }
 
             #navbar ul {
@@ -331,7 +365,8 @@ http://stackoverflow.com/a/34696029/383904
             }
 
             #navbar li {
-                padding-top: 1%;
+                padding: 1%;
+                
             }
 
             #navbar li a {
@@ -340,27 +375,33 @@ http://stackoverflow.com/a/34696029/383904
                 text-decoration: none;
                 /* this removes the underline */
             }
-
-            #navbar li a:hover {
+            
+                      #navbar li a:hover {
                 text-decoration: none;
+                color: darkblue;
             }
+            
+            #navbar h1 a {
+                font-weight: 800;
+                text-decoration: none;
+                /* this removes the underline */
+            }             
+            
+            #navbar h1 a:hover {
+                text-decoration: none;
+                background: lightyellow;
+                color: navy;
+            }
+
+  
 
             #flex {
                 display: flex;
 
             }
 
-            /* this colors BOTH sidebars */
-            aside {
-                background-color: white;
-		color: navy;
-                width: 20%;
-                padding: 1%;
-                font-size: smaller;
-            }
-
             main {
-                background-color: lightblue;
+                background-color: lightgreen;
 		color: black;
                 flex: 1;
                 padding: 1%;
@@ -370,24 +411,26 @@ http://stackoverflow.com/a/34696029/383904
            
 
             footer {
-                background-color: lightgreen;
-		border-radius:2px;
+                background-color: lightblue;
+                
+                border: 2px solid navy;
+                border-radius: 5px;
                 width: 100%;
-                height: 3em;
+
                 padding: 1em;
                 text-align: center;
 
             }
 
-            h1, h2, h3 {
+            h1, h2, h3 {display:inline;
                 color: darkblue;
             }
 
-            h1 {display:inline;
+            h1 {
             	background: white;
                 font-size: 25px;
 		text-align: center;
-		border-radius: 5px;
+		border-radius: 10px;
             }
 
             .box {
@@ -398,15 +441,21 @@ http://stackoverflow.com/a/34696029/383904
                 padding: 1%;
 		margin-bottom: 1%
             }
-
                 #navbar ul {
                     flex-wrap: wrap;
                 }
-            }
 
+/* ACTIVE 
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s5:target ~ .bullets >*:nth-child(5) {background: rgba(255, 255, 255,   1);}
+#s5:target ~ .bullets >*:nth-child(6) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
 
-
-
+	.border {border: 2px solid darkgreen; 
+		border-radius: 5px}
 
         </style></body>
 
