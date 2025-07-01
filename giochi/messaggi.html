@@ -88,7 +88,6 @@ let p1 = document.createElement("p");
 		if (avanza == 0) {
 		  p1.innerHTML = ("<hr><br> > <span title='ry, [01/01/"+ anno +"]'>buon anno"+ miao+ "</span>");
 		  avanza = 1 ;
-		finestra.scrollBy({ top: 1000, behavior: "smooth" });
 			notif += 1 ; document.getElementById("note").innerHTML = notif;
 			anno += 1;}
 			
@@ -97,11 +96,14 @@ let p1 = document.createElement("p");
 		  p1.innerHTML = ("> <span title='ry, [25/02/"+ anno +"]'>buon compleanno"+ miao +"</span>");
 		  avanza = 0;
 			notif += 1 ; document.getElementById("note").innerHTML = (notif);
-		finestra.scrollBy({ top: 1000, behavior: "smooth" });
+			}
+
+ document.getElementById("fine").appendChild(p1);
+ finestra.scrollBy({ top: 1000, behavior: "smooth" });
+
 
 }
-  document.getElementById("fine").appendChild(p1);
-}
+
 </script>
 
 </body>
