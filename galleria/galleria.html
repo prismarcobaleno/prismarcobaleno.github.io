@@ -4,12 +4,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <meta property="og:title" content="Website">
+    <title>Uyombo Visits</title>
+    <meta property="og:title" content="Uyombo Visits">
+    <meta property="og:image" content="https://i.ibb.co/tPMgbt4H/Whats-App-Image-2025-07-01-at-5-20-18-PM.jpg">
     <!-- 
     <meta property="og:description" content=" "> 
-    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1119362891137683507/1119371589784440832/quarzoametista.png" >
-    <meta property="og:image" content="https://media.discordapp.net/attachments/1119362891137683507/1119371589784440832/quarzoametista.png">
+    <link rel="icon" type="image/png" href="" >
+    
  <link href="https://caleidoscopio.neocities.org/stile.css" rel="stylesheet" type="text/css" media="all">
     -->
 
@@ -148,14 +149,8 @@ http://stackoverflow.com/a/34696029/383904
 #s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
 #s5:target ~ .slider {transform: translateX(-400%); -webkit-transform: translateX(-400%);}
 #s6:target ~ .slider {transform: translateX(-500%); -webkit-transform: translateX(-500%);}
-
 /* More slides? Add here more rules */
 
-
-/* 
-   ____________________
-   All above was mainly to get it working :)
-   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
 
 .CSSgal{
 	color: black;	
@@ -184,35 +179,23 @@ http://stackoverflow.com/a/34696029/383904
         <div id="headerArea">
                 <div id="header" style="height: 50px;"></div>
                 <nav id="navbar">
-                    <ul><h1>Home</h1>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                    <ul><h1>Uyombo Visits</h1>
+                        <li><a href="#s1">Gallery</a></li>
+                        <li><a href="#footer">Contacts</a></li>
                     </ul><br>
                 </nav>
             </div>
             <div id="flex" style="height: 100%; ">
-
-
-                <!--<aside id="leftSidebar" style="margin-right: 5px;">
-                    <h2>Updates</h2>
-                    <h3>Other Things</h3>
-                    <ul>
-                        <li>Example text</li>
-                    </ul>
-                </aside>-->
                 <main><BR>
 <div class="CSSgal">
-  <!-- Don't wrap targets in parent -->
+  <!-- configuration -->
   <s id="s1"></s> 
   <s id="s2"></s>
   <s id="s3"></s>
   <s id="s4"></s>
   <s id="s5"></s>
   <s id="s6"></s>
-  <div class="slider">
+  <div class="slider"><!-- Put link and text for each image here -->
     <div style="background-image: url(https://i.ibb.co/Ps5J8zJr/Whats-App-Image-2025-07-01-at-5-18-09-PM.jpg;)">
 			<br><h3 class="fondo ">Short Beach At Bandarini Uyombo Coast Kenya</h3>
 		</div>
@@ -233,7 +216,7 @@ http://stackoverflow.com/a/34696029/383904
 		</div>
   </div>
   
-  <div class="prevNext">
+  <div class="prevNext"><!-- Prev / next buttons -->
     <div><a href="#s6">prev6</a><a href="#s2">next2</a></div>
     <div><a href="#s1">prev1</a><a href="#s3">next3</a></div>
     <div><a href="#s2">prev2</a><a href="#s4">next4</a></div>
@@ -242,7 +225,7 @@ http://stackoverflow.com/a/34696029/383904
     <div><a href="#s5">prev5</a><a href="#s1">next1</a></div>
   </div>
 
-  <div class="bullets">
+  <div class="bullets"><!-- Round buttons at the bottom of the image: -->
     <a href="#s1">1</a>
     <a href="#s2">2</a>
     <a href="#s3">3</a>
@@ -256,12 +239,11 @@ http://stackoverflow.com/a/34696029/383904
 
 </main></div>
 
- 
-
-
-            <footer id="footer" style="margin-top: 1%;">CC0 Public Domain, 2025</footer>
+            <footer id="footer" style="margin-top: 1%;">
+            Contacts: examplenumber, examplemail
+            </footer>
         </div>
-        <!-- THIS IS THE CSS !-->
+        <!-- THIS IS THE CSS ! It styles and colours the webpage.-->
         <style>
 
             :root {
@@ -385,18 +367,7 @@ http://stackoverflow.com/a/34696029/383904
                 order: 2;
             }
 
-            /* 
-    if you're using both sidebars, the "order" value
-    tells the CSS the order in which to display them.
-    left sidebar is 1, content is 2, and right sidebar is 3! */
-
-             #leftSidebar {
-                order: 1;
-            }
-
-            #rightSidebar {
-                order: 3;
-            }
+           
 
             footer {
                 background-color: lightgreen;
@@ -408,16 +379,15 @@ http://stackoverflow.com/a/34696029/383904
 
             }
 
-            h2,
-            h3 {
+            h1, h2, h3 {
                 color: darkblue;
             }
 
             h1 {display:inline;
-            	background: darkblue;
-            	color: white;
+            	background: white;
                 font-size: 25px;
 		text-align: center;
+		border-radius: 5px;
             }
 
             .box {
@@ -429,52 +399,12 @@ http://stackoverflow.com/a/34696029/383904
 		margin-bottom: 1%
             }
 
-            /* CSS for extras */
-
-            #topBar {
-                width: 100%;
-                height: 30px;
-                padding: 10px;
-                font-size: smaller;
-                background-color: #13092D;
-            }
-
-
-            /* BELOW THIS POINT IS MEDIA QUERY 
-
-
-            @media only screen and (max-width: 800px) {
-                #flex {
-                    flex-wrap: wrap;
-                }
-
-                aside {
-                    width: 100%;
-                }*/
-
-                /* the order of the items is adjusted here for responsiveness!
-      since the sidebars would be too small on a mobile device.
-      feel free to play around with the order!
-      */
-                main {
-                    order: 1;
-                }
-
-                #leftSidebar {
-                    order: 2;
-		overflow:auto;
-                }
-
-                #rightSidebar {
-                    order: 3;
-                }
-
                 #navbar ul {
                     flex-wrap: wrap;
                 }
             }
 
-// aaaaaaaaaaaaaaaaaaaaaa MENU
+
 
 
 
