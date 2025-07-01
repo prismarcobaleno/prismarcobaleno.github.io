@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaggi</title>
+    <meta property="og:title" content="Messaggi">
+    <!-- 
+    <meta property="og:description" content=" "> 
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1119362891137683507/1119371589784440832/quarzoametista.png" >
+    <meta property="og:image" content="https://media.discordapp.net/attachments/1119362891137683507/1119371589784440832/quarzoametista.png">
+    
+ 
+    <link href="https://caleidoscopio.neocities.org/stile.css" rel="stylesheet" type="text/css" media="all">-->
+  </head>
+  <body>
+  <style>
+body {background: black; color: lightyellow ;}
+.bottoni {
+	margin: 1%;
+	 }
+button {
+background: lightyellow;
+border: 2px solid blue;
+border-radius: 5px;}
+
+.fissa{
+  width: 99%;
+  padding:2px;
+  margin: 1px;
+	border: 2px solid blue;
+  	border-radius: 5px;
+  height: 20em;
+  max-height: 20em;
+  overflow: auto;}
+
+hr {color: blue}
+
+p {margin: 1%}
+
+span {cursor: pointer;}
+</style>
+
+<h1>Messaggi non letti</h1> <div class="scatola">
+
+<div class="scatolina fissa" id="fine">
+<p> <span title="ry, [01/01/20023]"> > buon anno!</span></p>
+</div>
+
+</div>
+<br>
+<p class="bottoni"> 
+<button id="bottone" onclick="avanti()">Ignora (<span id="note">0</span>)</button>
+<button id="risp" disabled title="Non puoi rispondere." onclick="rispondi()">Rispondi</button>
+</p>
+
+<script>
+var avanza = 1;
+const finestra = document.getElementById("fine");
+
+var notif = 0
+var anno = 20023
+var miao = "!"
+var conta
+
+function con(a) { 
+var conta = Math.floor((Math.random() * a));  
+		if (conta == 1) { 
+		return "!!"
+		}
+		else if (conta == 2) { 
+		return "! :3"
+		}
+		else if (conta == 3){
+		return "!!!"
+		} 
+		else {return "!"}
+
+}
+
+function avanti() {
+
+
+var miao = con(6)
+
+let p1 = document.createElement("p");
+		if (avanza == 0) {
+		  p1.innerHTML = ("<hr><br> > <span title='ry, [01/01/"+ anno +"]'>buon anno"+ miao+ "</span>");
+		  avanza = 1 ;
+		finestra.scrollBy({ top: 1000, behavior: "smooth" });
+			notif += 1 ; document.getElementById("note").innerHTML = notif;
+			anno += 1;}
+			
+
+		else if (avanza == 1 ){
+		  p1.innerHTML = ("> <span title='ry, [25/02/"+ anno +"]'>buon compleanno"+ miao +"</span>");
+		  avanza = 0;
+			notif += 1 ; document.getElementById("note").innerHTML = (notif);
+		finestra.scrollBy({ top: 1000, behavior: "smooth" });
+
+}
+  document.getElementById("fine").appendChild(p1);
+}
+</script>
+
+</body>
+</html>
