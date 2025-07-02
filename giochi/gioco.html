@@ -21,7 +21,7 @@
   padding:2px;
 	border: 2px solid blue;
   	border-radius: 5px;
-  max-height:25em;
+  max-height: 18em;
   overflow: scroll;}
 </style>
 <body>
@@ -30,20 +30,24 @@
 <p>Motivazione: <span id="motivazione">0</span></p>
 
 <h2>Registro:</h2>
-<div class="scatolina fissa" id="1">
+<div class="scatolina fissa" id="fine">
 </div>
 </div>
 
 <script>
 var  mot = 0;
 function clic() {let moti = Math.floor((Math.random() * 6) - 2);
+const finestra = document.getElementById("fine");
+
 
 var p1 = document.createElement("p");
   p1.innerHTML = ("Clic. " + moti + " motivazione.");
-  document.getElementById("1").appendChild(p1);
+  document.getElementById("fine").appendChild(p1);
 
  mot += moti
   document.getElementById("motivazione").innerHTML = mot;
+  
+   finestra.scrollBy({ top: 1000, behavior: "smooth" });
 }
 
 
