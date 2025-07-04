@@ -40,12 +40,18 @@ hr {color: blue}
 p {margin: 1%}
 
 span {cursor: pointer;}
+
+.gri {color: gray;
+     background: black;
+      display: inline;
+      filter: brightness(1%);
+      transition: 1s;}
 </style>
 
 <h1>Messaggi non letti</h1> <div class="scatola">
 
 <div class="scatolina fissa" id="fine">
-<p> <span title="[01/01/20023]"> <strong>ry:</strong> > buon anno!</span></p>
+<p> <span title="[01/01/20023]"> <strong>ry:</strong> > buon anno!<span class='gri'>[01/01/20023]</span></p>
 </div>
 
 </div>
@@ -86,14 +92,14 @@ var miao = con(6)
 
 let p1 = document.createElement("p");
 		if (avanza == 0) {
-		  p1.innerHTML = ("<hr><br><strong>ry:</strong> > <span title='[01/01/"+ anno +"]'>buon anno"+ miao+ "</span>");
+		  p1.innerHTML = ("<hr><br><strong>ry:</strong> > buon anno"+ miao + "<span class='gri'>[01/01/"+ anno +"]</span>");
 		  avanza = 1 ;
 			notif += 1 ; document.getElementById("note").innerHTML = notif;
 			anno += 1;}
 			
 
 		else if (avanza == 1 ){
-		  p1.innerHTML = ("<strong>ry:</strong> ><span title='[25/02/"+ anno +"]'> buon compleanno"+ miao +"</span>");
+		  p1.innerHTML = ("<strong>ry:</strong> > buon compleanno" + miao + "<span class='gri'>[01/01/"+ anno +"]</span>");
 		  avanza = 0;
 			notif += 1 ; document.getElementById("note").innerHTML = (notif);
 			}
