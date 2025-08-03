@@ -1,9 +1,9 @@
 
 
-html{ 
-      font-family: "Roboto Mono", "DejaVu Sans Mono", monospace;
-      }
-      
+html	{
+	font-family: "Roboto Mono", "DejaVu Sans Mono", monospace;
+	}
+
 /* a {
   position: relative;
 }
@@ -24,7 +24,7 @@ a[href*="://"]:after, a[href^="//"] {
    
 
 details {
-  padding: 1px; 
+  padding: 1px;
   display: inline;
   min-width: 99%;
     border-radius: 2px;
@@ -244,8 +244,6 @@ background: rgba(0, 50, 0, 0.1);
  border: 1px solid red;
  background: rgba(230, 0, 0, 0.1);
 }
-
-
 
 
 h1 {text-align:center;}
