@@ -1,0 +1,196 @@
+/* commenti! */
+ oriz {
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+ /* link (copiato da SOGNO.CSS)*/
+  a:link{
+    color: #ffff55;
+    text-decoration: none; 
+    font-weight: bold;
+    border-bottom: 1px solid #ffff55;
+    }
+  
+  /* link visitato */
+  a:visited {
+    color: #ffff55;
+    text-decoration: none;
+    /* nasconde la sottolineatura per link già cliccati*/
+    }
+    
+  /* mouse sul link */
+  a:hover {
+    color: darkorange;
+    text-decoration: none;
+    }
+  
+  /* link selezionato */
+  a:active {
+    color: red;
+     text-decoration: none;
+    }
+
+      
+    .html {  
+     
+      background-color: #000022;
+      color: white;
+      font-family: sans-serif;
+      line-height: 1.5;
+      margin: 3%;
+      letter-spacing: 0.04em;
+      word-spacing: 0.04em;
+      
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      
+      }
+      
+    .h1 {  
+      text-align: center;
+      }
+    
+    .img {
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+      }
+      
+    .iframe {
+    max-width: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      
+      }
+        
+    .scuro {
+      background: black;
+      display: inline;
+      filter: brightness(0%);
+      transition: 1s;
+      }
+    .scuro:hover{
+      display: inline;
+      filter: none;
+      transition: 3s;
+      }
+      
+      
+    footer {  
+      text-align: center;
+      }
+      
+    
+/* evidenziatore */
+.e {
+  background: #304000;
+  color:white;
+  display: inline;
+  }     
+
+.b {
+ color: skyblue
+  }
+ 
+.v {
+  color: lightgreen;
+  }
+  
+.g {
+  color: lightyellow
+  }
+  
+.a {
+  color: orange;
+  }
+  
+ .scatolina {
+   background: black; 
+  color: skyblue;
+  border-radius: 5px;
+  border: 1px solid cyan;
+  overflow: auto;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+    padding: 2%
+  } 
+  
+.scatola { 
+    background: black;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid lightgreen;
+    overflow: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%
+  }
+  
+  .grigio {
+   background: #222222; 
+  color: white;
+  border-radius: 5px;
+  border: 3px solid red;
+  overflow: auto;
+  
+  margin-top: 1%;
+  margin-bottom: 1%;
+    padding: 2%
+  }
+  
+  .fotoblu {
+  background: black;
+  overflow: auto;
+  
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  
+  padding: 2%;
+  border-radius: 5px;
+  border: 1px solid cyan;
+   max-width: 90%;
+   max-width: 800px
+    }
+    
+   
+    
+ .forma {
+   background: black;
+  color: SKYBLUE;
+  overflow: auto;
+  
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  
+  padding: 2%;
+  border-radius: 5px;
+  border: 1px solid cyan;
+   max-width: 700px;
+   }
+
+    
+  .summary {
+    background: black;
+    color:skyblue;
+    }
+    
+  .details {
+  background: black;
+  color: white;
+    }
+    
+
+
+  
+  
