@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500');
+ 
+* {
+font-family: 'Inconsolata';
+cursor: default;
+line-height: 16.8px;
+clear: both;
+-webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+-moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+-webkit-transition: color .25s, background .25s, border-color .25s;
+-o-transition: color .25s, background .25s, border-color .25s;
+transition: color .25s, background .25s, border-color .25s;
+}
+
+:root{
+--harry: #EF5B36;
+--scott: #CB4743; 
+--scott-originale: #ad342f;
+
+--michael: #75a721;
+--sara: #ebab27;
+--jude: #914233;
+--ty: #10bc6f;
+--care: #8c75b3;
+--jacob: #6b7983;
+
+--wren: #6f5274;
+--hyper: var(--wren);
+--vince: #3a9445;
+--ben: #227f9b;
+--jay: #657294;
+--char: #774dcb;
+
+--clyde: #296b9c;
+--alexa: #10a992;
+
+--scarf: #e92b5b;
+--ek: #12ac1a;
+--cal: #627cbb;
+--arlons: #435a91;
+--sam: #ed1c24;
+--eleanor: #ff7b55;
+--canary: #CC8A46;
+--alice: #66ec95;
+--jon: #6551d6;
+--elise: #39a4d7;
+
+--white: #fffd;
+
+--vselect: var(--harry);
+--hselect: var(--harry);
+--vselectt: var(--harryt);
+--hselectt: var(--harryt);
+
+--harryt: #181110d3;
+--scottt: #100909ca; 
+
+--michaelt: #161812ca;
+--sarat: #1e1b15ca;
+--judet: #100c0cca;
+--tyt: #111915ca;
+--caret: #141316ca;
+--jacobt: #0f1112ca;
+
+--wrent: #0f0e0fca;
+--hypert: var(--wrent);
+--vincet: #131813ca;
+--bent: #0e1213ca;
+--jayt: #131415ca;
+--chart: #0d0c11ca;
+
+--clydet: #0d1012ca;
+--alexat: #131d1bca;
+
+--whitet: #000c;
+--canaryt: #1f1f17ca;
+
+--scarft: #1f1518ca;
+--ekt: #131813ca;
+--calt: #131415ca;
+--eliset: #0e1113ca;
+--samt: #181010ca;
+--eleanort: #181110ca;
+--alicet: #131d1aca;
+--jont: #0c0c11ca;
+}
+html, body {
+background: #000;
+font-size: 16px;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+}
+#stage {
+background: #000;
+position: absolute;
+width: calc(96 * 8px - 3px);
+left: calc((100vw - (96 * 8px))/2);
+color: #eef4;
+word-wrap:break-word;
+}
+.box{
+background: #f008;
+color: #fff;
+overflow-y: visible;
+overflow-x: hidden;
+height: 100%;
+width: 100%;
+position: static;
+border: 0.5ch solid #fff;
+padding: 8px;
+white-space: pre-wrap;
+}
+
+.boxc {
+position: absolute;
+}
+
+.dots .linens {
+position: absolute;
+left: -5ch;
+width: 4ch;
+word-spacing: 999ch;
+word-break:normal;
+text-align: right;
+-moz-user-select: -moz-none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
+width: 740px; 
+height: 100em
+}
+.dots {
+/*background-image: url("https://media.discordapp.net/attachments/1327391688704004126/1327393217355714633/punto-sfondo.png?ex=6782e6c4&is=67819544&hm=9df8fe7968a3e72785a2635a00c144f49d680417f672c36d9e331541546f05c8"); */
+background-image: url("puntini.png"); 
+
+}
+/* .crediti-per-i-puntini "https://cdn.mst.edu/emctest/brand_resources/design_elements/patterns/dots/Dots-MetallicSilver-04.png" */
+
+.linens {
+opacity: 0;
+}
+#stage > .section:last-child {
+margin-bottom: 50vh;
+} /*?*/
+.closedsec > * {
+display: none;
+}
+.boxname{
+position:auto;
+display: block;
+top: 0;
+white-space: nowrap;
+-webkit-transform: translateX(1ch);
+    -ms-transform: translateX(1ch);
+        transform: translateX(1ch);
+height: 16.8px;
+}
+
+.box::-webkit-scrollbar {
+display: none;
+}
+
+hr {border-color: inherit;border-style:solid;padding: 0; margin: 7.4px 0}
+
+.sharps {
+border-radius: 0;
+}
+.usays{
+border-radius: 50% 50% 50% 0;
+}
+.isays {
+border-radius: 50% 50% 0 50%
+}
+.rounds {
+border-radius: 50%;
+}
+
+.boxc.isay .box {
+border-radius: 12px 12px 0 12px
+}
+
+.boxc.usay .box {
+border-radius: 12px 12px 12px 0
+}
+
+.boxc.round .box {
+border-radius: 12px;
+}
+
+.usay {display: inline;}
+.isay {display: inline;}
+
+
+@-webkit-keyframes sel {
+0% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+50% {-webkit-filter: brightness(1);filter: brightness(1)}
+100% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+}
+@keyframes sel {
+0% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+50% {-webkit-filter: brightness(1);filter: brightness(1)}
+100% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+}
+.misc > .verbs {
+-webkit-filter: hue-rotate(-17deg) brightness(.79) saturate(150%);
+        filter: hue-rotate(-17deg) brightness(.79) saturate(150%);
+}
+.misc > .comments {
+-webkit-filter: hue-rotate(-10deg) brightness(.62) saturate(350%);
+        filter: hue-rotate(-10deg) brightness(.62) saturate(350%);
+}
+.misc {
+-webkit-filter: hue-rotate(-4deg) brightness(.95);
+        filter: hue-rotate(-4deg) brightness(.95);
+}
+.misc > .objects {
+-webkit-filter: hue-rotate(-9deg) brightness(.88) saturate(2.7);
+        filter: hue-rotate(-9deg) brightness(.88) saturate(2.7);
+}
+.misc > .symbols {
+-webkit-filter: hue-rotate(8deg) brightness(1.3) saturate(1.2);
+        filter: hue-rotate(8deg) brightness(1.3) saturate(1.2);
+}
+.misc > .numbers {
+-webkit-filter: hue-rotate(13deg) brightness(1.03) saturate(1.8);
+        filter: hue-rotate(13deg) brightness(1.03) saturate(1.8);
+}
+
+.whitec { background: var(--whitet); border: 4px solid #fff;}
+.whitec.selected { background: #fff;}
+.boxc.unbordered.white .box {color: var(--white); background: var(--whitet); border: 0.5ch solid var(--whitet)}
+.boxc.bordered.white .box {color: var(--white); background: var(--whitet); border: 0.5ch solid var(--white)}
+.boxc.opaque.white .box {color: #fff; background: var(--white); border: 0.5ch solid var(--white)}
+.boxc.white .boxname {color: var(--white)} 
+
+.harryc { background: var(--harryt); border: 4px solid var(--harry);}
+.harryc.selected { background: var(--harry);}
+.boxc.unbordered.harry .box {color: var(--harry); background: var(--harryt); border: 0.5ch solid var(--harryt)}
+.boxc.bordered.harry .box {color: var(--harry); background: var(--harryt); border: 0.5ch solid var(--harry)}
+.boxc.opaque.harry .box {color: #fff; background: var(--harry); border: 0.5ch solid var(--harry)}
+.boxc.harry .boxname {color: var(--harry)} 
+
+.scottc { background: var(--scottt); border: 4px solid var(--scott);}
+.scottc.selected { background: var(--scott);}
+.boxc.unbordered.scott .box {color: var(--scott); background: var(--scottt); border: 0.5ch solid var(--scottt)}
+.boxc.bordered.scott .box {color: var(--scott); background: var(--scottt); border: 0.5ch solid var(--scott)}
+.boxc.opaque.scott .box {color: #fff; background: var(--scott); border: 0.5ch solid var(--scott)}
+.boxc.scott .boxname {color: var(--scott)} 
+
+.michaelc { background: var(--michaelt); border: 4px solid var(--michael);}
+.michaelc.selected { background: var(--michael);}
+.boxc.unbordered.michael .box {color: var(--michael); background: var(--michaelt); border: 0.5ch solid var(--michaelt)}
+.boxc.bordered.michael .box {color: var(--michael); background: var(--michaelt); border: 0.5ch solid var(--michael)}
+.boxc.opaque.michael .box {color: #fff; background: var(--michael); border: 0.5ch solid var(--michael)}
+.boxc.michael .boxname {color: var(--michael)} 
+
+.sarac { background: var(--sarat); border: 4px solid var(--sara);}
+.sarac.selected { background: var(--sara);}
+.boxc.unbordered.sara .box {color: var(--sara); background: var(--sarat); border: 0.5ch solid var(--sarat)}
+.boxc.bordered.sara .box {color: var(--sara); background: var(--sarat); border: 0.5ch solid var(--sara)}
+.boxc.opaque.sara .box {color: #fff; background: var(--sara); border: 0.5ch solid var(--sara)}
+.boxc.sara .boxname {color: var(--sara)} 
+
+.judec { background: var(--judet); border: 4px solid var(--jude);}
+.judec.selected { background: var(--jude);}
+.boxc.unbordered.jude .box {color: var(--jude); background: var(--judet); border: 0.5ch solid var(--judet)}
+.boxc.bordered.jude .box {color: var(--jude); background: var(--judet); border: 0.5ch solid var(--jude)}
+.boxc.opaque.jude .box {color: #fff; background: var(--jude); border: 0.5ch solid var(--jude)}
+.boxc.jude .boxname {color: var(--jude)} 
+
+.tyc { background: var(--tyt); border: 4px solid var(--ty);}
+.tyc.selected { background: var(--ty);}
+.boxc.unbordered.ty .box {color: var(--ty); background: var(--tyt); border: 0.5ch solid var(--tyt)}
+.boxc.bordered.ty .box {color: var(--ty); background: var(--tyt); border: 0.5ch solid var(--ty)}
+.boxc.opaque.ty .box {color: #fff; background: var(--ty); border: 0.5ch solid var(--ty)}
+.boxc.ty .boxname {color: var(--ty)} 
+
+.carec { background: var(--caret); border: 4px solid var(--care);}
+.carec.selected { background: var(--care);}
+.boxc.unbordered.care .box {color: var(--care); background: var(--caret); border: 0.5ch solid var(--caret)}
+.boxc.bordered.care .box {color: var(--care); background: var(--caret); border: 0.5ch solid var(--care)}
+.boxc.opaque.care .box {color: #fff; background: var(--care); border: 0.5ch solid var(--care)}
+.boxc.care .boxname {color: var(--care)} 
+
+.jacobc { background: var(--jacobt); border: 4px solid var(--jacob);}
+.jacobc.selected { background: var(--jacob);}
+.boxc.unbordered.jacob .box {color: var(--jacob); background: var(--jacobt); border: 0.5ch solid var(--jacobt)}
+.boxc.bordered.jacob .box {color: var(--jacob); background: var(--jacobt); border: 0.5ch solid var(--jacob)}
+.boxc.opaque.jacob .box {color: #fff; background: var(--jacob); border: 0.5ch solid var(--jacob)}
+.boxc.jacob .boxname {color: var(--jacob)} 
+
+.wrenc { background: var(--wrent); border: 4px solid var(--wren);}
+.wrenc.selected { background: var(--wren);}
+.boxc.unbordered.wren .box {color: var(--wren); background: var(--wrent); border: 0.5ch solid var(--wrent)}
+.boxc.bordered.wren .box {color: var(--wren); background: var(--wrent); border: 0.5ch solid var(--wren)}
+.boxc.opaque.wren .box {color: #fff; background: var(--wren); border: 0.5ch solid var(--wren)}
+.boxc.wren .boxname {color: var(--wren)} 
+
+.hyperc { background: var(--wrent); border: 4px solid var(--wren);}
+.hyperc.selected { background: var(--wren);}
+.boxc.unbordered.hyper .box {color: #bbb; background: var(--wrent); border: 0.5ch solid var(--wrent)}
+.boxc.bordered.hyper .box {color: #bbb; background: var(--wrent); border: 0.5ch solid var(--wren)}
+.boxc.opaque.hyper .box {color: #fff; background: var(--wren); border: 0.5ch solid var(--wren)}
+.boxc.hyper .boxname {color: var(--wren)} 
+
+.vincec { background: var(--vincet); border: 4px solid var(--vince);}
+.vincec.selected { background: var(--vince);}
+.boxc.unbordered.vince .box {color: var(--vince); background: var(--vincet); border: 0.5ch solid var(--vincet)}
+.boxc.bordered.vince .box {color: var(--vince); background: var(--vincet); border: 0.5ch solid var(--vince)}
+.boxc.opaque.vince .box {color: #fff; background: var(--vince); border: 0.5ch solid var(--vince)}
+.boxc.vince .boxname {color: var(--vince)} 
+
+.benc { background: var(--bent); border: 4px solid var(--ben);}
+.benc.selected { background: var(--ben);}
+.boxc.unbordered.ben .box {color: var(--ben); background: var(--bent); border: 0.5ch solid var(--bent)}
+.boxc.bordered.ben .box {color: var(--ben); background: var(--bent); border: 0.5ch solid var(--ben)}
+.boxc.opaque.ben .box {color: #fff; background: var(--ben); border: 0.5ch solid var(--ben)}
+.boxc.ben .boxname {color: var(--ben)} 
+
+.jayc { background: var(--jayt); border: 4px solid var(--jay);}
+.jayc.selected { background: var(--jay);}
+.boxc.unbordered.jay .box {color: var(--jay); background: var(--jayt); border: 0.5ch solid var(--jayt)}
+.boxc.bordered.jay .box {color: var(--jay); background: var(--jayt); border: 0.5ch solid var(--jay)}
+.boxc.opaque.jay .box {color: #fff; background: var(--jay); border: 0.5ch solid var(--jay)}
+.boxc.jay .boxname {color: var(--jay)} 
+
+.charc { background: var(--chart); border: 4px solid var(--char);}
+.charc.selected { background: var(--char);}
+.boxc.unbordered.char .box {color: var(--char); background: var(--chart); border: 0.5ch solid var(--chart)}
+.boxc.bordered.char .box {color: var(--char); background: var(--chart); border: 0.5ch solid var(--char)}
+.boxc.opaque.char .box {color: #fff; background: var(--char); border: 0.5ch solid var(--char)}
+.boxc.char .boxname {color: var(--char)} 
+
+.clydec { background: var(--clydet); border: 4px solid var(--clyde);}
+.clydec.selected { background: var(--clyde);}
+.boxc.unbordered.clyde .box {color: var(--clyde); background: var(--clydet); border: 0.5ch solid var(--clydet)}
+.boxc.bordered.clyde .box {color: var(--clyde); background: var(--clydet); border: 0.5ch solid var(--clyde)}
+.boxc.opaque.clyde .box {color: #fff; background: var(--clyde); border: 0.5ch solid var(--clyde)}
+.boxc.clyde .boxname {color: var(--clyde)} 
+
+.alexac { background: var(--alexat); border: 4px solid var(--alexa);}
+.alexac.selected { background: var(--alexa);}
+.boxc.unbordered.alexa .box {color: var(--alexa); background: var(--alexat); border: 0.5ch solid var(--alexat)}
+.boxc.bordered.alexa .box {color: var(--alexa); background: var(--alexat); border: 0.5ch solid var(--alexa)}
+.boxc.opaque.alexa .box {color: #fff; background: var(--alexa); border: 0.5ch solid var(--alexa)}
+.boxc.alexa .boxname {color: var(--alexa)} 
+
+.canaryc { background: var(--canaryt); border: 4px solid var(--canary);}
+.canaryc.selected { background: var(--canary);}
+.boxc.unbordered.canary .box {color: var(--canary); background: var(--canaryt); border: 0.5ch solid var(--canaryt)}
+.boxc.bordered.canary .box {color: var(--canary); background: var(--canaryt); border: 0.5ch solid var(--canary)}
+.boxc.opaque.canary .box {color: #fff; background: var(--canary); border: 0.5ch solid var(--canary)}
+.boxc.canary .boxname {color: var(--canary)} 
+
+.scarfc { background: var(--scarft); border: 4px solid var(--scarf);}
+.scarfc.selected { background: var(--scarf);}
+.boxc.unbordered.scarf .box {color: var(--scarf); background: var(--scarft); border: 0.5ch solid var(--scarft)}
+.boxc.bordered.scarf .box {color: var(--scarf); background: var(--scarft); border: 0.5ch solid var(--scarf)}
+.boxc.opaque.scarf .box {color: #fff; background: var(--scarf); border: 0.5ch solid var(--scarf)}
+.boxc.scarf .boxname {color: var(--scarf)} 
+
+.ekc { background: var(--ekt); border: 4px solid var(--ek);}
+.ekc.selected { background: var(--ek);}
+.boxc.unbordered.ek .box {color: var(--ek); background: var(--ekt); border: 0.5ch solid var(--ekt)}
+.boxc.bordered.ek .box {color: var(--ek); background: var(--ekt); border: 0.5ch solid var(--ek)}
+.boxc.opaque.ek .box {color: #fff; background: var(--ek); border: 0.5ch solid var(--ek)}
+.boxc.ek .boxname {color: var(--ek)} 
+
+.calc { background: var(--calt); border: 4px solid var(--cal);}
+.calc.selected { background: var(--cal);}
+.boxc.unbordered.cal .box {color: var(--cal); background: var(--calt); border: 0.5ch solid var(--calt)}
+.boxc.bordered.cal .box {color: var(--cal); background: var(--calt); border: 0.5ch solid var(--cal)}
+.boxc.opaque.cal .box {color: #fff; background: var(--cal); border: 0.5ch solid var(--cal)}
+.boxc.cal .boxname {color: var(--cal)} 
+
+.eleanorc { background: var(--eleanort); border: 4px solid var(--eleanor);}
+.eleanorc.selected { background: var(--eleanor);}
+.boxc.unbordered.eleanor .box {color: var(--eleanor); background: var(--eleanort); border: 0.5ch solid var(--eleanort)}
+.boxc.bordered.eleanor .box {color: var(--eleanor); background: var(--eleanort); border: 0.5ch solid var(--eleanor)}
+.boxc.opaque.eleanor .box {color: #fff; background: var(--eleanor); border: 0.5ch solid var(--eleanor)}
+.boxc.eleanor .boxname {color: var(--eleanor)} 
+
+.samc { background: var(--samt); border: 4px solid var(--sam);}
+.samc.selected { background: var(--sam);}
+.boxc.unbordered.sam .box {color: var(--sam); background: var(--samt); border: 0.5ch solid var(--samt)}
+.boxc.bordered.sam .box {color: var(--sam); background: var(--samt); border: 0.5ch solid var(--sam)}
+.boxc.opaque.sam .box {color: #fff; background: var(--sam); border: 0.5ch solid var(--sam)}
+.boxc.sam .boxname {color: var(--sam)} 
+
+.elisec { background: var(--eliset); border: 4px solid var(--elise);}
+.elisec.selected { background: var(--elise);}
+.boxc.unbordered.elise .box {color: var(--elise); background: var(--eliset); border: 0.5ch solid var(--eliset)}
+.boxc.bordered.elise .box {color: var(--elise); background: var(--eliset); border: 0.5ch solid var(--elise)}
+.boxc.opaque.elise .box {color: #fff; background: var(--elise); border: 0.5ch solid var(--elise)}
+.boxc.elise .boxname {color: var(--elise)} 
+
+.alicec { background: var(--alicet); border: 4px solid var(--alice);}
+.alicec.selected { background: var(--alice);}
+.boxc.unbordered.alice .box {color: var(--alice); background: var(--alicet); border: 0.5ch solid var(--alicet)}
+.boxc.bordered.alice .box {color: var(--alice); background: var(--alicet); border: 0.5ch solid var(--alice)}
+.boxc.opaque.alice .box {color: #fff; background: var(--alice); border: 0.5ch solid var(--alice)}
+.boxc.alice .boxname {color: var(--alice)} 
+
+.jonc { background: var(--jont); border: 4px solid var(--jon);}
+.jonc.selected { background: var(--jon);}
+.boxc.unbordered.jon .box {color: var(--jon); background: var(--jont); border: 0.5ch solid var(--jont)}
+.boxc.bordered.jon .box {color: var(--jon); background: var(--jont); border: 0.5ch solid var(--jon)}
+.boxc.opaque.jon .box {color: #fff; background: var(--jon); border: 0.5ch solid var(--jon)}
+.boxc.jon .boxname {color: var(--jon)}
+
+@-webkit-keyframes musthing {
+from {-webkit-transform:translate(-.35ch) scaleY(1.25);transform:translate(-.35ch) scaleY(1.25)}
+to {-webkit-transform:translate(.15ch) scaleY(1.25);transform:translate(.15ch) scaleY(1.25)}
+}
+
+@keyframes musthing {
+from {-webkit-transform:translate(-.35ch) scaleY(1.25);transform:translate(-.35ch) scaleY(1.25)}
+to {-webkit-transform:translate(.15ch) scaleY(1.25);transform:translate(.15ch) scaleY(1.25)}
+}
+
+@-webkit-keyframes musthing2 {
+from {opacity: .49}
+to {opacity: .81}
+}
+
+@keyframes musthing2 {
+from {opacity: .49}
+to {opacity: .81}
+}
+
+.music::before {
+content: "►";
+position: absolute;
+left: -2ch;
+font-size: large;
+-webkit-animation: musthing 1s ease-in-out -.001s infinite alternate, musthing2 calc(2s / 3) ease-in-out -.051s infinite alternate;
+        animation: musthing 1s ease-in-out -.001s infinite alternate, musthing2 calc(2s / 3) ease-in-out -.051s infinite alternate;
+}
+
+.selected:hover, .music:hover::before, .next:hover {
+-webkit-animation-play-state: paused;
+        animation-play-state: paused;
+}
+
+.selected {
+-webkit-animation: sel 1s ease-in-out -.001s infinite;
+        animation: sel 1s ease-in-out -.001s infinite;
+}
+
+.selected, .selected * {
+cursor: pointer;
+}
+.boxname {
+cursor: default;
+}
+
+@-webkit-keyframes sel {
+0% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+50% {-webkit-filter: brightness(1);filter: brightness(1)}
+100% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+}
+
+@keyframes sel {
+0% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+50% {-webkit-filter: brightness(1);filter: brightness(1)}
+100% {-webkit-filter: brightness(1.35);filter: brightness(1.35)}
+}
+
+.round.white * {
+-webkit-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+-webkit-transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+        transition-timing-function: ease;
+}
+
+.scarfbg:not(:hover) {
+            color: var(--scarf);
+}
+
+#d7sonas{
+    position: fixed;
+    width: 75vw;
+    left: 12.5vw;
+    z-index: 9999999;
+    top: calc((100vh - (75vw * 1536 / 3104)) / 2);
+    pointer-events: none;
+}
+
+#d7container {
+    z-index: 9999998;
+    position: fixed;
+    background: #000a;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+#left, #right {
+    position: fixed;
+    height: 100vh;
+    width: calc((100vw - (96 * 8px - 3px)) / 2 + 2ch);
+    z-index: 9999997;
+}
+
+#left {
+    left: 0;
+    mask-image: linear-gradient(90deg, black 0%, transparent calc((100vw - (96 * 8px - 3px)) / 2 + 2ch));
+    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent calc((100vw - (96 * 8px - 3px)) / 2 + 2ch));
+    background: url(https://disfixdog.neocities.org/left.png);
+}
+
+#right {
+    right: 0;
+    mask-image: linear-gradient(270deg, black 0%, transparent calc((100vw - (96 * 8px - 3px)) / 2 + 2ch));
+    -webkit-mask-image: linear-gradient(270deg, black 0%, transparent calc((100vw - (96 * 8px - 3px)) / 2 + 2ch));
+    background: url(https://disfixdog.neocities.org/right.png);
+}
+
+.banner {
+    opacity: 0;
+    -webkit-animation: banner 40s linear -.001s infinite alternate, banner2 120s ease 60s 1 forwards;
+            animation: banner 40s linear -.001s infinite alternate, banner2 120s ease 60s 1 forwards;
+}
+
+.banner:first-of-type {
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s
+}
+
+@-webkit-keyframes banner {
+    0% {-webkit-filter: contrast(100%) brightness(100%) opacity(100%) grayscale(0%);filter: contrast(100%) brightness(100%) opacity(100%) grayscale(0%)}
+    25% {-webkit-filter: contrast(100%) brightness(112%) opacity(90%) grayscale(0%);filter: contrast(100%) brightness(112%) opacity(90%) grayscale(0%)}
+    40% {-webkit-filter: contrast(109%) brightness(112%) opacity(90%) grayscale(0%);filter: contrast(109%) brightness(112%) opacity(90%) grayscale(0%)}
+    65% {-webkit-filter: contrast(109%) brightness(100%) opacity(100%) grayscale(0%);filter: contrast(109%) brightness(100%) opacity(100%) grayscale(0%)}
+    80% {-webkit-filter: contrast(100%) brightness(112%) opacity(100%) grayscale(0%);filter: contrast(100%) brightness(112%) opacity(100%) grayscale(0%)}
+    98.5% {-webkit-filter: contrast(109%) brightness(113%) opacity(95%) grayscale(0%);filter: contrast(109%) brightness(113%) opacity(95%) grayscale(0%)}
+    98.52% {-webkit-filter: contrast(109%) brightness(113%) opacity(95%) grayscale(100%);filter: contrast(109%) brightness(113%) opacity(95%) grayscale(100%)}
+    100% {-webkit-filter: contrast(109%) brightness(112%) opacity(95%) grayscale(100%);filter: contrast(109%) brightness(112%) opacity(95%) grayscale(100%)}
+}
+
+@keyframes banner {
+    0% {-webkit-filter: contrast(100%) brightness(100%) opacity(100%) grayscale(0%);filter: contrast(100%) brightness(100%) opacity(100%) grayscale(0%)}
+    25% {-webkit-filter: contrast(100%) brightness(112%) opacity(90%) grayscale(0%);filter: contrast(100%) brightness(112%) opacity(90%) grayscale(0%)}
+    40% {-webkit-filter: contrast(109%) brightness(112%) opacity(90%) grayscale(0%);filter: contrast(109%) brightness(112%) opacity(90%) grayscale(0%)}
+    65% {-webkit-filter: contrast(109%) brightness(100%) opacity(100%) grayscale(0%);filter: contrast(109%) brightness(100%) opacity(100%) grayscale(0%)}
+    80% {-webkit-filter: contrast(100%) brightness(112%) opacity(100%) grayscale(0%);filter: contrast(100%) brightness(112%) opacity(100%) grayscale(0%)}
+    98.5% {-webkit-filter: contrast(109%) brightness(113%) opacity(95%) grayscale(0%);filter: contrast(109%) brightness(113%) opacity(95%) grayscale(0%)}
+    98.52% {-webkit-filter: contrast(109%) brightness(113%) opacity(95%) grayscale(100%);filter: contrast(109%) brightness(113%) opacity(95%) grayscale(100%)}
+    100% {-webkit-filter: contrast(109%) brightness(112%) opacity(95%) grayscale(100%);filter: contrast(109%) brightness(112%) opacity(95%) grayscale(100%)}
+}
+
+@-webkit-keyframes banner2 {
+    0% {opacity: 0}
+    10% {opacity: .01}
+    30% {opacity: 0}
+    50% {opacity: .05}
+    75% {opacity: .2}
+    90% {opacity: .9}
+    100% {opacity: 1}
+}
+
+@keyframes banner2 {
+    0% {opacity: 0}
+    10% {opacity: .01}
+    30% {opacity: 0}
+    50% {opacity: .05}
+    75% {opacity: .2}
+    90% {opacity: .9}
+    100% {opacity: 1}
+}
+
+.next {
+    background: var(--harry);
+    width: 4ch;
+    height: 4ch;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    position: absolute;
+    bottom: 4ch;
+    right: 4ch;
+    -webkit-animation: musthing 1s ease-in-out -.001s infinite alternate, musthing2 calc(2s / 3) ease-in-out -.051s infinite alternate;
+        animation: musthing 1s ease-in-out -.001s infinite alternate, musthing2 calc(2s / 3) ease-in-out -.051s infinite alternate;
+    cursor: pointer;
+}
+
+.opaque > .selected {
+    cursor: default;
+}
+
+#icon {
+    position: fixed;
+    width: 6ch;
+    height: 6ch;
+    border-radius: 3ch;
+    box-sizing: border-box;
+    background-image: url("https://disfixdog.neocities.org/dog.png");
+    background-size: contain;
+    border: 0.2ch solid black;
+    z-index: 9999999;
+    left: 1ch;
+    top: 1ch;
+    transition: transform 0.5s, border 0.4s;
+    transform-origin: center center;
+    cursor: pointer;
+}
+
+#icon:hover {
+    transform: rotate(360deg);
+    border: 0.5ch solid #13ccb0;
+}
+
+.boxc {
+    animation: lift 1s 1;
+}
+
+@keyframes lift {
+    0% {transform: translateY(20ch); opacity: 0.2}
+    100% {transform: translateY(0ch); opacity: 1}
+}
+
+#chapters {
+    background: linear-gradient(90deg, black 0%, transparent 20vw);
+    left: 0;
+    top: 0;
+    width: 20vw;
+    height: 100%;
+    position: fixed;
+    z-index: 9999998;
+    padding: 1ch;
+    padding-top: 8ch;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#icon:hover+#chapters, #chapters:hover{
+    opacity: 1;
+    display: block;
+}
+
+h1{
+display: block;
+  font-size: 1em;
+  margin-top:0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h2{
+display: block;
+  font-size: 1em;
+  margin-top:0;
+  margin-bottom: 0;
+  margin-left: 0;s
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h3{
+display: block;
+  font-size: 1em;
+  margin-top:0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: normal;
+}
+
+

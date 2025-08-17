@@ -1,0 +1,175 @@
+
+html,
+body{height:100%;
+margin:1;padding:0;
+background-color:#000;
+line-height:2em;
+font-size:20px;
+font-family:Helvetica,Arial,sans-serif}
+
+img{padding:0;display:block;margin:0 auto;width:100%;max-height:100%;max-width:100%}
+
+p.JUICE img{padding:0;display:block;margin:0;width:50%;padding-left:0;max-height:100%;max-width:100%}.frame{display:block;width:100vw;height:100vh;max-width:100%;margin:0;padding:0;border:0 none;box-sizing:border-box}
+
+body{
+  color:#ffffff;
+  margin-right:4%;
+  margin-left:4%;
+  margin-top:1.2em;
+  margin-bottom:1.5em}
+a{color:#fff}
+
+h{margin-right:4%;margin-left:4%;margin-top:1.2em;margin-bottom:1.5em} 
+
+.source{text-align:right;font-size:0.7em;color:#fff;margin-bottom:1.2em}
+
+.NINE{
+  color:#ff6767;
+  padding-left:10%}
+  
+.TEN{
+  color:#92ff92;
+  padding-left:0}
+  
+.JUICE{
+    color:#ffea02;
+    padding-left:20%}
+
+.AARON {
+    color: #8fc698;
+    padding-left: 10%;
+  }
+.MICAH {
+    color: #65f87e;
+    padding-left: 20%;
+  }
+.DANNY {
+    color: #bef5c8;
+    padding-left: 30%;
+  }
+
+.COP {
+    color: #84e1ff;
+    padding-left: 50%;
+  }
+  
+p.NINE.interrupting {
+    color: #ff6767;
+    padding-left: 70%;
+  }
+p.JUICE.interrupting {
+    color: #ffea02;
+    padding-left: 80%;
+  }
+.JASON {
+    color: #fdff7f;
+    padding-left: 10%;
+  }
+  
+.EMILY {
+    color: #fff600;
+    padding-left: 20%;
+  }
+  
+.LORI {
+    color: #ffc600;
+    padding-left: 30%;
+  }
+  
+.LAUGHTER {
+    color: #ffffff;
+    padding-left: 50%;
+  }
+  
+.THUY {
+    color: #ffb975;
+    padding-left: 10%;
+  }
+  
+.ROGER {
+    color: #ffa4fa;
+    padding-left: 15%;
+  }
+  
+p.AARON.radio {
+    color: #8fc698;
+    padding-left: 40%;
+  }
+  
+p.MICAH.radio {
+    color: #65f87e;
+    padding-left: 45%;
+  }
+  
+p.DANNY.radio {
+    color: #bef5c8;
+    padding-left: 50%;
+  }
+  
+.NANCY {
+    color: #ffcc00;
+    padding-left: 10%;
+  }
+  
+.BARTENDER {
+    color: #8cbfff;
+    padding-left: 25%;
+  }
+  
+.RADIO {
+    color: #ffffff;
+    padding-left: 50%;
+  }
+  
+.LACRECIA {
+    color: #00fff6;
+    padding-left: 10%;
+  }
+  
+p.BURGER.SPECIALIST.intercom {
+    color: #fff074;
+    padding-left: 40%;
+  }
+  
+p.BURGER.SPECIALIST {
+    color: #fff074;
+    padding-left: 20%;
+  }
+  
+.BLUETOOTH {
+    color: #ffffff;
+    padding-left: 50%;
+  }
+  
+p.TRACEY {
+    color: #89c6ff;
+    padding-left: 50%;
+  }
+  p.BYSTANDER.ONE {
+    color: #fdb9b9;
+    padding-left: 30%;
+  }
+  p.BYSTANDER.TWO {
+    color: #c93eff;
+    padding-left: 30%;
+  }
+  p.BYSTANDER.THREE {
+    color: #e84d00;
+    padding-left: 30%;
+  }
+  p.ED {
+    color: #d2ff00;
+    padding-left: 10%;
+  }
+  p.TIM {
+    color: #93ffe9;
+    padding-left: 40%;
+  }
+  p.TIM.closer {
+    color: #93ffe9;
+    padding-left: 25%;
+  }
+  p.TIM.even.closer {
+    color: #93ffe9;
+    padding-left: 15%;
+  }

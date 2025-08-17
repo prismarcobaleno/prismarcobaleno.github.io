@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>The Process of Elimination</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500');
+
+        *{
+            font-family: 'Inconsolata';
+            cursor: default;
+            user-select: none;
+            line-height: 16.8px;
+            clear: both;
+            transform-origin: 0 0;
+            tab-size: 4;
+        }
+
+        .scarfbg:not(:hover) {
+            color: var(--scarf);
+        }
+
+        :root{
+            --harry: #EF5B36;
+            --scott: #ad342f;
+
+            --michael: #75a721;
+            --sara: #ebab27;
+            --jude: #914233;
+            --ty: #10bc6f;
+            --care: #8c75b3;
+            --jacob: #6b7983;
+
+            --wren: #6f5274;
+            --hyper: var(--wren);
+            --vince: #3a9445;
+            --ben: #227f9b;
+            --jay: #657294;
+            --char: #774dcb;
+
+            --clyde: #296b9c;
+            --alexa: #10a992;
+
+            --scarf: #e92b5b;
+            --ek: #12ac1a;
+            --cal: #627cbb;
+            --arlons: #435a91;
+            --sam: #ed1c24;
+            --eleanor: #ff7b55;
+            --canary: #CC8A46;
+            --alice: #66ec95;
+            --jon: #6551d6;
+            --elise: #39a4d7;
+            
+            --white: #fffd;
+
+            --vselect: var(--harry);
+            --hselect: var(--harry);
+            --vselectt: var(--harryt);
+            --hselectt: var(--harryt);
+
+            --harryt: #181110d3;
+            --scottt: #0f0909ca;
+
+            --michaelt: #161812ca;
+            --sarat: #1e1b15ca;
+            --judet: #100c0cca;
+            --tyt: #111915ca;
+            --caret: #141316ca;
+            --jacobt: #0f1112ca;
+
+            --wrent: #0f0e0fca;
+            --hypert: var(--wrent);
+            --vincet: #131813ca;
+            --bent: #0e1213ca;
+            --jayt: #131415ca;
+            --chart: #0d0c11ca;
+
+            --clydet: #0d1012ca;
+            --alexat: #131d1bca;
+            
+            --whitet: #000c;
+            --canaryt: #1f1f17ca;
+
+            --scarft: #1f1518ca;
+            --ekt: #131813ca;
+            --calt: #131415ca;
+            --eliset: #0e1113ca;
+            --samt: #181010ca;
+            --eleanort: #181110ca;
+            --alicet: #131d1aca;
+            --jont: #0c0c11ca;
+        }
+        html, body {
+            background: #000;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #stage {
+            background: #000;
+            position: absolute;
+            width: calc(96 * 8px - 3px);
+            left: calc((100vw - (96 * 8px))/2);
+            color: #eef4;
+            word-wrap:break-word;
+        }
+
+        .guideline, .line {
+            background: #eef2;
+            position: fixed;
+            display: none;
+            z-index: 99999998;
+        }
+
+        .glv, .line{
+            width:0.5ch;
+            height: 100vh;
+            top: 0;
+        }
+
+        .glh{
+            height: 0.5ch;
+            width: 100vw;
+            left: 0;
+        }
+
+        #glr{
+            transform: translateX(-0.5ch);
+        }
+
+        #glb{
+            transform: translateY(-0.5ch);
+        }
+
+        #box, .box{
+            background: #f008;
+            color: #fff;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+            position: static;
+            border: 0.5ch solid #fff;
+            padding: 7px 8px 9px;
+        }
+
+        .boxc {
+            position: absolute;
+        }
+
+        .ui-resizable-handle, .ui-draggable-handle {
+            background: #616266;
+            width: 16.8px;
+            height: 16.8px;
+            position: absolute;
+            border-radius: 50%;
+            opacity: .4;
+            transform: translateY(18px);
+        }
+
+        .ui-resizable-s{
+            bottom: -32px;
+            left: calc(50% + 8px);
+            clip-path: polygon(0 48%, 100% 48%, 100% 100%, 0 100%)
+        }
+
+        .ui-resizable-se, .ui-resizable-es{
+            right: -32px;
+            bottom: -32px;
+        }
+
+        .ui-resizable-e{
+            right: -32px;
+            top: calc(50% - 1px);
+            clip-path: polygon(48% 0, 100% 0, 100% 100%, 48% 100%)
+        }
+
+        .ui-draggable-handle {
+            left: -8.4px;
+            top: -8.4px;
+            cursor:move;
+        }
+
+        .button {
+            position: fixed;
+            width: 6ch;
+            height: 6ch;
+            left: 1ch;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            padding: .8ch 1.5ch;
+            box-sizing: border-box;
+            background: #ffffff19;
+        }
+        #addbox{
+            bottom: 1ch;
+            color: var(--scott);
+        }
+        #addbox:hover {
+            background: var(--scott);
+            color: #fff;
+        }
+        #gettpo{
+            top: 1ch;
+            color: var(--harry);
+        }
+        #gettpo:hover, #copy div:hover {
+            background: var(--harry);
+            color: #fff;
+        }
+        #addsec{
+            bottom: 22ch;
+            color: var(--char);
+        }
+        #addsec:hover{
+            background: var(--char);
+            color: #fff;
+        }
+        #dupsec{
+            bottom: 15ch;
+            color: var(--wren);
+        }
+        #dupsec:hover {
+            background: var(--wren);
+            color: #fff;
+        }
+        #duplns{
+            bottom: 8ch;
+            color: var(--scarf);
+        }
+        #duplns:hover {
+            background: var(--scarf);
+            color: #fff;
+        }
+        #dldata, #dsdata{
+            position: fixed;
+            bottom: 8ch;
+            left: 8ch;
+            height: 6ch;
+            background: var(--scarf);
+            width: calc(50vw - 48ch - 14ch);
+            display: none;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-row-gap: 0.2ch;
+            padding: 0.2ch;
+        }
+        #dsdata{
+            bottom: 15ch;
+            background: var(--wren);
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+        #dldata input, #dsdata input, #zthing input, .header input[type=number]{
+            background: #0f0f10;
+            outline: none;
+            margin: none;
+            border: none;
+            width: 6ch;
+            color: #fff;
+        }
+        #dldata div, #dsdata div {
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            text-align: center;
+            background: black;
+            color: var(--scarf);
+        }
+        #dsdata div{
+            color: var(--wren);
+        }
+        #dldata::before, #dldata::after, #dsdata::before{
+            content: "SOURCE SECT/TOP LN/BOTTOM LN";
+            position: absolute;
+            left: 0;
+            top: -16.8px;
+            display: block;
+            clip-path: polygon(0 0, 100% 0, 100% 16.8px, 0 16.8px);
+            color: #fff8;
+            font-size: small;
+        }
+        #dsdata::before{
+            content: "SOURCE SECT";
+        }
+        #dldata::after{
+            content: "DESTINATION SECT/TOP LN";
+            top: auto;
+            bottom: -16.8px;
+        }
+        #seelns{
+            bottom: 29ch;
+            color: var(--ben);
+            border-radius: 0;
+            cursor: default;
+            width: 18ch;
+            height: auto;
+        }
+        #seelns:hover {
+            background: var(--ben);
+            color: #fff;
+        }
+        .header {
+            background: #000;
+            color: var(--scarf);
+            margin-top: 0.5ch;
+        }
+        .dots .linens {
+            position: absolute;
+            left: -5ch;
+            width: 4ch;
+            word-spacing: 999ch;
+            word-break:normal;
+            text-align: right;
+        }
+        .dots {
+            background: #09090a;
+        }
+        .linens {
+            background: #000;
+        }
+        .closedsec > *:not(.header), #data {
+            display: none;
+        }
+        input[type="text"] {
+            background: #0f0f10;
+            border: none;
+            color: white;
+            resize: horizontal;
+            width:76ch;
+            cursor: text;
+            transition: all .2s ease-in-out;
+        }
+        #boxname{
+            width:24ch;
+        }
+
+        textarea:focus, input:focus{
+            outline: none;
+        }
+
+        .opcl {
+            position: absolute;
+            left: -2ch;
+            width: 1ch;
+            color: var(--scarf);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #stage > .section:last-child {
+            margin-bottom: 50vh;
+        } /*?*/
+
+        #copy {
+            position: fixed;
+            border: 0.5ch solid #fff;
+            width: 16ch;
+            height: auto;
+            box-sizing: border-box;
+            left: 8ch;
+            top: 1ch;
+            background: #000d;
+            display: none;
+        }
+
+        #copy textarea {
+            position: static;
+            width: 80%;
+            background: #0f0f10;
+            border: none;
+            color: white;
+            resize: none;
+            overflow: hidden;
+        }
+
+        #copy div {
+            text-align: center;
+            color: var(--harry);
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+        #vpalette, #hpalette{
+            display: grid;
+            grid-template-columns: repeat(3, 1.5ch);
+            grid-template-rows: repeat(8, 1.5ch);
+            position: fixed;
+            left: 1ch;
+            top: 8ch;
+            grid-row-gap: 0.75ch;
+            grid-column-gap: 0.75ch;
+            grid-auto-flow:column;
+        }
+
+        #hpalette{
+            right: 1ch !important;
+            left: auto;
+            grid-auto-flow: row;
+            grid-template-rows: repeat(4, 1.5ch);
+            grid-template-columns: repeat(8, 1.5ch);
+        }
+
+        .palette * {
+            background: var(--vselect);
+            border: 0.5ch solid var(--vselect);
+            border-radius: .5ch;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        #hpalette .shape:not(.selected) {
+            background: var(--hselect);
+            border-color: var(--hselect);
+        }
+
+        #hpalette .shape.selected {
+            background: var(--hselect);
+            border-color: #fffa;
+        }
+
+        #vpalette .shape.selected {
+            background: var(--vselect);
+            border-color: #fffa;
+        }
+
+        .palette *:hover{
+            filter: brightness(1.2);
+        }
+
+        .harryc { background: var(--harryt); border: 4px solid var(--harry);}
+        .harryc.selected { background: var(--harry);}
+        .boxc.unbordered.harry .box {color: var(--harry); background: var(--harryt); border: 0.5ch solid var(--harryt)}
+        .boxc.bordered.harry .box {color: var(--harry); background: var(--harryt); border: 0.5ch solid var(--harry)}
+        .boxc.opaque.harry .box {color: #fff; background: var(--harry); border: 0.5ch solid var(--harry)}
+        .boxc.harry .boxname {color: var(--harry)} 
+
+        .scottc { background: var(--scottt); border: 4px solid var(--scott);}
+        .scottc.selected { background: var(--scott);}
+        .boxc.unbordered.scott .box {color: var(--scott); background: var(--scottt); border: 0.5ch solid var(--scottt)}
+        .boxc.bordered.scott .box {color: var(--scott); background: var(--scottt); border: 0.5ch solid var(--scott)}
+        .boxc.opaque.scott .box {color: #fff; background: var(--scott); border: 0.5ch solid var(--scott)}
+        .boxc.scott .boxname {color: var(--scott)} 
+        
+        .michaelc { background: var(--michaelt); border: 4px solid var(--michael);}
+        .michaelc.selected { background: var(--michael);}
+        .boxc.unbordered.michael .box {color: var(--michael); background: var(--michaelt); border: 0.5ch solid var(--michaelt)}
+        .boxc.bordered.michael .box {color: var(--michael); background: var(--michaelt); border: 0.5ch solid var(--michael)}
+        .boxc.opaque.michael .box {color: #fff; background: var(--michael); border: 0.5ch solid var(--michael)}
+        .boxc.michael .boxname {color: var(--michael)} 
+        
+        .sarac { background: var(--sarat); border: 4px solid var(--sara);}
+        .sarac.selected { background: var(--sara);}
+        .boxc.unbordered.sara .box {color: var(--sara); background: var(--sarat); border: 0.5ch solid var(--sarat)}
+        .boxc.bordered.sara .box {color: var(--sara); background: var(--sarat); border: 0.5ch solid var(--sara)}
+        .boxc.opaque.sara .box {color: #fff; background: var(--sara); border: 0.5ch solid var(--sara)}
+        .boxc.sara .boxname {color: var(--sara)} 
+        
+        .judec { background: var(--judet); border: 4px solid var(--jude);}
+        .judec.selected { background: var(--jude);}
+        .boxc.unbordered.jude .box {color: var(--jude); background: var(--judet); border: 0.5ch solid var(--judet)}
+        .boxc.bordered.jude .box {color: var(--jude); background: var(--judet); border: 0.5ch solid var(--jude)}
+        .boxc.opaque.jude .box {color: #fff; background: var(--jude); border: 0.5ch solid var(--jude)}
+        .boxc.jude .boxname {color: var(--jude)} 
+        
+        .tyc { background: var(--tyt); border: 4px solid var(--ty);}
+        .tyc.selected { background: var(--ty);}
+        .boxc.unbordered.ty .box {color: var(--ty); background: var(--tyt); border: 0.5ch solid var(--tyt)}
+        .boxc.bordered.ty .box {color: var(--ty); background: var(--tyt); border: 0.5ch solid var(--ty)}
+        .boxc.opaque.ty .box {color: #fff; background: var(--ty); border: 0.5ch solid var(--ty)}
+        .boxc.ty .boxname {color: var(--ty)} 
+        
+        .carec { background: var(--caret); border: 4px solid var(--care);}
+        .carec.selected { background: var(--care);}
+        .boxc.unbordered.care .box {color: var(--care); background: var(--caret); border: 0.5ch solid var(--caret)}
+        .boxc.bordered.care .box {color: var(--care); background: var(--caret); border: 0.5ch solid var(--care)}
+        .boxc.opaque.care .box {color: #fff; background: var(--care); border: 0.5ch solid var(--care)}
+        .boxc.care .boxname {color: var(--care)} 
+        
+        .jacobc { background: var(--jacobt); border: 4px solid var(--jacob);}
+        .jacobc.selected { background: var(--jacob);}
+        .boxc.unbordered.jacob .box {color: var(--jacob); background: var(--jacobt); border: 0.5ch solid var(--jacobt)}
+        .boxc.bordered.jacob .box {color: var(--jacob); background: var(--jacobt); border: 0.5ch solid var(--jacob)}
+        .boxc.opaque.jacob .box {color: #fff; background: var(--jacob); border: 0.5ch solid var(--jacob)}
+        .boxc.jacob .boxname {color: var(--jacob)} 
+        
+        .wrenc { background: var(--wrent); border: 4px solid var(--wren);}
+        .wrenc.selected { background: var(--wren);}
+        .boxc.unbordered.wren .box {color: var(--wren); background: var(--wrent); border: 0.5ch solid var(--wrent)}
+        .boxc.bordered.wren .box {color: var(--wren); background: var(--wrent); border: 0.5ch solid var(--wren)}
+        .boxc.opaque.wren .box {color: #fff; background: var(--wren); border: 0.5ch solid var(--wren)}
+        .boxc.wren .boxname {color: var(--wren)} 
+        
+        .hyperc { background: var(--wrent); border: 4px solid var(--wren);}
+        .hyperc.selected { background: var(--wren);}
+        .boxc.unbordered.hyper .box {color: #bbb; background: var(--wrent); border: 0.5ch solid var(--wrent)}
+        .boxc.bordered.hyper .box {color: #bbb; background: var(--wrent); border: 0.5ch solid var(--wren)}
+        .boxc.opaque.hyper .box {color: #fff; background: var(--wren); border: 0.5ch solid var(--wren)}
+        .boxc.hyper .boxname {color: var(--wren)} 
+
+        .vincec { background: var(--vincet); border: 4px solid var(--vince);}
+        .vincec.selected { background: var(--vince);}
+        .boxc.unbordered.vince .box {color: var(--vince); background: var(--vincet); border: 0.5ch solid var(--vincet)}
+        .boxc.bordered.vince .box {color: var(--vince); background: var(--vincet); border: 0.5ch solid var(--vince)}
+        .boxc.opaque.vince .box {color: #fff; background: var(--vince); border: 0.5ch solid var(--vince)}
+        .boxc.vince .boxname {color: var(--vince)} 
+        
+        .benc { background: var(--bent); border: 4px solid var(--ben);}
+        .benc.selected { background: var(--ben);}
+        .boxc.unbordered.ben .box {color: var(--ben); background: var(--bent); border: 0.5ch solid var(--bent)}
+        .boxc.bordered.ben .box {color: var(--ben); background: var(--bent); border: 0.5ch solid var(--ben)}
+        .boxc.opaque.ben .box {color: #fff; background: var(--ben); border: 0.5ch solid var(--ben)}
+        .boxc.ben .boxname {color: var(--ben)} 
+        
+        .jayc { background: var(--jayt); border: 4px solid var(--jay);}
+        .jayc.selected { background: var(--jay);}
+        .boxc.unbordered.jay .box {color: var(--jay); background: var(--jayt); border: 0.5ch solid var(--jayt)}
+        .boxc.bordered.jay .box {color: var(--jay); background: var(--jayt); border: 0.5ch solid var(--jay)}
+        .boxc.opaque.jay .box {color: #fff; background: var(--jay); border: 0.5ch solid var(--jay)}
+        .boxc.jay .boxname {color: var(--jay)} 
+        
+        .charc { background: var(--chart); border: 4px solid var(--char);}
+        .charc.selected { background: var(--char);}
+        .boxc.unbordered.char .box {color: var(--char); background: var(--chart); border: 0.5ch solid var(--chart)}
+        .boxc.bordered.char .box {color: var(--char); background: var(--chart); border: 0.5ch solid var(--char)}
+        .boxc.opaque.char .box {color: #fff; background: var(--char); border: 0.5ch solid var(--char)}
+        .boxc.char .boxname {color: var(--char)} 
+        
+        .clydec { background: var(--clydet); border: 4px solid var(--clyde);}
+        .clydec.selected { background: var(--clyde);}
+        .boxc.unbordered.clyde .box {color: var(--clyde); background: var(--clydet); border: 0.5ch solid var(--clydet)}
+        .boxc.bordered.clyde .box {color: var(--clyde); background: var(--clydet); border: 0.5ch solid var(--clyde)}
+        .boxc.opaque.clyde .box {color: #fff; background: var(--clyde); border: 0.5ch solid var(--clyde)}
+        .boxc.clyde .boxname {color: var(--clyde)} 
+        
+        .alexac { background: var(--alexat); border: 4px solid var(--alexa);}
+        .alexac.selected { background: var(--alexa);}
+        .boxc.unbordered.alexa .box {color: var(--alexa); background: var(--alexat); border: 0.5ch solid var(--alexat)}
+        .boxc.bordered.alexa .box {color: var(--alexa); background: var(--alexat); border: 0.5ch solid var(--alexa)}
+        .boxc.opaque.alexa .box {color: #fff; background: var(--alexa); border: 0.5ch solid var(--alexa)}
+        .boxc.alexa .boxname {color: var(--alexa)} 
+
+        .canaryc { background: var(--canaryt); border: 4px solid var(--canary);}
+        .canaryc.selected { background: var(--canary);}
+        .boxc.unbordered.canary .box {color: var(--canary); background: var(--canaryt); border: 0.5ch solid var(--canaryt)}
+        .boxc.bordered.canary .box {color: var(--canary); background: var(--canaryt); border: 0.5ch solid var(--canary)}
+        .boxc.opaque.canary .box {color: #fff; background: var(--canary); border: 0.5ch solid var(--canary)}
+        .boxc.canary .boxname {color: var(--canary)} 
+        
+        .whitec { background: var(--whitet); border: 4px solid #fff;}
+        .whitec.selected { background: #fff;}
+        .boxc.unbordered.white .box {color: var(--white); background: var(--whitet); border: 0.5ch solid var(--whitet)}
+        .boxc.bordered.white .box {color: var(--white); background: var(--whitet); border: 0.5ch solid var(--white)}
+        .boxc.opaque.white .box {color: #fff; background: var(--white); border: 0.5ch solid var(--white)}
+        .boxc.white .boxname {color: var(--white)} 
+        
+        .scarfc { background: var(--scarft); border: 4px solid var(--scarf);}
+        .scarfc.selected { background: var(--scarf);}
+        .boxc.unbordered.scarf .box {color: var(--scarf); background: var(--scarft); border: 0.5ch solid var(--scarft)}
+        .boxc.bordered.scarf .box {color: var(--scarf); background: var(--scarft); border: 0.5ch solid var(--scarf)}
+        .boxc.opaque.scarf .box {color: #fff; background: var(--scarf); border: 0.5ch solid var(--scarf)}
+        .boxc.scarf .boxname {color: var(--scarf)} 
+        
+        .ekc { background: var(--ekt); border: 4px solid var(--ek);}
+        .ekc.selected { background: var(--ek);}
+        .boxc.unbordered.ek .box {color: var(--ek); background: var(--ekt); border: 0.5ch solid var(--ekt)}
+        .boxc.bordered.ek .box {color: var(--ek); background: var(--ekt); border: 0.5ch solid var(--ek)}
+        .boxc.opaque.ek .box {color: #fff; background: var(--ek); border: 0.5ch solid var(--ek)}
+        .boxc.ek .boxname {color: var(--ek)} 
+        
+        .calc { background: var(--calt); border: 4px solid var(--cal);}
+        .calc.selected { background: var(--cal);}
+        .boxc.unbordered.cal .box {color: var(--cal); background: var(--calt); border: 0.5ch solid var(--calt)}
+        .boxc.bordered.cal .box {color: var(--cal); background: var(--calt); border: 0.5ch solid var(--cal)}
+        .boxc.opaque.cal .box {color: #fff; background: var(--cal); border: 0.5ch solid var(--cal)}
+        .boxc.cal .boxname {color: var(--cal)} 
+        
+        .eleanorc { background: var(--eleanort); border: 4px solid var(--eleanor);}
+        .eleanorc.selected { background: var(--eleanor);}
+        .boxc.unbordered.eleanor .box {color: var(--eleanor); background: var(--eleanort); border: 0.5ch solid var(--eleanort)}
+        .boxc.bordered.eleanor .box {color: var(--eleanor); background: var(--eleanort); border: 0.5ch solid var(--eleanor)}
+        .boxc.opaque.eleanor .box {color: #fff; background: var(--eleanor); border: 0.5ch solid var(--eleanor)}
+        .boxc.eleanor .boxname {color: var(--eleanor)} 
+        
+        .samc { background: var(--samt); border: 4px solid var(--sam);}
+        .samc.selected { background: var(--sam);}
+        .boxc.unbordered.sam .box {color: var(--sam); background: var(--samt); border: 0.5ch solid var(--samt)}
+        .boxc.bordered.sam .box {color: var(--sam); background: var(--samt); border: 0.5ch solid var(--sam)}
+        .boxc.opaque.sam .box {color: #fff; background: var(--sam); border: 0.5ch solid var(--sam)}
+        .boxc.sam .boxname {color: var(--sam)} 
+        
+        .elisec { background: var(--eliset); border: 4px solid var(--elise);}
+        .elisec.selected { background: var(--elise);}
+        .boxc.unbordered.elise .box {color: var(--elise); background: var(--eliset); border: 0.5ch solid var(--eliset)}
+        .boxc.bordered.elise .box {color: var(--elise); background: var(--eliset); border: 0.5ch solid var(--elise)}
+        .boxc.opaque.elise .box {color: #fff; background: var(--elise); border: 0.5ch solid var(--elise)}
+        .boxc.elise .boxname {color: var(--elise)} 
+        
+        .alicec { background: var(--alicet); border: 4px solid var(--alice);}
+        .alicec.selected { background: var(--alice);}
+        .boxc.unbordered.alice .box {color: var(--alice); background: var(--alicet); border: 0.5ch solid var(--alicet)}
+        .boxc.bordered.alice .box {color: var(--alice); background: var(--alicet); border: 0.5ch solid var(--alice)}
+        .boxc.opaque.alice .box {color: #fff; background: var(--alice); border: 0.5ch solid var(--alice)}
+        .boxc.alice .boxname {color: var(--alice)} 
+        
+        .jonc { background: var(--jont); border: 4px solid var(--jon);}
+        .jonc.selected { background: var(--jon);}
+        .boxc.unbordered.jon .box {color: var(--jon); background: var(--jont); border: 0.5ch solid var(--jont)}
+        .boxc.bordered.jon .box {color: var(--jon); background: var(--jont); border: 0.5ch solid var(--jon)}
+        .boxc.opaque.jon .box {color: #fff; background: var(--jon); border: 0.5ch solid var(--jon)}
+        .boxc.jon .boxname {color: var(--jon)} 
+        
+
+        .deadcell{
+            opacity: 0;
+            cursor: default;
+        }
+
+        #vpalette .opf {background: var(--vselect); border: 0.5ch solid var(--vselect)}
+        #vpalette .fill.selected {border: 0.5ch solid #fffa}
+        #vpalette .brf {background: var(--vselectt); border: 0.5ch solid var(--vselect)}
+        #vpalette .brf.selected {background: var(--vselect)}
+        #vpalette .ubf {background: var(--vselect); opacity: 0.5}
+        #vpalette .ubf.selected {background: var(--vselectt); opacity: 1}
+
+        #hpalette .opf {background: var(--hselect); border: 0.5ch solid var(--hselect)}
+        #hpalette .fill.selected {border: 0.5ch solid #fffa}
+        #hpalette .brf {background: var(--hselectt); border: 0.5ch solid var(--hselect)}
+        #hpalette .ubf {background: var(--hselect); opacity: 0.5; border-color: var(--hselect)}
+        #hpalette .brf.selected {background: var(--hselect)}
+        #hpalette .ubf.selected {background: var(--hselectt); opacity: 1}
+
+        .box::-webkit-scrollbar {
+            display: none;
+        }
+
+        hr {border-color: inherit;border-style:solid;padding: 0; margin: 7.4px 0}
+        .sharps {
+            border-radius: 0;
+        }
+        .usays{
+            border-radius: 50% 50% 50% 0;
+        }
+        .isays {
+            border-radius: 50% 50% 0 50%
+        }
+        .rounds {
+            border-radius: 50%;
+        }
+
+        .boxc.isay .box {
+            border-radius: 12px 12px 0 12px
+        }
+
+        .boxc.usay .box {
+            border-radius: 12px 12px 12px 0
+        }
+
+        .boxc.round .box {
+            border-radius: 12px;
+        }
+
+        .boxc.selected {
+            animation-name: sel;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            animation-iteration-count:infinite;
+        }
+
+        @keyframes sel {
+            0% {filter: brightness(1.35)}
+            50% {filter: brightness(1)}
+            100% {filter: brightness(1.35)}
+        }
+
+        #identifier {
+            width: calc(50vw - 51ch);
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: auto;
+            text-align: right;
+            color: var(--hselect);
+            padding: 1ch;
+        }
+
+        .boxname{
+            position:auto;
+            display: block;
+            top: 0;
+            white-space: nowrap;
+            transform: translateX(1ch);
+            height: 16.8px;
+        }
+
+        #zthing {
+            position: fixed;
+            right: 20ch;
+            top: 10ch;
+            color: var(--hselect)
+        }
+
+        #boxtext{
+            outline: none;
+            margin: 0;
+            position: fixed;
+            padding-bottom: calc(16.8px * 4);
+            resize: none;
+            border: none;
+            background: #09090a;
+            bottom: 2ch;
+            right: 1ch;
+            width: calc(50vw - 48ch - 8ch);
+            z-index: 99999999;
+            font-size: 15.99px;
+            height: calc(100vh - 20ch - (16.8px * 4));
+            color: white;
+        }
+
+        .delete {
+            position: absolute;
+            background: #f00;
+            width: 16.8px;
+            height: 16.8px;
+            opacity: .4;
+            border-radius: 50%;
+            top: 8.4px;
+            right: -32px;
+        }
+
+        .box{
+            white-space: pre-wrap;
+        }
+
+        .misc > .verbs {
+            filter: hue-rotate(-17deg) brightness(.79) saturate(150%);
+        }
+        .misc > .comments {
+            filter: hue-rotate(-10deg) brightness(.62) saturate(350%);
+        }
+        .misc {
+            filter: hue-rotate(-4deg) brightness(.95);
+        }
+        .misc > .objects {
+            filter: hue-rotate(-9deg) brightness(.88) saturate(2.7);
+        }
+        .misc > .symbols {
+            filter: hue-rotate(8deg) brightness(1.3) saturate(1.2);
+        }
+        .misc > .numbers {
+            filter: hue-rotate(13deg) brightness(1.03) saturate(1.8);
+        }
+        .line {
+            background: var(--ben);
+            opacity: 0.6;
+            display: block;
+        }
+        .line:hover, .linetype{
+            display: none;
+        }
+    </style>
+    <body onclick='document.getElementById("copy").style.display = "none"'>
+        <section id="stage"></section>
+
+        <div class="button" id="addbox" onclick="addbox(32, 33.6)">ADD BOX</div>
+        <div class="button" id="addsec" onclick="addsec()">ADD SEC</div>
+        <div class="button" id="dupsec" onclick="primedupsec()">DUP SEC</div>
+        <div class="button" id="duplns" onclick="primeduplns()">DUP LNS</div>
+        <div id="dldata"><input type="number" min="0"><input type="number" min="0"><input type="number" min="0"><input type="number" min="0"><input type="number" min="0"><div onclick="duplns()">GO</div></div>
+        <div id="dsdata"><input type="number" min="0" id="dsdatain"><div onclick="dupsec()">GO</div></div>
+        <div class="button" id="seelns">
+            SEE LNS<br>
+            <input type="checkbox" onchange="document.getElementById('dreamls').style.display = this.checked ? 'block' : 'none'"> dream/narr<br>
+            <input type="checkbox" onchange="document.getElementById('likertls').style.display = this.checked ? 'block' : 'none'"> likert<br>
+            <input type="checkbox" onchange="document.getElementById('dialoguels').style.display = this.checked ? 'block' : 'none'"> dialogue<br>
+            <input type="checkbox" onchange="document.getElementById('chapterls').style.display = this.checked ? 'block' : 'none'"> chapters<br>
+            <input type="checkbox" onchange="document.getElementById('appls').style.display = this.checked ? 'block' : 'none'"> app&helper<br>
+            <input type="checkbox" onchange="document.getElementById('espionls').style.display = this.checked ? 'block' : 'none'"> esp app<br>
+            <input type="checkbox" onchange="document.getElementById('espionhls').style.display = this.checked ? 'block' : 'none'"> in-helper<br>
+            <input type="checkbox" onchange="document.getElementById('smalls').style.display = this.checked ? 'block' : 'none'"> smal<br>
+            <input type="checkbox" onchange="document.getElementById('strikels').style.display = this.checked ? 'block' : 'none'"> strike<br>
+
+            <input type="checkbox" checked onchange="let hd = this.checked ? 'block' : 'none', od = this.checked ? 1 : 0.3; Array.from($('#stage .header')).forEach(e => {e.style.display = hd; e.parentElement.getElementsByClassName('linens')[0].style.opacity = od}); for (const e of boxes.filter(x => x.section.hidden == false)) {rebox(e);}"> Stupid<br>
+        </div>
+        <div id="dreamls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (4ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (12ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="likertls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (8ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (8ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="dialoguels" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (2ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (23ch * 2 + 1.5ch))"></div>
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (23ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (2ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="chapterls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (4ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (4ch * 2 + 1.5ch))"></div>
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (12ch * 2))"></div>
+        </div>
+        <div id="appls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (2ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (38ch * 2 + 1.5ch))"></div>
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (10ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (2ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="espionls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (12ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (4ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="espionhls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (31ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (12ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="smalls" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (18ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (30ch * 2 + 1.5ch))"></div>
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (13ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (5ch * 2 + 1.5ch))"></div>
+        </div>
+        <div id="strikels" class="linetype">
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (13ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (19ch * 2 + 1.5ch))"></div>
+            <div class="line" style="left: calc(((100vw - (96 * 8px))/2)  + (19ch * 2))"></div>
+            <div class="line" style="left: calc(100vw - ((100vw - (96 * 8px))/2) - (13ch * 2 + 1.5ch))"></div>
+        </div>
+
+        <div class="button" id="gettpo" onclick="gettpo()">GET TPO</div>
+        <div id="copy"><textarea type="text" id="tpoinput" spellcheck="false"></textarea><div onclick="copytpo()">COPY SAVE</div>
+    <textarea type="text" id="htmlinput" spellcheck="false"></textarea><div onclick="copyhtml()">COPY HTML</div></div>
+
+        <div class="guideline glv" id="gll"></div><div class="guideline glv" id="glr"></div><div class="guideline glh" id="glt"></div><div class="guideline glh" id="glb"></div>
+        <div class="palette" id="vpalette">
+            <div onclick="leftcselect(0)" class="color harryc selected" title="harry"></div>
+            <div onclick="leftcselect(1)" class="color scottc" title="scott"></div>
+            <div onclick="leftcselect(2)" class="color michaelc" title="michael"></div>
+            <div onclick="leftcselect(3)" class="color sarac" title="sara"></div>
+            <div onclick="leftcselect(4)" class="color judec" title="jude"></div>
+            <div onclick="leftcselect(5)" class="color tyc" title="ty"></div>
+            <div onclick="leftcselect(6)" class="color carec" title="care"></div>
+            <div onclick="leftcselect(7)" class="color jacobc" title="jacob"></div>
+
+            <div onclick="leftcselect(8)" class="color wrenc" title="wren"></div>
+            <div onclick="leftcselect(9)" class="color vincec" title="vince"></div>
+            <div onclick="leftcselect(10)" class="color benc" title="ben"></div>
+            <div onclick="leftcselect(11)" class="color jayc" title="jay"></div>
+            <div onclick="leftcselect(12)" class="color charc" title="char"></div>
+            <div onclick="leftcselect(13)" class="color clydec" title="clyde"></div>
+            <div onclick="leftcselect(14)" class="color alexac" title="alexa"></div>
+            <div onclick="leftcselect(15)" class="color canaryc" title="canary"></div>
+
+            <div onclick="leftcselect(16)" class="color whitec" title="white"></div>
+            <div onclick="leftfselect(0)" class="fill opf" title="opaque"></div>
+            <div onclick="leftfselect(1)" class="fill brf selected" title="bordered"></div>
+            <div onclick="leftfselect(2)" class="fill ubf" title="unbordered"></div>
+            <div onclick="leftsselect(0)" class="shape sharps selected" title="sharp"></div>
+            <div onclick="leftsselect(1)" class="shape isays" title="isay"></div>
+            <div onclick="leftsselect(2)" class="shape usays" title="usay"></div>
+            <div onclick="leftsselect(3)" class="shape rounds" title="round"></div>
+        </div>
+
+        <div class="palette" id="hpalette">
+            <div onclick="rightcselect(0)" class="color harryc" title="harry"></div>
+            <div onclick="rightcselect(1)" class="color scottc" title="scott"></div>
+            <div onclick="rightcselect(2)" class="color michaelc" title="michael"></div>
+            <div onclick="rightcselect(3)" class="color sarac" title="sara"></div>
+            <div onclick="rightcselect(4)" class="color judec" title="jude"></div>
+            <div onclick="rightcselect(5)" class="color tyc" title="ty"></div>
+            <div onclick="rightcselect(6)" class="color carec" title="care"></div>
+            <div onclick="rightcselect(7)" class="color jacobc" title="jacob"></div>
+
+            <div onclick="rightcselect(8)" class="color wrenc" title="wren"></div>
+            <div onclick="rightcselect(9)" class="color vincec" title="vince"></div>
+            <div onclick="rightcselect(10)" class="color benc" title="ben"></div>
+            <div onclick="rightcselect(11)" class="color jayc" title="jay"></div>
+            <div onclick="rightcselect(12)" class="color charc" title="char"></div>
+            <div onclick="rightcselect(13)" class="color clydec" title="clyde"></div>
+            <div onclick="rightcselect(14)" class="color alexac" title="alexa"></div>
+            <div onclick="rightcselect(15)" class="color canaryc" title="canary"></div>
+
+            <div onclick="rightcselect(16)" class="color scarfc" title="scarf"></div>
+            <div onclick="rightcselect(17)" class="color ekc" title="ek"></div>
+            <div onclick="rightcselect(18)" class="color calc" title="cal"></div>
+            <div onclick="rightcselect(19)" class="color elisec" title="elise"></div>
+            <div onclick="rightcselect(20)" class="color samc" title="sam"></div>
+            <div onclick="rightcselect(21)" class="color eleanorc" title="eleanor"></div>
+            <div onclick="rightcselect(22)" class="color hyperc" title="hyper"></div>
+            <div onclick="rightcselect(23)" class="color jonc" title="jon"></div>
+
+            <div onclick="rightcselect(24)" class="color whitec" title="white"></div>
+            <div onclick="rightfselect(0)" class="fill opf" title="opaque"></div>
+            <div onclick="rightfselect(1)" class="fill brf" title="bordered"></div>
+            <div onclick="rightfselect(2)" class="fill ubf" title="unbordered"></div>
+            <div onclick="rightsselect(0)" class="shape sharps" title="sharp"></div>
+            <div onclick="rightsselect(1)" class="shape isays" title="isay"></div>
+            <div onclick="rightsselect(2)" class="shape usays" title="usay"></div>
+            <div onclick="rightsselect(3)" class="shape rounds" title="round"></div>
+        </div>
+        <div id="identifier">SELECTED BOX: <span id="selectedbox">NONE</span><br><span id="boxdata"></span><br>NAME <input spellcheck="false" type="text" id="boxname" onchange="if (!selectedbox) return false; selectedbox.name = document.getElementById('boxname').value; selectedbox.element.querySelector('.boxname *').innerHTML = selectedbox.name;"></div>
+        <div id="zthing">Z-INDEX <input min="0" type="number" id="zinput" oninput="if (!selectedbox) return false; selectedbox.z = document.getElementById('zinput').value; selectedbox.element.style.zIndex = selectedbox.z"></div>
+        <div id="grow" style="color: white; position: fixed; top: 14vh; right: 10vw; cursor: pointer"><u style="cursor: pointer" onclick="if (selectedbox) grow(selectedbox)">+</u></div>
+        <textarea id="boxtext" spellcheck="false" onchange="if (!selectedbox) return false; saved = false; selectedbox.text = document.getElementById('boxtext').value; puttext(selectedbox.text, selectedbox.element.querySelector('.box'))"></textarea>
+
+        <section id="templates" style="display: none">
+            <section id="secttemp">
+                <div class="header"><div class="opcl" onclick="opcl(8)">></div>8: "<input spellcheck="false" type="text" onchange="sections[8].name = sections[8].element.querySelector('input').value">", <input type="checkbox" onchange="sections[8].hasMax = this.checked; if (this.checked && sections[8].max < 10) {sections[8].max = sections[8].height; this.parentElement.querySelector('input[type=number]').value = sections[8].max} $('#' + boxes.find(x => x.section.id == sections[8].id).element.id).trigger('expands');">max<input type="number" onchange="sections[8].max = Number(this.value)" value="0"></div>
+                <div class="dots"><div class="linens"></div>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . </div>
+            </section>
+            <div id="boxtemp">
+                <div class="boxname"><span>test2</span></div>
+                <div class="box">test</div>
+                <div class="delete"></div>
+                <div class="h2"></div>
+            </div>
+        </section>
+  
+    <script src="save.js"></script>
+    <script>
+        const stage = document.getElementById("stage");
+        const row = ". ".repeat(48);
+
+        const root = document.querySelector(':root');
+        const strikes = {
+            harry: "schrodingers_",
+            wren: "wreckless_abando",
+            vince: "redfoxdead_",
+            char: "radioscar",
+            alexa: "axloverdo1",
+            jay: "jaspercat229",
+            ben: "benisnt",
+            clyde: "cl_hanley",
+            canary: "mxbloodmoon"
+        }
+        const shortcuts = {
+            a: ["alexa"],
+            b: ["ben"],
+            c: ["care", "char", "clyde", "canary"],
+            h: ["harry"],
+            j: ["jude", "jacob", "jay"],
+            m: ["michael"],
+            s: ["scott", "sara"],
+            t: ["ty"],
+            v: ["vince"],
+            w: ["wren"]
+        }
+        const order = new Map([[0, -1], [1, 0], [2, 0], [3, 1], [4, 3], [5, 4], [6, 5], [7, 6], [8, 7], [9, 8], [10, 9], [11, 9], [12, 9], [13, 9], [14, 9], [15, 10], [16, 15], [17, 16], [18, 17], [19, 18], [20, 16], [21, 20], [22, 21], [23, 1], [24, 23], [25, 24], [26, 25], [27, 26], [28, 27], [29, 28], [30, 29], [31, 29], [32, 30], [33, 32], [34, 33], [35, 34], [36, 35], [37, 32], [38, 37], [39, 38], [40, 39], [41, 1], [42, 41], [43, 42], [44, 43], [45, 44], [46, 45], [47, 46], [48, 47], [49, 47], [50, 47], [51, 48], [52, 51], [53, 52], [54, 53], [55, 54], [56, 52], [57, 56], [58, 57], [59, 19], [60, 22], [61, 36], [62, 40], [63, 55], [64, 58]])
+
+        function sumHeights(n) {
+            console.log(n);
+            if (n==-1) {return 0}
+            return sections[n].height * 16.8 + sumHeights(order.get(n))
+        }
+
+        var sections = [], sectID = 0, selsec;
+        var boxes = [], boxID = 0;
+
+        var selectedcolor = "harry", selectedfill = "bordered", selectedshape = "sharp";
+        var maxZ = 0;
+
+        var selectedbox = undefined;
+        var loading = true;
+
+        var saved = true;
+
+        load()
+        document.body.addEventListener("keydown", function(e) {if (!document.querySelector("*:focus")) {
+            e = e.key.toLowerCase();
+            if (e == "n") {
+                leftcselect(0); leftfselect(2); leftsselect(3);
+            } else if (e == "f") {
+                leftfselect((Array.from(document.getElementById("vpalette").getElementsByClassName("fill")).findIndex(x => x.className.indexOf("selected") >= 0) + 1) % 3);
+            } else if (e == "r") {
+                leftsselect((Array.from(document.getElementById("vpalette").getElementsByClassName("shape")).findIndex(x => x.className.indexOf("selected") >= 0) + 1) % 4);
+            } else if (e == "d") {
+                if (selectedshape == 'usay')
+                    leftsselect(1);
+                else
+                    leftsselect(2);
+            } else if ("abchjmstvw".indexOf(e) >= 0) {
+                leftcselect(Array.from(document.getElementById("vpalette").getElementsByClassName("color")).map(x => x.classList[1].slice(0, -1)).indexOf(shortcuts[e][(((shortcuts[e].findIndex(x => selectedcolor.indexOf(x) >= 0) + 1)||0) % shortcuts[e].length)]))
+            }
+        }})
+
+        document.getElementById('boxtext').addEventListener('keydown', function(e) {
+        if (e.key == 'Tab') {
+            e.preventDefault();
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+
+            // set textarea value to: text before caret + tab + text after caret
+            this.value = this.value.substring(0, start) +
+            "\t" + this.value.substring(end);
+
+            // put caret at right position again
+            this.selectionStart =
+            this.selectionEnd = start + 1;
+        }
+        });
+
+        window.onload = function() {
+            window.addEventListener("beforeunload", function (e) {
+                if (saved) {
+                    return undefined;
+                }
+                
+                var confirmationMessage = 'It looks like you have been editing something. '
+                                        + 'If you leave before saving, your changes will be lost.';
+
+                (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+                return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+            });
+        };
+
+        function leftcselect(c) {
+            if (document.getElementById("vpalette").getElementsByClassName("selected")[0].className == document.getElementById("vpalette").getElementsByClassName("color")[c].className) return false;
+            document.getElementById("vpalette").getElementsByClassName("selected")[0].className = document.getElementById("vpalette").getElementsByClassName("selected")[0].className.replace(" selected", "");
+            document.getElementById("vpalette").getElementsByClassName("color")[c].className += " selected"
+
+            root.style.setProperty('--vselect', "var(--" + document.getElementById("vpalette").getElementsByClassName("color")[c].title + ")");
+            root.style.setProperty('--vselectt', "var(--" + document.getElementById("vpalette").getElementsByClassName("color")[c].title + "t)");
+            selectedcolor = document.getElementById("vpalette").getElementsByClassName("color")[c].title;
+        }
+
+        function leftfselect(c) {
+            if (document.getElementById("vpalette").getElementsByClassName("selected")[1].className == document.getElementById("vpalette").getElementsByClassName("fill")[c].className) return false;
+            document.getElementById("vpalette").getElementsByClassName("selected")[1].className = document.getElementById("vpalette").getElementsByClassName("selected")[1].className.replace(" selected", "");
+            document.getElementById("vpalette").getElementsByClassName("fill")[c].className += " selected";
+
+            selectedfill = document.getElementById("vpalette").getElementsByClassName("fill")[c].title;
+        }
+
+        function leftsselect(c) {
+            if (document.getElementById("vpalette").getElementsByClassName("selected")[2].className == document.getElementById("vpalette").getElementsByClassName("shape")[c].className) return false;
+            document.getElementById("vpalette").getElementsByClassName("selected")[2].className = document.getElementById("vpalette").getElementsByClassName("selected")[2].className.replace(" selected", "");
+            document.getElementById("vpalette").getElementsByClassName("shape")[c].className += " selected";
+
+            selectedshape = document.getElementById("vpalette").getElementsByClassName("shape")[c].title;
+        }
+
+        function rightcselect(c) {
+            if (document.querySelector("#hpalette .color.selected") && document.getElementById("hpalette").getElementsByClassName("selected")[0].className == document.getElementById("hpalette").getElementsByClassName("color")[c].className) return false;
+            if (document.querySelector("#hpalette .color.selected")) document.getElementById("hpalette").getElementsByClassName("selected")[0].className = document.getElementById("hpalette").getElementsByClassName("selected")[0].className.replace(" selected", "");
+            document.getElementById("hpalette").getElementsByClassName("color")[c].className += " selected"
+
+            root.style.setProperty('--hselect', "var(--" + document.getElementById("hpalette").getElementsByClassName("color")[c].title + ")");
+            root.style.setProperty('--hselectt', "var(--" + document.getElementById("hpalette").getElementsByClassName("color")[c].title + "t)");
+
+            if (!selectedbox) return false;
+            selectedbox.color = document.getElementById("hpalette").getElementsByClassName("color")[c].title;
+            selectedbox.element.className = selectedbox.element.className.replace(/harry|scott|michael|sara|jude|ty|care|jacob|wren|vince|ben|jay|char|clyde|alexa|white|canary|scarf|ek|cal|elise|eleanor|alice|jon|sam|hyper/, selectedbox.color);
+        }
+
+        function rightfselect(c) {
+            if (document.querySelector("#hpalette .fill.selected") && document.querySelector("#hpalette .fill.selected").className == document.getElementById("hpalette").getElementsByClassName("fill")[c].className) return false;
+            if (document.querySelector("#hpalette .fill.selected")) document.querySelector("#hpalette .fill.selected").className = document.querySelector("#hpalette .fill.selected").className.replace(" selected", "");
+            document.getElementById("hpalette").getElementsByClassName("fill")[c].className += " selected";
+
+            if (!selectedbox) return false;
+            selectedbox.fill = document.getElementById("hpalette").getElementsByClassName("fill")[c].title;
+            selectedbox.element.className = selectedbox.element.className.replace(/opaque|unbordered|bordered/, selectedbox.fill);
+        }
+
+        function rightsselect(c) {
+            if (document.querySelector("#hpalette .shape.selected") && document.querySelector("#hpalette .shape.selected").className == document.getElementById("hpalette").getElementsByClassName("shape")[c].className) return false;
+            if (document.querySelector("#hpalette .shape.selected")) document.querySelector("#hpalette .shape.selected").className = document.querySelector("#hpalette .shape.selected").className.replace(" selected", "");
+            document.getElementById("hpalette").getElementsByClassName("shape")[c].className += " selected";
+
+            if (!selectedbox) return false;
+            selectedbox.rounded = document.getElementById("hpalette").getElementsByClassName("shape")[c].title;
+            selectedbox.element.className = selectedbox.element.className.replace(/sharp|isay|usay|round/, selectedbox.rounded);
+        }
+
+        function primedupsec() {
+            if (document.getElementById("dsdata").style.display == "grid") {
+                document.getElementById("dsdata").style.display = "none";
+                document.getElementById("dupsec").removeAttribute("style");
+            } else {
+                dsdata.style.display = "grid";
+                document.getElementById("dupsec").style.background = "var(--wren)";
+                document.getElementById("dupsec").style.color = "#fff"
+            }
+        }
+
+        function dupsec() {
+            primedupsec();
+            addsec();
+            saved = false;
+                selsec = sections[sections.length - 1];
+                selsec.name = sections[document.getElementById("dsdatain").value].name;
+                selsec.element.querySelector("input").value = sections[document.getElementById("dsdatain").value].name;
+                for (const b of boxes.filter(x => x.section.id == sections[document.getElementById("dsdatain").value].id)) {
+                    addbox(b.x, b.y, b.width, b.height, b.color, b.text, b.rounded, b.fill, b.z, b.name); //np
+                    let box = boxes[boxes.length - 1];
+                    box.width = b.width;
+                    box.element.style.width = Number(b.width);
+                }
+        }
+
+        function primeduplns() {
+            if (document.getElementById("dldata").style.display == "grid") {
+                document.getElementById("dldata").style.display = "none";
+                document.getElementById("duplns").removeAttribute("style");
+            } else {
+                document.getElementById("dldata").style.display = "grid";
+                document.getElementById("duplns").style.background = "var(--scarf)";
+                document.getElementById("duplns").style.color = "#fff"
+            }
+        }
+
+        function duplns() {
+            primeduplns();
+            const dld = Array.from(document.getElementById("dldata").querySelectorAll("input")).map(x => Number(x.value));
+            selsec = sections[dld[3]];
+            for (const b of boxes.filter(x => x.section.id == dld[0] && x.y/16.8-1 >= dld[1] && x.y/16.8-1 <= dld[2])) {
+                addbox(b.x, (dld[4]-dld[1])*16.8+b.y, b.width, b.height, b.color, b.text, b.rounded, b.fill, b.z, b.name); //np
+                let box = boxes[boxes.length - 1];
+                box.width = b.width;
+                box.element.style.width = Number(b.width);
+            }
+            saved = false;
+        }
+
+        const songurls = [
+            `https://disfixdog.bandcamp.com/track/tmesis`, `https://disfixdog.bandcamp.com/track/the-lighthouse`, `https://disfixdog.bandcamp.com/track/sam`, `https://disfixdog.bandcamp.com/track/urgent-bracket`, `https://disfixdog.bandcamp.com/track/good-morning-ghost-breakfast-i`, `https://disfixdog.bandcamp.com/track/smal`, `https://disfixdog.bandcamp.com/track/fetch`, `https://disfixdog.bandcamp.com/track/sux-4-char`, `https://disfixdog.bandcamp.com/track/i-started-pretending`, `https://disfixdog.bandcamp.com/track/writing-a-love-letter`, `https://disfixdog.bandcamp.com/track/drawing-clyde-hanley`, `https://disfixdog.bandcamp.com/track/the-prison`, `https://disfixdog.bandcamp.com/track/jude-is-really-nice`, `https://disfixdog.bandcamp.com/track/air-hockey`, `https://disfixdog.bandcamp.com/track/judes-party`, `https://disfixdog.bandcamp.com/track/morse-cove`, `https://disfixdog.bandcamp.com/track/in-processing-unoccupation`, `https://disfixdog.bandcamp.com/track/power`, `https://disfixdog.bandcamp.com/track/ben-liker`, `https://disfixdog.bandcamp.com/track/d7sonas-png`, `https://disfixdog.bandcamp.com/track/awe`, `https://disfixdog.bandcamp.com/track/consonance`, `https://disfixdog.bandcamp.com/track/tainted-vision`, `https://disfixdog.bandcamp.com/track/this-whole-time`, `https://disfixdog.bandcamp.com/track/old-habits-the-perfect-house`, `https://disfixdog.bandcamp.com/track/what-you-missed-care`, `https://disfixdog.bandcamp.com/track/diggin`, `https://disfixdog.bandcamp.com/track/abstract-do-not-read`, `https://disfixdog.bandcamp.com/track/resonance-far-from-the-tree`, `https://disfixdog.bandcamp.com/track/11-24-21-vinces-ii`, `https://disfixdog.bandcamp.com/track/unr-eal-ity`, `https://disfixdog.bandcamp.com/track/11-24-21-on-falcoincognito`, `https://disfixdog.bandcamp.com/track/harrys-dissatisfaction`, `https://disfixdog.bandcamp.com/track/hare-bear`, `https://disfixdog.bandcamp.com/track/wrens-suspicion`, `https://disfixdog.bandcamp.com/track/flight-response`, `https://disfixdog.bandcamp.com/track/ty-can-be-sort-of-nice`, `https://disfixdog.bandcamp.com/track/drawing-cal-morgan`, `https://disfixdog.bandcamp.com/track/fixer-upper-the-unself`, `https://disfixdog.bandcamp.com/track/morse-hollow`, `https://disfixdog.bandcamp.com/track/nothing-where-you-are`, `https://disfixdog.bandcamp.com/track/miss-it-already-breakfast-ii`, `https://disfixdog.bandcamp.com/track/chimes`, `https://disfixdog.bandcamp.com/track/rapid-succession`, `https://disfixdog.bandcamp.com/track/alexa`, `https://disfixdog.bandcamp.com/track/the-disappointment-of-time`, `https://disfixdog.bandcamp.com/track/dissonance`, `https://disfixdog.bandcamp.com/track/the-ghost-of-7th-street`, `https://disfixdog.bandcamp.com/track/cerys62-par71vepr0xy`, `https://disfixdog.bandcamp.com/track/cerys-mom`, `https://disfixdog.bandcamp.com/track/the-opposite-of-flowers`
+        ]
+
+        function load() {
+            function xp(x) {return Number(x[0].split(" ")[0].substr(1))||0}
+            function yp(x) {return Number(x[0].split(" ")[1].substr(1))||0}
+            data.forEach(x => x.sort(function(a,b) {
+                if (typeof a === 'string' || typeof b === 'string') return 0;
+                console.log(x)
+                let t = yp(a) - yp(b); 
+                if (t === 0) {return xp(a) - xp(b)}
+                else {return t}
+            })) //ENABLE 4 FINAL VERSION
+            data.forEach(x => {
+                addsec();
+                sections[sections.length - 1].name = x[0];
+                sections[sections.length - 1].element.querySelector("input").value = x[0];
+                sections[sections.length - 1].hasMax = (x[2] == 'true')
+                sections[sections.length - 1].element.querySelector("input[type=checkbox]").checked = (x[2] == 'true');
+                sections[sections.length - 1].max = Number(x[1]) || 0;
+                sections[sections.length - 1].element.querySelector("input[type=number]").value = Number(x[1]) || 0;
+                selsec = sections[sections.length - 1];
+                for (let i = 3; i < x.length; i++) {
+                    let b = x[i][0].split(" ");
+                    //console.log([Number(b[0].substr(1)), Number(b[1].substr(1)), Number(b[2].substr(1)), Number(b[3].substr(1))]);
+                    addbox(Number(b[0].substr(1)), Number(b[1].substr(1)), Number(b[2].substr(1)), Number(b[3].substr(1)), b[4], x[i][2], b[5], b[6], b[7], x[i][1]);//np
+                    let box = boxes[boxes.length - 1];
+                    box.width = Number(b[2].substr(1)) + .05;
+                    box.element.children[1].innerHTML = x[i][3];
+                    box.element.style.width = Number(b[2].substr(1)) + "px";
+                    box.height = Number(b[3].substr(1));
+                    box.element.style.height = Number(b[3].substr(1)) + "px";
+                }
+                $("#" + boxes[boxes.length - 1].element.id).trigger("expands")
+                opcl(sections.length - 1);
+            });
+            loading = false;
+        }
+
+        function gettpo() {
+            document.getElementsByTagName("head")[0].innerHTML += "<style id='killthis'>.box{font-size:8px}</style>";
+            var save = "const data = [[";
+            for (const s of sections) {
+                save += `\`${s.name}\`, \`${s.max}\`, \`${s.hasMax}\`, `;
+                for (const b of boxes.filter(x => x.section.id == s.id)) {
+                    save += `\n[\`x${Math.round(b.x * 10) / 10} y${Math.round(b.y * 10) / 10} w${Math.round(b.width * 10) / 10} h${Math.round(b.height * 10) / 10} ${b.color} ${b.rounded} ${b.fill} ${b.z}\`, \`${b.name}\`, \`${b.text.replace(/`/g, "\\`").replace(/\n/g, "\\n")}\`, \`${b.element.children[1].innerHTML.replace(/`/g, "\\`").replace(/\n/g, "\\n")}\`], `;
+                }
+                save = save.slice(0, -2) + "], \n\n[";
+            }
+            save = save.slice(0, -4) + "];";
+            document.getElementById("tpoinput").value = save;
+            for (var s of sections) {
+                var n = sumHeights(order.get(s.id))
+                for (var b of boxes.filter(x => x.section.id == s.id)) {
+                    b.element.style.top = (Number(b.element.style.top.slice(0,-2)) + n - 25*s.id) + "px";
+                }
+            }
+            let r = "<section id='stage'>\n" + stage.innerHTML.replace(/<div class="header">.*<\/div>\n/g, "").replace(/<div class="delete"><\/div>\n.*\n.*<\/div><\/div>/g, "</div>").replace(/box("><span style="display:none">\.<\/span><u>[0-9][0-9]\. )/g, "box music$1").replace(/(<div class="box music.*)(<u>)([0-9][0-9])(.*<\/div>)/g, "<a target='_blank' href=\"song$3\">$1$2$3$4</a>").replace(/(bordered.*\n.*\n.*"box music")/g, "selected $1").replace(/ ui-resizable ui-draggable/g, "").replace(/(<div id=") ?b[0-9]+(.*\n.*\n.*<div class="box)"(><span style="display:none">\.<\/span>)([A-Z][A-Z][A-Z][A-Z])([0-9])/g, '$1$4$5$2 selected" onclick="opcl(\'$4\', $4S, $5, this.parentElement)">').replace(/id="[b0-9]+"/g, "").replace(/(class=")(boxc sharp harry bordered".*\n.*d7)/g, "onclick='showd7()' $1selected $2").replace("closedsec", "").replace(/<\/section>/g, "<div class='next' onclick='open(this)'></div></section>") + "</section>";
+            for (let i = 50; i >= 0; i--) {
+                r = r.replace(new RegExp(`<u>${((i < 10) ? "0" : "") + i}. `, "g"), `<u>${((i < 9) ? "0" : "") + (i + 1)}. `);
+                r = r.replace(new RegExp(`song${((i < 10) ? "0" : "") + i}`, "g"), songurls[i]);
+            }
+            for (let i = 0; i < 65; i++) {
+                r = r.replace("open(this)", `this.className += " unnext"; open2(nextmap.get(${i}))`)
+            }
+            document.getElementById("htmlinput").value = r;
+            setTimeout(function(){document.getElementById("copy").style.display = "block"; document.getElementById("tpoinput").select()},10);
+            for (var b of boxes) {
+                b.element.style.removeProperty("transform");
+            }
+            document.getElementById("killthis").remove();
+        }
+
+        function copytpo() {
+            saved = true;
+            navigator.clipboard.writeText(document.getElementById("tpoinput").value);
+        }
+
+        function copyhtml() {
+            saved = true;
+            navigator.clipboard.writeText(document.getElementById("htmlinput").value);
+        }
+
+        function Section() {
+            this.height = 20;
+            this.id = sectID;
+            sectID++;
+            this.element;
+            this.hidden = true;
+            this.name = "";
+            this.max = 0;
+            this.hasMax = false;
+        }
+
+        function Box(x, y, w, h, section, color, text, rounded, fill, z, n) {//search //np to find all places to insert new property
+            this.id = boxID;
+            boxID++;
+            this.x = x;
+            this.y = y;
+            this.height = h||33.6;
+            this.width = w||Math.min(((rounded.indexOf("say") <= 0) ? 208 : ((fill.indexOf("opaque") >= 0) ? 224 : 336)), 736 - this.x);
+            this.section = section;
+            this.color = color;
+            this.element;
+            this.text = text;
+            this.rounded = rounded;
+            this.fill = fill;
+            if (z === undefined) {maxZ += 5; this.z = maxZ} else {this.z = z; maxZ = Math.max(z, maxZ)}
+            this.name = (n !== undefined) ? n : choosename(color, fill, rounded);
+        }
+
+        function choosename(c, f, s) {
+            if (s.indexOf("say") < 0)
+                return "";
+            if (f == "opaque")
+                return strikes[c]??"";
+            return c.toUpperCase();
+        }
+
+        function rebox(box) {
+            box.element.style.left = box.x + "px";
+            box.element.style.top = (box.y + window.pageYOffset + box.section.element.getBoundingClientRect().y) + "px";
+            box.element.style.width = box.width + "px";
+            box.element.style.height = (box.height - 16.8) + "px";
+            let box2 = box.element.querySelector(".box");
+            while (box2.scrollHeight > box2.clientHeight) {box.element.style.height = (Number(box.element.style.height.slice(0, -2)||0) + 16.8) + "px";}
+            if (box.x + box.width > 760) {box.element.style.left = (box.x - 32) + "px";
+                let c = box.element.getBoundingClientRect();
+                let s = box.section.element.getBoundingClientRect();
+                box.x = Math.round((c.x - s.x)/16) * 16;
+            }
+            else if (box.x + box.width > 750) {box.element.style.left = (box.x - 16) + "px";
+            if (box.x + box.width > 760) {box.element.style.left = (box.x - 32) + "px";
+                let c = box.element.getBoundingClientRect();
+                let s = box.section.element.getBoundingClientRect();
+                box.x = Math.round((c.x - s.x)/16) * 16;
+            }
+        }
+        }
+
+        function opcl(s) {
+            if (sections[s].element.className.indexOf("closedsec") >= 0) {
+                sections[s].element.className = sections[s].element.className.replace("closedsec", "")
+                sections[s].element.getElementsByClassName("opcl")[0].innerHTML = "v";
+                sections[s].hidden = false;
+            } else {
+                sections[s].element.className = sections[s].element.className + " closedsec";
+                sections[s].element.getElementsByClassName("opcl")[0].innerHTML = ">";
+                sections[s].hidden = true;
+            }
+            for (const e of boxes.filter(x => x.section.hidden == false)) {
+                rebox(e);
+            }
+        }
+
+        function addsec() {
+            let section = new Section();
+            sections.push(section);
+            let sech = document.createElement("SECTION"); //section html = sech
+            sech.id = "s" + section.id;
+            section.element = sech;
+            sech.className = "sec closedsec";
+            sech.innerHTML = document.getElementById("secttemp").innerHTML.replace(/8/g, section.id);
+            sech.getElementsByClassName("linens")[0].innerHTML = Array.from(Array(section.height).keys()).join(" ");
+            opcl(section.id);
+            stage.appendChild(sech);
+            sech.getElementsByClassName("dots")[0].addEventListener("mouseenter", function(event) {selsec = sections.find(x => x.id == event.target.parentElement.id.substr(1))});
+            sech.addEventListener( "dblclick", function() {if (!event.target.closest(".header, .boxname")) dblc(event, event.target.closest(".sec, .boxc, .delete"))});
+        }
+
+        function dblc(event, e) {
+            saved = false;
+            if (e.className.indexOf("delete") >= 0) {
+                boxes.find(x => x.element.id == e.parentElement.id).y = 0;
+                boxes.find(x => x.element.id == e.parentElement.id).height = 0;
+                $(e.parentElement).trigger("expands")
+                boxes.splice(boxes.findIndex(x => x.element.id == e.parentElement.id), 1);
+                if (e.parentElement.className.indexOf("selected") < 0)
+                e.parentElement.remove();
+                else {
+                selectedbox = undefined;
+                e.parentElement.remove();
+                document.getElementById("boxtext").value = "";
+                document.getElementById("boxname").value = "";
+                document.getElementById("zinput").value = 0;
+                document.getElementById("boxdata").innerHTML = "";
+                document.getElementById("selectedbox").innerHTML = "NONE";
+                }
+                return false;
+            }
+            if (!!event && ((Array.from(e.classList).indexOf("boxc") >= 0 && (Array.from(e.classList).indexOf("selected") >= 0)) || Array.from(e.classList).indexOf("sec") >= 0)) {
+                addbox(event.clientX - selsec.element.getBoundingClientRect().x, event.clientY - selsec.element.getBoundingClientRect().y - 10)
+                e = boxes[boxes.length - 1].element;
+            }
+                if (stage.getElementsByClassName("selected")[0]) stage.getElementsByClassName("selected")[0].className = stage.getElementsByClassName("selected")[0].className.replace(/ ?selected/, "");
+                e.className += " selected";
+                selectedbox = boxes.find(x => x.element.className == e.className);
+                document.getElementById("selectedbox").innerHTML = "#" + selectedbox.id;
+                document.getElementById("boxdata").innerHTML = `${Math.round(selectedbox.width/16 + 1)}x${Math.round(selectedbox.height/16.8)} | (${Math.round(selectedbox.x/16)}, ${Math.round(selectedbox.y/16.8-1)})`
+                rightcselect("harry scott michael sara jude ty care jacob wren vince ben jay char clyde alexa canary scarf ek cal elise sam eleanor hyper jon white".split(" ").indexOf(selectedbox.color));
+                rightfselect("opaque bordered unbordered".split(" ").indexOf(selectedbox.fill));
+                rightsselect("sharp isay usay round".split(" ").indexOf(selectedbox.rounded));
+                document.getElementById('boxname').value = selectedbox.name;
+                document.getElementById('zinput').value = selectedbox.z;
+                document.getElementById('boxtext').value = selectedbox.text;
+        }
+
+        function puttext(text, box) {
+            text = (" " + text)
+            .replace(/([^\\])\*([^\*]*)([^\\])\*/gi, "$1<i>$2$3</i>")
+            .replace(/([^\\])\_\_([^\_]*)([^\\])\_\_/gi, "$1<u>$2$3</u>")
+            .replace(/\\\*/gi, "*")
+            .replace(/\\_/gi, "_")
+            .replace(/&-\n?/g, "<hr>");
+            let i = 0;
+            while (text.indexOf("<<") >= 0 && i < 5) {
+                let code = text.substring(text.indexOf("<<") + 2, text.indexOf(">>"));
+                code = "<m>" + code.replace(/<\/?[a-z]>/g, "").replace(/([\{\}\[\]\(\)\ω\V\,\.\:\!\=\&\/]+)/g, "<s>$1</sspan>").replace(/(##.+##)/g, "<c>$1</span>").replace(/(be|is|do|does|obj)/gi, "<v>$1</span>").replace(/([A-Z][A-z]+)/g, "<o>$1</span>").replace(/(-?[0-9]([0-9]|<s>\.<\/sspan>)*)/g, "<n>$1</span>") + "</span>";
+                code = code.replace(/sspan/g, "span").replace(/<m>/g, "<span class='misc'>").replace(/<s>/g, "<span class='symbols'>").replace(/<c>/g, "<span class='comments'>").replace(/<o>/g, "<span class='objects'>").replace(/<n>/g, "<span class='numbers'>").replace(/<v>/g, "<span class='verbs'>")
+                text = text.substring(0, text.indexOf("<<")) + code + text.substring(text.indexOf(">>") + 2);
+                i++;
+            }
+
+            if (text.indexOf("@") >= 0) {
+                text = text
+                .replace(/@harry"(.*[^\\])"/gi, '<span style="color: var(--harry)">$1</span>')
+                .replace(/@harry\[(.*[^\\])\]/gi, '<span style="background: var(--harry)">$1</span>')
+                .replace(/\(@harry\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--harry)">🐱</span>')
+                .replace(/@(schrodingers_)/gi, "<span style='color: var(--harry)'>@$1</span>")
+                .replace(/@(harrison arsigne)/gi, "<span style='color: var(--harry)'>$1</span>")
+                .replace(/@(harry arsigne)/gi, "<span style='color: var(--harry)'>$1</span>")
+                .replace(/@(harrison)/gi, "<span style='color: var(--harry)'>$1</span>")
+                .replace(/@(harry)/gi, "<span style='color: var(--harry)'>$1</span>")
+
+                .replace(/@scott"(.*[^\\])"/gi, '<span style="color: var(--scott)">$1</span>')
+                .replace(/@scott\[(.*[^\\])\]/gi, '<span style="background: var(--scott)">$1</span>')
+                .replace(/@(scott arsigne)/gi, "<span style='color: var(--scott)'>$1</span>")
+                .replace(/@(scott)/gi, "<span style='color: var(--scott)'>$1</span>")
+
+                .replace(/@michael"(.*[^\\])"/gi, '<span style="color: var(--michael)">$1</span>')
+                .replace(/@michael\[(.*[^\\])\]/gi, '<span style="background: var(--michael)">$1</span>')
+                .replace(/@(michael)/gi, "<span style='color: var(--michael)'>$1</span>")
+                .replace(/@(bytre05)/gi, "<span style='color: var(--michael)'>@$1</span>")
+
+                .replace(/@sara"(.*[^\\])"/gi, '<span style="color: var(--sara)">$1</span>')
+                .replace(/@sara\[(.*[^\\])\]/gi, '<span style="background: var(--sara)">$1</span>')
+                .replace(/@(sara morgan)/gi, "<span style='color: var(--sara)'>$1</span>")
+                .replace(/@(sara)/gi, "<span style='color: var(--sara)'>$1</span>")
+                .replace(/@(diamondier99)/gi, "<span style='color: var(--sara)'>@$1</span>")
+
+                .replace(/@jude"(.*[^\\])"/gi, '<span style="color: var(--jude)">$1</span>')
+                .replace(/@jude\[(.*[^\\])\]/gi, '<span style="background: var(--jude)">$1</span>')
+                .replace(/@(jude hanley)/gi, "<span style='color: var(--jude)'>$1</span>")
+                .replace(/@(jude medina)/gi, "<span style='color: var(--jude)'>$1</span>")
+                .replace(/@(jude)/gi, "<span style='color: var(--jude)'>$1</span>")
+                .replace(/@(brian4)/gi, "<span style='color: var(--jude)'>@$1</span>")
+
+                .replace(/@ty"(.*[^\\])"/gi, '<span style="color: var(--ty)">$1</span>')
+                .replace(/@ty\[(.*[^\\])\]/gi, '<span style="background: var(--ty)">$1</span>')
+                .replace(/@(tyler morgan)/gi, "<span style='color: var(--ty)'>$1</span>")
+                .replace(/@(tyler)/gi, "<span style='color: var(--ty)'>$1</span>")
+                .replace(/@(ty morgan)/gi, "<span style='color: var(--ty)'>$1</span>")
+                .replace(/@(ty)/gi, "<span style='color: var(--ty)'>$1</span>")
+                .replace(/@(JRX2006)/gi, "<span style='color: var(--ty)'>@$1</span>")
+                .replace(/@(rex)/gi, "<span style='color: var(--ty)'>$1</span>")
+
+                .replace(/@care"(.*[^\\])"/gi, '<span style="color: var(--care)">$1</span>')
+                .replace(/@care\[(.*[^\\])\]/gi, '<span style="background: var(--care)">$1</span>')
+                .replace(/@(caroline reyes)/gi, "<span style='color: var(--care)'>$1</span>")
+                .replace(/@(caroline)/gi, "<span style='color: var(--care)'>$1</span>")
+                .replace(/@(care reyes)/gi, "<span style='color: var(--care)'>$1</span>")
+                .replace(/@(care)/gi, "<span style='color: var(--care)'>$1</span>")
+                .replace(/@(nico_vi)/gi, "<span style='color: var(--care)'>@$1</span>")
+
+                .replace(/@jacob"(.*[^\\])"/gi, '<span style="color: var(--jacob)">$1</span>')
+                .replace(/@jacob\[(.*[^\\])\]/gi, '<span style="background: var(--jacob)">$1</span>')
+                .replace(/@(jake wayer)/gi, "<span style='color: var(--jacob)'>$1</span>")
+                .replace(/@(jake)/gi, "<span style='color: var(--jacob)'>$1</span>")
+                .replace(/@(jacob wayer)/gi, "<span style='color: var(--jacob)'>$1</span>")
+                .replace(/@(jacob)/gi, "<span style='color: var(--jacob)'>$1</span>")
+
+                .replace(/@wren"(.*[^\\])"/gi, '<span style="color: var(--wren)">$1</span>')
+                .replace(/@wren\[(.*[^\\])\]/gi, '<span style="background: var(--wren)">$1</span>')
+                .replace(/\(@wren\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--wren)">👤</span>')
+                .replace(/@(wreckless_abandon)/gi, "<span style='color: var(--wren)'>@koasFDm4A$1</span>")
+                .replace(/@(wreckless_abando)/gi, "<span style='color: var(--wren)'>@$1</span>")
+                .replace(/@(wren wayer)/gi, "<span style='color: var(--wren)'>$1</span>")
+                .replace(/@(wren)/gi, "<span style='color: var(--wren)'>$1</span>")
+
+                .replace(/@vince"(.*[^\\])"/gi, '<span style="color: var(--vince)">$1</span>')
+                .replace(/@vince\[(.*[^\\])\]/gi, '<span style="background: var(--vince)">$1</span>')
+                .replace(/\(@vince\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--vince)">🦊</span>')
+                .replace(/@(redfoxdead_)/gi, "<span style='color: var(--vince)'>@$1</span>")
+                .replace(/@(vincent oxley)/gi, "<span style='color: var(--vince)'>$1</span>")
+                .replace(/@(vincent)/gi, "<span style='color: var(--vince)'>$1</span>")
+                .replace(/@(vince oxley)/gi, "<span style='color: var(--vince)'>$1</span>")
+                .replace(/@(vince)/gi, "<span style='color: var(--vince)'>$1</span>")
+                .replace(/@(radixrazor)/gi, "<span style='color: var(--vince)'>@$1</span>")
+
+                .replace(/@ben"(.*[^\\])"/gi, '<span style="color: var(--ben)">$1</span>')
+                .replace(/@ben\[(.*[^\\])\]/gi, '<span style="background: var(--ben)">$1</span>')
+                .replace(/\(@ben\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--ben)">🛹</span>')
+                .replace(/@(benisnt)/gi, "<span style='color: var(--ben)'>@koasFDm4A$1</span>")
+                .replace(/@(ben ellemy)/gi, "<span style='color: var(--ben)'>$1</span>")
+                .replace(/@(ben)/gi, "<span style='color: var(--ben)'>$1</span>")
+
+                .replace(/@jay"(.*[^\\])"/gi, '<span style="color: var(--jay)">$1</span>')
+                .replace(/@jay\[(.*[^\\])\]/gi, '<span style="background: var(--jay)">$1</span>')
+                .replace(/\(@jay\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--jay)">🤖</span>')
+                .replace(/@(jaspercat229)/gi, "<span style='color: var(--jay)'>@koasFDm4A$1</span>")
+                .replace(/@(jasper chapman)/gi, "<span style='color: var(--jay)'>$1</span>")
+                .replace(/@(jasper)/gi, "<span style='color: var(--jay)'>$1</span>")
+                .replace(/@(jay chapman)/gi, "<span style='color: var(--jay)'>$1</span>")
+                .replace(/@(@?jay)/gi, "<span style='color: var(--jay)'>$1</span>")
+                .replace(/@(harper)/gi, "<span style='color: var(--jay)'>@$1</span>")
+
+                .replace(/@char"(.*[^\\])"/gi, '<span style="color: var(--char)">$1</span>')
+                .replace(/@char\[(.*[^\\])\]/gi, '<span style="background: var(--char)">$1</span>')
+                .replace(/\(@char\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--char)">🌙</span>')
+                .replace(/@(radioscar)/gi, "<span style='color: var(--char)'>@$1</span>")
+                .replace(/@(charlotte rylon)/gi, "<span style='color: var(--char)'>$1</span>")
+                .replace(/@(charlotte)/gi, "<span style='color: var(--char)'>$1</span>")
+                .replace(/@(char rylon)/gi, "<span style='color: var(--char)'>$1</span>")
+                .replace(/@(char)/gi, "<span style='color: var(--char)'>$1</span>")
+
+                .replace(/@clyde"(.*[^\\])"/gi, '<span style="color: var(--clyde)">$1</span>')
+                .replace(/@clyde\[(.*[^\\])\]/gi, '<span style="background: var(--clyde)">$1</span>')
+                .replace(/\(@clyde\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--clyde)">🌄</span>')
+                .replace(/@(cl_hanley)/gi, "<span style='color: var(--clyde)'>@koasFDm4A$1</span>")
+                .replace(/@(clyde hanley)/gi, "<span style='color: var(--clyde)'>$1</span>")
+                .replace(/@(clyde)/gi, "<span style='color: var(--clyde)'>$1</span>")
+
+                .replace(/@alexa"(.*[^\\])"/gi, '<span style="color: var(--alexa)">$1</span>')
+                .replace(/@alexa\[(.*[^\\])\]/gi, '<span style="background: var(--alexa)">$1</span>')
+                .replace(/\(@alexa\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--alexa)">🪀</span>')
+                .replace(/@(axloverdo1)/gi, "<span style='color: var(--alexa)'>@$1</span>")
+                .replace(/@(alexa verido)/gi, "<span style='color: var(--alexa)'>$1</span>")
+                .replace(/@(alexa)/gi, "<span style='color: var(--alexa)'>$1</span>")
+
+                .replace(/@scarf"(.*[^\\])"/gi, '<span style="color: var(--scarf)">$1</span>')
+                .replace(/@scarf\[(.*[^\\])\]/gi, '<span style="display: inline-block; color: var(--scarf);font-style: normal;width:8px">≡</span><span style="background: var(--scarf)" class="scarfbg">$1</span><span style="display: inline-block; color: var(--scarf);font-style: normal;width:8px">≡</span>')
+
+                .replace(/@ek"(.*[^\\])"/gi, '<span style="color: var(--ek)">$1</span>')
+                .replace(/@ek\[(.*[^\\])\]/gi, '<span style="background: var(--ek)">$1</span>')
+                .replace(/@(e\.k\.)/gi, "<span style='color: var(--ek)'>$1</span>")
+                .replace(/@(ek)/gi, "<span style='color: var(--ek)'>$1</span>")
+
+                .replace(/@cal"(.*[^\\])"/gi, '<span style="color: var(--cal)">$1</span>')
+                .replace(/@cal\[(.*[^\\])\]/gi, '<span style="background: var(--cal)">$1</span>')
+                .replace(/@(cal morgan)/gi, "<span style='color: var(--cal)'>$1</span>")
+                .replace(/@(cal)/gi, "<span style='color: var(--cal)'>$1</span>")
+
+                .replace(/@arlons"(.*[^\\])"/gi, '<span style="color: var(--arlons)">$1</span>')
+                .replace(/@arlons\[(.*[^\\])\]/gi, '<span style="background: var(--arlons)">$1</span>')
+                .replace(/@(mary arlon)/gi, "<span style='color: var(--arlons)'>$1</span>")
+                .replace(/@(mary)/gi, "<span style='color: var(--arlons)'>$1</span>")
+                .replace(/@(thomas arlon)/gi, "<span style='color: var(--arlons)'>$1</span>")
+                .replace(/@(thomas)/gi, "<span style='color: var(--arlons)'>$1</span>")
+
+                .replace(/@sam"(.*[^\\])"/gi, '<span style="color: var(--sam)">$1</span>')
+                .replace(/@sam\[(.*[^\\])\]/gi, '<span style="background: var(--sam)">$1</span>')
+                .replace(/@(sam halas)/gi, "<span style='color: var(--sam)'>$1</span>")
+                .replace(/@(sam)/gi, "<span style='color: var(--sam)'>$1</span>")
+                .replace(/@(w111)/gi, "<span style='color: var(--sam)'>@$1</span>")
+                .replace(/@(Mr Internet)/gi, "<span style='color: var(--sam)'>@$1</span>")
+
+                .replace(/@eleanor"(.*[^\\])"/gi, '<span style="color: var(--eleanor)">$1</span>')
+                .replace(/@eleanor\[(.*[^\\])\]/gi, '<span style="background: var(--eleanor)">$1</span>')
+                .replace(/@(eleanor reyes)/gi, "<span style='color: var(--eleanor)'>$1</span>")
+                .replace(/@(eleanor)/gi, "<span style='color: var(--eleanor)'>$1</span>")
+                .replace(/@(1nv1n)/gi, "<span style='color: var(--eleanor)'>@$1</span>")
+                .replace(/@(falcoincognito)/gi, "<span style='color: var(--eleanor)'>@$1</span>")
+
+                .replace(/@canary"(.*[^\\])"/gi, '<span style="color: var(--canary)">$1</span>')
+                .replace(/@canary\[(.*[^\\])\]/gi, '<span style="background: var(--canary)">$1</span>')
+                .replace(/\(@canary\)/gi, '<span style="border-radius: 50%; display: inline-block; min-width: 21.95px;color:#fffa;background: var(--canary)">🦆</span>')
+                .replace(/@(mxbloodmoon)/gi, "<span style='color: var(--canary)'>@$1</span>")
+                .replace(/@(canary wayer)/gi, "<span style='color: var(--canary)'>$1</span>")
+                .replace(/@(canary)/gi, "<span style='color: var(--canary)'>$1</span>")
+                .replace(/@(user2206636)/gi, "<span style='color: var(--canary)'>@$1</span>")
+
+                .replace(/@alice"(.*[^\\])"/gi, '<span style="color: var(--alice)">$1</span>')
+                .replace(/@alice\[(.*[^\\])\]/gi, '<span style="background: var(--alice)">$1</span>')
+                .replace(/@(alice oxley)/gi, "<span style='color: var(--alice)'>$1</span>")
+                .replace(/@(alice)/gi, "<span style='color: var(--alice)'>$1</span>")
+
+                .replace(/@jon"(.*[^\\])"/gi, '<span style="color: var(--jon)">$1</span>')
+                .replace(/@jon\[(.*[^\\])\]/gi, '<span style="background: var(--jon)">$1</span>')
+                .replace(/@(jon hanley)/gi, "<span style='color: var(--jon)'>$1</span>")
+                .replace(/@(jon)/gi, "<span style='color: var(--jon)'>$1</span>")
+
+                .replace(/@elise"(.*[^\\])"/gi, '<span style="color: var(--elise)">$1</span>')
+                .replace(/@elise\[(.*[^\\])\]/gi, '<span style="background: var(--elise)">$1</span>')
+                .replace(/@(elise hanley)/gi, "<span style='color: var(--elise)'>$1</span>")
+                .replace(/@(elise)/gi, "<span style='color: var(--elise)'>$1</span>")
+                .replace(/@(occamsbitch)/gi, "<span style='color: var(--elise)'>@$1</span>")
+
+                .replace(/@white"(.*[^\\])"/gi, '<span style="color: var(--white)">$1</span>')
+                .replace(/@(habit)/gi, "<span style='color: var(--white)'>$1</span>")
+
+                .replace(/koasFDm4A/gi, "")
+
+                .replace(/@\$/gi, "<span id='dynamic'>12</span>")
+            }
+
+            box.innerHTML = '<span style="display:none">.</span>' + text.substr(1);
+            $("#" + box.parentElement.id).trigger("resizestop");
+        }
+
+        function addbox(bx, by, bw, bh, bc, bt, br, bf, bz, bn) {//np
+            if (!selsec.element || selsec.element.className.indexOf("closedsec") >= 0) return false;
+            bx = Number(bx); by = Number(by); bw = Number(bw); bh = Number(bh);//np
+            let box = new Box(bx, by, bw, bh, selsec, bc??selectedcolor, bt??"", br??selectedshape, bf??selectedfill, bz, bn);//np
+            boxes.push(box);
+            let boxh = document.createElement("DIV"); //box html = boxh
+            boxh.id = "b" + box.id;
+            box.element = boxh;
+            boxh.innerHTML = document.getElementById("boxtemp").innerHTML;
+            boxh.querySelector(".boxname *").innerHTML = box.name;
+            if (!loading) puttext(box.text, boxh.querySelector(".box"))
+            boxh.style.zIndex = box.z;
+            boxh.className = `boxc ${box.rounded} ${box.color} ${box.fill}`;
+            selsec.element.appendChild(boxh);
+            rebox(box);
+            evaluate();
+            if (!loading) expands();
+            rebox(box);
+            $("#b" + box.id).resizable({
+                grid: [16, 16.8],
+                containment: "parent",
+                minWidth: 15,
+                maxWidth: 737,
+                minHeight: 16.5
+            });
+            $("#b" + box.id).draggable({
+                grid: [15.99, 16.8],
+                helper: "ui-resizable-helper",
+                containment: "parent",
+                handle: ".h2"
+            });
+
+            function evaluate( ) {
+                let c = boxh.getBoundingClientRect();
+                let s = box.section.element.getBoundingClientRect();
+                box.x = Math.round((c.x - s.x)/16) * 16;
+                box.y = Math.round((c.y - s.y) / 16.8) * 16.8;
+                box.height = Math.round(boxh.querySelector(".box").offsetHeight / 16.8) * 16.8;
+                box.width = Math.floor(boxh.querySelector(".box").offsetWidth / 16) * 16 - 16;
+
+                document.getElementById("glr").style.left = (c.left + boxh.querySelector(".box").offsetWidth) + "px";
+                document.getElementById("gll").style.left = (c.left) + "px";
+                document.getElementById("glt").style.top = (c.top + 16.8) + "px";
+                document.getElementById("glb").style.top = (c.top + boxh.querySelector(".box").offsetHeight + 16.8) + "px";
+            };
+
+            function expands() {
+                box.section.height = Math.min((Math.round(10 * Math.max.apply(null, boxes.filter(x => box.section.id == x.section.id).map(x => Number(x.height) + x.y)))/168+16), box.section.hasMax ? box.section.max : Number.MAX_SAFE_INTEGER);
+                box.section.element.getElementsByClassName("linens")[0].innerHTML = Array.from(Array(box.section.height).keys()).join(" ");
+                box.section.element.getElementsByClassName("dots")[0].innerHTML = box.section.element.getElementsByClassName("dots")[0].innerHTML.replace(/\. /g, "");
+                box.section.element.getElementsByClassName("dots")[0].innerHTML += row.repeat(box.section.height);
+                for (const e of boxes.filter(x => x.section.hidden == false)) {
+                    rebox(e);
+                }
+            }
+            $("#b" + box.id).on( "dragstart", function() {saved = false; document.getElementById("glr").style.display = "block";
+                document.getElementById("gll").style.display = "block";
+                document.getElementById("glt").style.display = "block";
+                document.getElementById("glb").style.display = "block";});
+                $("#b" + box.id).on( "resizestart", function() {saved = false; document.getElementById("glr").style.display = "block";
+                document.getElementById("gll").style.display = "block";
+                document.getElementById("glt").style.display = "block";
+                document.getElementById("glb").style.display = "block";});
+            $("#b" + box.id).on( "drag", function() {evaluate()});
+            $("#b" + box.id).on( "resize", function() {evaluate()});
+            $("#b" + box.id).on( "dragstop", function() {evaluate(); rebox(box); expands(); document.getElementById("glr").style.display = "none";
+                document.getElementById("gll").style.display = "none";
+                document.getElementById("glt").style.display = "none";
+                document.getElementById("glb").style.display = "none";
+                evaluate();
+                if (selectedbox) document.getElementById("boxdata").innerHTML = `${Math.round(selectedbox.width/16 + 1)}x${Math.round(selectedbox.height/16.8)} | (${Math.round(selectedbox.x/16)}, ${Math.round(selectedbox.y/16.8-1)})`;
+            });
+            $("#b" + box.id).on( "resizestop", function() {evaluate(); rebox(box); document.getElementById("glr").style.display = "none";
+                document.getElementById("gll").style.display = "none";
+                document.getElementById("glt").style.display = "none";
+                document.getElementById("glb").style.display = "none";
+                evaluate();
+                expands();
+                if (selectedbox) document.getElementById("boxdata").innerHTML = `${Math.round(selectedbox.width/16 + 1)}x${Math.round(selectedbox.height/16.8)} | (${Math.round(selectedbox.x/16)}, ${Math.round(selectedbox.y/16.8-1)})`});
+            $("#b" + box.id).on("mousedown", function() {if (event.shiftKey) {addbox(box.x, box.y, box.width, box.height, box.color, box.text, box.rounded, box.fill, box.z, box.name, true); dblc(null, boxh);}});
+            $("#b" + box.id).on("expands", function(){expands()})
+        }
+
+        function grow(box) {
+            box.element.style.height = (Number(selectedbox.element.style.height.slice(0,-2)) + 1680) + "px";
+            $("#" + selectedbox.element.id).trigger("dragstop")
+        }
+    
+        const random2digs = ["12", "68", "61", "94", "31", "79", "15", "52", "33", "45", "21", "58", "94", "31", "44", "80", "53", "90", "98", "59", "15", "08", "41", "78", "26", "62", "99", "80", "92", "68", "05", "41", "78", "91", "27", "00", "37", "45", "06", "62", "55", "88", "25", "73", "09", "46", "27", "39", "15", "52", "88", "25", "38", "74", "47", "84", "92", "53", "09", "02", "35", "72", "20", "56", "93", "74", "86", "62", "99", "35", "72", "85", "21", "94", "31", "39", "00", "56", "49", "82", "19", "67", "03", "40", "21", "33", "09", "46", "82", "19", "32", "68", "41", "78", "86", "47"]; var dynamiccount = 0;
+        window.setInterval(function(){document.getElementById('dynamic').innerHTML = random2digs[dynamiccount++ % random2digs.length]},350)
+    </script>
+    </body>
+</html>
