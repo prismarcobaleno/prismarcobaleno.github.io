@@ -14,7 +14,7 @@
   
   /* link visitato */
   .a:visited {
-	color: #ffff55;
+	color: darkorange;
 	text-decoration: none;
 	/* nasconde la sottolineatura per link già cliccati*/
 	}
