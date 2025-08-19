@@ -1,0 +1,1 @@
+!function(){$(document).ready(function(){localStorage.setItem("pageExploded",!0)})}();
