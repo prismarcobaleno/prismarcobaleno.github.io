@@ -14,14 +14,14 @@
   
   /* link visitato */
   .a:visited {
-	color: darkorange;
+	color: orange;
 	text-decoration: none;
 	/* nasconde la sottolineatura per link già cliccati*/
 	}
 	
   /* mouse sul link */
   .a:hover {
-	color: darkorange;
+	color: orange;
 	text-decoration: none;
 	}
   
