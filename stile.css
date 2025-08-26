@@ -86,8 +86,12 @@
 	footer {  
 	  text-align: center;
 	  }
-	  
-	
+/* codice */
+.codice {
+	border: 1px solid white;
+	font-family: monospace;
+  }	
+
 /* evidenziatore */
 .e {
   background: #304000;
