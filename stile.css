@@ -21,13 +21,13 @@
 	
   /* mouse sul link */
   .a:hover {
-	color: orange;
+	color: yellow;
 	text-decoration: none;
 	}
   
   /* link selezionato */
   .a:active {
-	color: red;
+	color: pink;
 	 text-decoration: none;
 	}
 
