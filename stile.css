@@ -212,6 +212,20 @@
   	border-radius: 3px;
   	margin: 1px;
 	}
+	
+.diam {list-style-type: '🔶 ';
+margin-left: -1em;}
+
+/*details[open] > .diam {					list-style-type: '💠 ';}*/
+.diam li:hover, .diam li:focus, .diam li:active { list-style-type: '💠 ';}
+
+.diam ul {list-style-type: '🔸';
+margin-left: -1em;}
+
+/*.diam details[open] > .diam ul {					list-style-type: '🔹 ';}*/
+.diam ul li:hover, .diam ul li:focus, .diam ul li:active { list-style-type: '🔹 ';}
+
+
 
 .pad {
 padding: 1%;
