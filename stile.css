@@ -32,8 +32,7 @@
 	}
 
 	  
-	.html {  
-	 
+	.html {
 	  background-color: #000022;
 	  color: white;
 	  font-family: sans-serif;
@@ -116,6 +115,11 @@
   color: orange;
   }
   
+  .h1 {
+  color: lightgreen;
+  text-align: center;
+  }
+
 .scatolina {
    background: rgba(0, 0, 0, 0.5); 
   color: skyblue;
@@ -168,7 +172,6 @@
 	}
 	
    
-	
  .forma {
    background: black;
   color: SKYBLUE;
@@ -185,16 +188,25 @@
    }
 
 
-  .summary {
-	background: black;
-	color:skyblue;
+  summary {
+	background: rgba(00, 100, 50, 0.5);
+	font-weight: bold;
 	}
 	
-  .details {
-  background: black;
-  color: white;
+  details {
+  	border: 1px solid rgba(00, 100, 50, 0.5);
+  	border-radius: 3px;
+  	margin: 1px;
 	}
 
+.pad {
+padding: 1%;
+}
+
+
+.mar {
+margin: 1%;
+}
 
 /* TEMA SCURO
 
@@ -204,3 +216,4 @@ color: #cba !important
 }
  
 + controlla i link */
+
