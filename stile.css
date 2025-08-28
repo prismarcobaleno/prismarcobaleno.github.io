@@ -106,7 +106,7 @@
 .v {
   color: lightgreen;
   }
-  
+
 .g {
   color: lightyellow
   }
@@ -156,7 +156,7 @@
 	padding: 2%;
 	overflow:auto;
   }
-
+  
 
   .grigio {
    background: #222222; 
@@ -222,6 +222,37 @@ padding: 1%;
 margin: 1%;
 }
 
+
+.verdolina
+	{
+	background: rgba(0, 30, 0, 0.5); 
+	padding: 4px;
+	border-radius: 5px;
+	border: 2px solid rgba(00, 50, 00, 50);}
+
+input , textarea {
+background: black;
+color: inherit;
+font-weight: bold;
+}
+
+::placeholder {
+	 color: #aaa;
+	 opacity: 1;
+}
+
+.campo {
+	background: rgba(00, 20, 00, 0.5);
+	border: 1px solid rgba(00, 50, 00, 50);
+	margin: 0.4%;
+	flex-grow: 1;flex-grow: 1;
+}
+
+
+::selection {
+  color: #110;
+  background: #eff;
+}
 
 /* TEMA SCURO
 

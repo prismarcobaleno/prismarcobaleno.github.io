@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class=html lang=it>
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Libro | Caleidoscopio</title>
+	<meta property="og:title" content="Caleidoscopio">
+	<link rel="icon" type="image/png" href="cuore.png" >
+	<!--<meta property="og:image" content="cuore.png">
+	<meta property="og:description" content=" ">
+	-->
+	<link href="./stile.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/stile.css" rel="stylesheet" type="text/css" media="all">
+	
+<style>
+
+</style>
+
+  </head>
+  <body class=body>
+	<h1 class=h1 id="inizio" >Libro</h1>
+
+	<main class="scatola"> 
+	
+	<p>Qui voglio aggiungere un <strong>libro per le firme</strong>, quelli che vanno di moda nei siti retrò, e per chi non sapesse sono come nei musei, che ogni passante può scrivere il suo nome o un commento su quello che ha visto...</p>
+	<p>Ecco, io lo vorrei fare interattivo, il problema è uno: so fare solo cose statiche. Quindi qua ho fatto un <strong>form finto</strong> per distrarvi mentre io vado a studiare un po' di PHP o JavaScript, e quando torno metto una vera sezione commenti. Forse. Prima o poi.</p>
+	
+	<p>Nel frattempo per dirmi cose puoi usare <a class=a href="./index.html#contatti">i miei contatti.</a></p>
+	
+	<h2>Giochino per fare finta di commentare:</h2>
+	<form class=verdolina><div class=flex>
+	<fieldset class=campo><legend>Dati</legend>
+	<div><label for="nome">Nome (necessario):</label><br>
+	<input type="text" name="nome" id="nome" 
+	required aria-required="true"
+	placeholder="Miao"><br>
+	</div>
+	<br>
+	<div><label for="sito">Sito:</label><br>
+	<input type="text" name="sito" id="sito" 
+	placeholder="esempio.it"><br>
+	</div>
+
+	</fieldset>
+	<fieldset class=campo><legend>Tempo</legend>
+	<div><label for="date">Data: </label>
+	<input type="date" name="date" id="date">
+	</div><br>
+	<div><label for="time">Ora: </label>
+	<input type="time" name="time" id="time">
+	</div>
+	</fieldset>
+		
+	<fieldset class=campo><legend>Bottoni</legend>
+	  <div>
+	  <input type="radio" id="s1" name="bottone" value="1">
+	  <label for="s1">Uno</label><br>
+	  <br>
+	  <input type="radio" id="s2" name="bottone" value="2">
+	  <label for="s2">Due</label><br>
+	  <br>
+	  <input type="radio" id="s3" name="bottone" value="3">
+	  <label for="s3">Tre</label></div>
+	</fieldset>
+	
+	<fieldset class=campo><legend>Altro</legend>
+	<div>
+	 <label for="per">Percentuale:</label>
+	 <input type="range" id="per" name="percentuale" min="0" max="100">
+	<br></div>
+	<br>
+	<div>
+	 <label for="colore">Colore</label>
+	 <input type="color" id="colore" name="colore">
+	</div>
+	</fieldset>
+	
+	
+	</div>
+	<fieldset class=campo><legend>Commenti</legend>
+	<div><label for="commento">Commento (necessario):</label><br>
+	<textarea class="textarea" id="commento"
+	required aria-required="true"
+	placeholder="Commenta qui" contenteditable 
+	style="min-width: 99%; min-height: 10em"></textarea><br>
+	</div>
+		
+		<label for="acconsento">Privato</label>
+	<input type="checkbox" name="acconsento" id="acconsento">	
+	</fieldset>	
+	<fieldset class=campo><legend>Invio</legend>
+	<br><input type="submit" class=e value="Invia (non disponibile)"> 	<input type="reset" value="Ripristina"> 
+	</fieldset>
+	
+	<p>(Sì, ho messo un pulsante per ripristinare tutto vicino al pulsante per inviare. Lo so, sono un genio del male. Quando implemento commenti veri non sarà di certo così!)</p>
+	</main>
+	<!--
+	<p>testo nascosto: 
+	 <span class=scuro > testo nascosto </span></p>
+	-->
+	
+  <footer> 
+	<p> 2025 </p>
+	<p> <a class="a" href=#inizio> Torna su </a> </p>
+	<p> <i><a class="a" href=index.html> Casa. </a></i> </p> 
+  </footer>
+	
+  </body>
+</html>
