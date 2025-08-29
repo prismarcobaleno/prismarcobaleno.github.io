@@ -4,29 +4,30 @@
 	flex-wrap: wrap;
 	}
 
+
 /* link (copiato da SOGNO.CSS)*/
-  .a:link{
-	color: #ffff55;
+  a:link{
+	color: yellow;
 	text-decoration: none; 
 	font-weight: bold;
 	border-bottom: 1px solid #ffff55;
 	}
   
   /* link visitato */
-  .a:visited {
+  a:visited {
 	color: orange;
 	text-decoration: none;
 	/* nasconde la sottolineatura per link già cliccati*/
 	}
 	
   /* mouse sul link */
-  .a:hover {
-	color: yellow;
+  a:hover {
+	color: lightyellow;
 	text-decoration: none;
 	}
   
   /* link selezionato */
-  .a:active {
+  a:active {
 	color: pink;
 	 text-decoration: none;
 	}
@@ -258,6 +259,12 @@ color: inherit;
 font-weight: bold;
 }
 
+form [required] {
+border: 2px solid red;
+}
+
+
+
 ::placeholder {
 	 color: #aaa;
 	 opacity: 1;
@@ -275,6 +282,38 @@ font-weight: bold;
   color: #110;
   background: #eff;
 }
+
+
+@font-face {
+	font-family: "seli kiwen asuki";
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenasuki.eot);
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenasuki.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "seli kiwen juniko";
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenjuniko.eot);
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenjuniko.ttf) format("truetype");
+}
+
+ [lang="tok"] {
+ font-family: "seli kiwen asuki", sans-serif;
+ 	font-size: larger;
+ 	letter-spacing: 0;
+ }
+ 
+ .ju {
+ font-family: "seli kiwen juniko", sans-serif;
+  	font-size: inherit;
+ 	letter-spacing: 0;
+ }
+
+ [lang="en"] {
+ font-family: "seli kiwen juniko", sans-serif;
+  	font-size: inherit;
+ 	letter-spacing: 0;
+ }
+
 
 /* TEMA SCURO
 

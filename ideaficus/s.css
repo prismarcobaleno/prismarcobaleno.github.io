@@ -1,8 +1,38 @@
 
 
 html	{
-	font-family: "Roboto Mono", "DejaVu Sans Mono", monospace;
+	background: black;
+	color: white;
+	font-family: sans-serif;
 	}
+
+/* link (copiato da SOGNO.CSS)*/
+  a:link{
+	color: yellow;
+	text-decoration: none; 
+	font-weight: bold;
+	border-bottom: 1px solid #ffff55;
+	}
+  
+  /* link visitato */
+  a:visited {
+	color: orange;
+	text-decoration: none;
+	/* nasconde la sottolineatura per link già cliccati*/
+	}
+	
+  /* mouse sul link */
+  a:hover {
+	color: lightyellow;
+	text-decoration: none;
+	}
+  
+  /* link selezionato */
+  a:active {
+	color: pink;
+	 text-decoration: none;
+	}
+
 
 /* a {
   position: relative;
@@ -151,6 +181,7 @@ max-width:100%
 .v {
 overflow: auto;
 padding: 0.5%;
+margin: 1px;
 border: 2px solid purple;
 border-radius: 2px;
 background: rgba(200, 20, 70, 0.1);
