@@ -67,8 +67,10 @@ h4 { margin: 0.5%;}
 .mar-lati { margin-left: 2%;
 	margin-right: 2% }
 
-.flesso{
-display: flex}
+.flesso{display: flex; 	flex-wrap: wrap;}
+.bolla{flex-grow: 1; margin:1px;}
+
+figure {margin:1px;}
 
 ul li {
       image-rendering: pixelated;
@@ -262,8 +264,13 @@ padding: 1%;
 
 pre {margin: 0.5%;
 font-family: "Roboto Mono",  "DejaVu Sans Mono", monospace;
+
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
-	
 
 .rosa {
 filter: saturate(100%) ;
