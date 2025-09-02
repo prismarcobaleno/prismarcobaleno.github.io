@@ -1,4 +1,7 @@
 
+.centro{
+  text-align:center;
+}
 
 html	{
 	background: black;
@@ -9,24 +12,24 @@ html	{
 /* link (copiato da SOGNO.CSS)*/
   a:link{
 	color: yellow;
-	text-decoration: none; 
+	text-decoration: none;
 	font-weight: bold;
 	border-bottom: 1px solid #ffff55;
 	}
-  
+
   /* link visitato */
   a:visited {
 	color: orange;
 	text-decoration: none;
 	/* nasconde la sottolineatura per link già cliccati*/
 	}
-	
+
   /* mouse sul link */
   a:hover {
 	color: lightyellow;
 	text-decoration: none;
 	}
-  
+
   /* link selezionato */
   a:active {
 	color: pink;
@@ -43,7 +46,7 @@ a[href*="://"]:after, a[href^="//"] {
   height: 1ch;
   display: inline-block;
   position: absolute;
-  top: -0.5ch; 
+  top: -0.5ch;
 }
 
 
@@ -51,7 +54,7 @@ a[href*="://"]:after, a[href^="//"] {
 */
 
 
-   
+
 
 details {
   padding: 1px;
@@ -64,7 +67,7 @@ summary {
   padding: 1px;
   border-radius: 2px;
   cursor: pointer;
-} 
+}
 
 .niente {list-style-type: ' ';}
 details[open] > .niente {
@@ -113,7 +116,7 @@ ul li {
 li summary {  margin-left: -0.8em;}
 
 li summary .no {margin-left: 0.2em;}
-      
+
 
 .o {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);}
 
@@ -157,33 +160,34 @@ details[open] > .lib {list-style-type: '📖 ';}
 
 
 
- .embed-container{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
- .embed-container iframe, 
- .embed-container object, 
+ .embed-container{ position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+ .embed-container iframe,
+ .embed-container object,
  .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.z {
-padding: 0.5%;
-border-radius: 2px;
-border: 2px solid skyblue;
-background: rgba(100, 200, 230, 0.2);
-} 
 
-.az {
-padding: 0.5%;
-border: 1px solid skyblue;
-background: rgba(100, 200, 230, 0.1);
-max-width:100%
+
+
+.v, .gri, .s, .g, .z, .az {
+  overflow: auto;
+  padding: 0.5%;
+  margin: 1px;
+  border-radius: 2px;
 }
 
+.z {
+border: 2px solid skyblue;
+background: rgba(100, 200, 230, 0.2);
+}
 
+.az {
+border: 1px solid skyblue;
+background: rgba(100, 200, 230, 0.1);
+max-width:100%;
+}
 
 .v {
-overflow: auto;
-padding: 0.5%;
-margin: 1px;
 border: 2px solid purple;
-border-radius: 2px;
 background: rgba(200, 20, 70, 0.1);
 }
 
@@ -191,7 +195,6 @@ background: rgba(200, 20, 70, 0.1);
  border: 1px solid purple;
  background: rgba(200, 20, 70, 0.1);
 }
-
 
 .vi:hover, .vi:focus, .vi:active {
   border: 1px solid violet;
@@ -213,12 +216,8 @@ background: rgba(250, 70, 70, 0.1);
   border: 1px solid red;
 }
 
-
 .gri {
-overflow: auto;
-padding: 0.5%;
 border: 2px solid darkgray;
-border-radius: 2px;
 background: rgba(20, 20, 20, 0.1);
 }
 
@@ -230,15 +229,10 @@ background: rgba(20, 20, 20, 0.1);
 .grigio:hover, .grigio:focus, .grigio:active {
 border: 1px solid black;}
 
-
 .s {
-overflow: auto;
-padding: 0.5%;
 border: 2px solid darkorange;
-border-radius: 2px;
 background: rgba(200, 200, 100, 0.2);
 }
-
 
 
 .gi:hover, .gi:focus, .gi:active {
@@ -248,10 +242,7 @@ background: rgba(200, 200, 100, 0.2);
 
 
 .g {
-overflow: auto;
-padding: 0.5%;
 border: 2px solid darkgreen;
-border-radius: 1px;
 background: rgba(0, 50, 0, 0.1);
 }
 
@@ -266,7 +257,7 @@ background: rgba(0, 50, 0, 0.1);
 }
 
 
-.gi {  
+.gi {
   border: 1px solid goldenrod;
   background: rgba(200, 200, 70, 0.1);
 }

@@ -1,20 +1,38 @@
 
+
+@font-face {
+	font-family: "Adys";
+	src: url(../caratteri/ADYS/ADYSV6-Regular.eot);
+	src: url(../caratteri/ADYS/ADYSV6-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: 'Adys';
+	src: local('ADYSV6');
+	src: url(../caratteri/ADYS/ADYSV6-Bold.eot);
+	src: url(../caratteri/ADYS/ADYSV6-Bold.ttf) format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "OpenDyslexic";
+	src: local('OpenDyslexic');
+	src: url(../caratteri/open_dyslexic/OpenDyslexic-Regular.otf);
+}
+
 html {  
   margin: 5%;
     background: black;
-      color: white;
-      font-family: Courier, Sans-serif;
+    color: white;
+      font-family: Adys, Dyslexie, monospace, Sans-serif;
       letter-spacing: 0.1em;
       line-height: 1.5;
       word-spacing: 0.2em;
       background-image: url("https://images.pexels.com/photos/3114462/pexels-photo-3114462.jpeg?auto=compress");
       background-attachment: fixed;
-      background-size: 100% 400%
+      background-size: 100% 400%;
       }
-      
-h1 {
-  font-size: 1.5em;
-  }
   
 summary {
     font-weight: bold;
@@ -39,7 +57,6 @@ summary {
   a:visited {
     color: darkorange;
     text-decoration: none;
-    border-bottom: 2px solid black;
     }
     
   /* mouse sul link */
@@ -89,6 +106,10 @@ img {
   padding-top: 1%;
   border-radius: 3px;
   }
+  
+.console::before{
+	content: "›"
+	}
       
 .scatoletta { 
   margin-right: 20%;
@@ -103,3 +124,7 @@ img {
   padding-top: 1%;
   border-radius: 3px;
   }
+  
+figure { max-width: 80%;
+margin: 0 auto 0 auto; 
+text-align:center;}
