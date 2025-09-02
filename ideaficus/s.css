@@ -1,4 +1,26 @@
 
+@font-face {
+	font-family: "Adys";
+	src: url(../caratteri/ADYS/ADYSV6-Regular.eot);
+	src: url(../caratteri/ADYS/ADYSV6-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: 'Adys';
+	src: local('ADYSV6');
+	src: url(../caratteri/ADYS/ADYSV6-Bold.eot);
+	src: url(../caratteri/ADYS/ADYSV6-Bold.ttf) format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "OpenDyslexic";
+	src: local('OpenDyslexic');
+	src: url(../caratteri/open_dyslexic/OpenDyslexic-Regular.otf);
+}
+
+
 .centro{
   text-align:center;
 }
@@ -6,7 +28,7 @@
 html	{
 	background: black;
 	color: white;
-	font-family: sans-serif;
+	font-family: "Adys", sans-serif;
 	}
 
 /* link (copiato da SOGNO.CSS)*/
@@ -167,7 +189,7 @@ details[open] > .lib {list-style-type: '📖 ';}
 
 
 
-
+/*ho fatto troppe classi... 3 per ogni pagina*/
 .v, .gri, .s, .g, .z, .az {
   overflow: auto;
   padding: 0.5%;
@@ -218,16 +240,16 @@ background: rgba(250, 70, 70, 0.1);
 
 .gri {
 border: 2px solid darkgray;
-background: rgba(20, 20, 20, 0.1);
+background: rgba(60, 60, 60, 0.2);
 }
 
 .grigio {
  border: 1px solid gray;
- background: rgba(20, 20, 20, 0.1);
+ background: rgba(60, 60, 60, 0.2);
 }
 
 .grigio:hover, .grigio:focus, .grigio:active {
-border: 1px solid black;}
+border: 1px solid white;}
 
 .s {
 border: 2px solid darkorange;
@@ -256,13 +278,13 @@ background: rgba(0, 50, 0, 0.1);
   background: rgba(00, 250, 00, 0.1);
 }
 
-
 .gi {
   border: 1px solid goldenrod;
   background: rgba(200, 200, 70, 0.1);
 }
 
-/* gi è parente di giallo, ma deve stare sotto ve per far funzionare il trucchetto di tmoi.html con quell'unica canzone dorata*/
+/* gi è parente di giallo, ma deve stare sotto ve per 
+far funzionare il trucchetto di tmoi.html con quell'unica canzone dorata*/
 
 .ro {
  border: 1px solid red;
