@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class=html lang=it>
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Caleidoscopio</title>
+	<meta property="og:title" content="Caleidoscopio">
+	<link rel="icon" type="image/png" href="cuore.png" >
+	<!--<meta property="og:image" content="cuore.png">
+	<meta property="og:description" content=" ">
+	-->
+	<link href="../stile.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/stile.css" rel="stylesheet" type="text/css" media="all">
+	
+	<style>
+	.flesso {display: flex;
+	flex-direction: wrap;
+	align-content:center;
+	justify-content:center;
+	 flex-basis: 100px;}
+	
+	.cartinca {border: 1px solid lightblue; 
+	flex-grow: 1;
+	max-width: 99%;
+	max-height: 90%;
+	
+	margin: auto;
+	align-content:center;
+	
+	background: white; color:black;
+		min-height: 60%;
+	}
+	
+	.flesso {display: flex;
+	flex-wrap: wrap;
+	}
+	
+	.foto{
+	flex-grow: 1; 
+	height: 300px;
+	width: 300px;
+	background: #022; color: lightblue;
+	border: 3px solid black;
+	
+	margin: 1px auto;
+	padding: 1%;
+	
+	text-align:center;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+
+	.foto:hover, .foto:active, .foto:focus, 
+	.foto button:hover, .foto button:active, .foto button:focus {
+	border: 3px solid goldenrod;
+	background: #033;
+	border-radius: 5px;
+	}
+	
+	.foto button
+	{color: white; background: black;
+	border: 3px solid black;
+	}
+
+	
+	</style>
+	
+  </head>
+  <body class=body>
+	<h1 class=h1 id="inizio" >Galassie</h1>
+	
+	
+	<aside class=scatolina>
+	<p>Foto di esempio prese da <a href="https://www.wired.it/galleries/gait107284/">wired.it</a></p>
+	</aside>
+	
+	<main class="scatola flesso">
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d79992d692f14b38ddca1/master/w_320%2Cc_limit/photo3.jpg" alt="">
+		<figcaption><button>Polvere di stelle</button><figcaption>
+	</figure> 
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d7999d8b66b13086ceeaa/master/w_320%2Cc_limit/photo8.jpg" alt="">
+		<figcaption><button>Galassia gialla 1</button><figcaption>
+	</figure>
+	
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d79995be2c0ed7dae3d67/master/w_1280%2Cc_limit/photo0.jpg" alt="">
+		<figcaption><button>Galassia a spirale</button></figcaption>
+	</figure>
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d7999d8b66b13086ceeaa/master/w_320%2Cc_limit/photo8.jpg" alt="">
+		<figcaption><button>Galassia gialla 2</button><figcaption>
+	</figure>
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d799a293ff83a81921a0f/master/w_320%2Cc_limit/photo11.jpg" alt="">
+		<figcaption><button>Stella</button><figcaption>
+	</figure>
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d799a2d692f14b38ddca3/master/w_1280%2Cc_limit/photo9.jpg" alt="">
+		<figcaption><button>Galassia rosa</button><figcaption>
+	</figure>
+	
+	<figure class=foto><img class="cartinca" src="https://c.pxhere.com/photos/36/9b/crab_nebula_supernova_remnant_supernova_pulsar_wind_fog_constellation_taurus_constellation_messier_catalogue_m_1_ngc_1952-1262202.jpg!d" alt="">
+		<figcaption><button>Esplosione</button><figcaption>
+	</figure>
+	
+	<figure class=foto><img class="cartinca" src="https://media-assets.wired.it/photos/615d799a293ff83a81921a0f/master/w_320%2Cc_limit/photo11.jpg" alt="">
+		<figcaption><button>Stella 2</button><figcaption>
+	</figure>
+	
+	
+	</main>
+	
+  <footer> 
+	<p> 2025 </p>
+	<p> <a class="a" href=#inizio> Torna su </a> </p>
+	<p> <i><a class="a" href=/> Casa. </a></i> </p> 
+  </footer>
+	
+  </body>
+</html>
