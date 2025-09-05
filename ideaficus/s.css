@@ -209,6 +209,10 @@ background: rgba(100, 200, 230, 0.1);
 max-width:100%;
 }
 
+.az:hover, .az:focus, .az:active {
+  border: 1px solid lightblue;
+}
+
 .v {
 border: 2px solid purple;
 background: rgba(200, 20, 70, 0.1);
