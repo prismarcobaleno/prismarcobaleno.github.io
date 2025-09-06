@@ -1,4 +1,4 @@
-/* Default variables values */
+/* Default variables values 
 
 @media (prefers-color-scheme: dark),  {
 :root {
@@ -10,8 +10,8 @@
 	--verde-t: lightgreen;
 	--azzurro-t: lightblue;
 }
-}
-@media (prefers-color-scheme: light),  {
+}*/
+
 :root {
 	--testo: white;
 	--sfondo: #002;
@@ -20,7 +20,7 @@
 	--allaccio-v: yellow;
 	--verde-t: lightgreen;
 	--azzurro-t: lightblue;
-}}
+	}
 
 :root:has(#chiara:checked) {
 	--testo: black;
