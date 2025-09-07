@@ -30,6 +30,7 @@ html	{
 	color: white;
 	font-family: "Adys", sans-serif;
 	}
+html.greca{font-family: sans-serif;}
 
 /* link (copiato da SOGNO.CSS)*/
   a:link{
