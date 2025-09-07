@@ -316,13 +316,14 @@ padding: 1%;
 }
 
 pre {margin: 0.5%;
-font-family: "Roboto Mono",  "DejaVu Sans Mono", monospace;
-
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+font-family: "Roboto Mono",  "DejaVu Sans Mono", monospace, sans-serif;
+/*
+    white-space: pre-wrap;      
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;       
+    white-space: -o-pre-wrap;    
+    word-wrap: break-word;     */
+ /*  Since CSS 2.1 *//*Mozilla, since 1999*/ /*Opera 4-6 *//*Opera 7 *//*Internet Explorer 5.5+*/ 
 }
 
 .rosa {
