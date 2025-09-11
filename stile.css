@@ -19,6 +19,7 @@
 	--allaccio: yellow;
 	--allaccio-v: orange;
 	--verde-t: lightgreen;
+	--verde: darkgreen;
 	--azzurro-t: lightblue;
 	}
 
@@ -29,9 +30,9 @@
 	--allaccio: blue;
 	--allaccio-v: purple;
 	--verde-t: darkgreen;
+	--verde: lightgreen;
 	--azzurro-t: #056;
 }
-
 
 /* commenti! */
  .oriz {
@@ -167,7 +168,7 @@ pre {
 	  flex-grow: 1;
 	background: var(--scatola);
 	border-radius: 5px;
-	border: 1px solid darkgreen;
+	border: 1px solid var(--verde);
 	margin: 0.5%;
 	padding: 1%;
 }
@@ -330,7 +331,7 @@ border: 2px solid red;
 	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenjuniko.ttf) format("truetype");
 }
 
- [lang="tok"] {
+ :not(:root:has(#sitelen:checked))  [lang="tok"] {
  font-family: "seli kiwen asuki", sans-serif;
  	font-size: larger;
  	font-weight: normal;
@@ -338,10 +339,14 @@ border: 2px solid red;
  }
  
  .ju {
- font-family:  sans-serif;
-  	font-size: smaller;
+	font-family:  sans-serif;
  	letter-spacing: 0;
  }
+
+ #impostazioni {
+	/*display: flex;*/
+	justify-content: flex-end;}
+
 
 /* [lang="en"] {
  font-family: "seli kiwen juniko", sans-serif;
