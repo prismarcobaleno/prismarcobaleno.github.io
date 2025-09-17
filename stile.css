@@ -14,7 +14,9 @@
 
 :root {
 	--testo: white;
+	--testo-sel: #024;
 	--sfondo: #002;
+	--sfondo-sel: #eff;
 	--scatola: rgba(0, 0, 0, 0.5);;
 	--allaccio: yellow;
 	--allaccio-v: orange;
@@ -26,7 +28,9 @@
 
 :root:has(#chiara:checked) {
 	--testo: black;
+	--testo-sel: #eef;
 	--sfondo: #eec;
+	--sfondo-sel: #024;
 	--scatola: rgba(250, 250, 255, 0.6);
 	--allaccio: blue;
 	--allaccio-v: purple;
@@ -74,6 +78,38 @@ del {text-decoration: wavy;
 color:  (var(--allaccio-r));
 text-decoration-line: underline;
 text-decoration-color: red;}
+
+del::before,
+del::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+del::before {
+  content: "[cancellato:] ";
+}
+
+ins {text-decoration: none;
+color: var(--allaccio-r);}
+ins::before,
+ins::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+ins::before {
+  content: " [aggiunto:] ";
+}
+
+rt {font-size: smaller;}
 	  
 	.html {
 	  background-color: var(--sfondo);
@@ -320,8 +356,8 @@ border: 2px solid red;
 
 
 ::selection {
-  color: #110;
-  background: #eff;
+  color: var(--testo-sel);
+  background: var(--sfondo-sel);
 }
 
 
