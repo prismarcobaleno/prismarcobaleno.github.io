@@ -15,38 +15,51 @@
 	<style>
 		em {font-style: normal;}
 
-		:root:has(#loi:checked) em{text-decoration: underline;
+	:root:has(#loi:checked) em{text-decoration: underline;
 		text-decoration-line: underline;
-	text-decoration-color:green;}
+		text-decoration-color:green;}
+
+	:root:has(#corsivo:checked) .corsivo {
+ 		font-family: "Playwrite IT Trad", cursive;
+  		font-weight: 400;
+  		font-style: normal;
+		}
+
 	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad&display=swap" rel="stylesheet">
+
   </head>
   <body class=body>
 	<header>
 		<h1 class=h1 id="inizio">Storie</h1>
 		<div class=scatolina>Questa storia è scritta in forma neutra, col <a class="a" href="https://it.pronouns.page/loi/le" target="_blank" rel="noopener noreferrer">pronome loi</a>. 
-		<p><input id="loi" type="checkbox" />
-		<label for="loi">Evidenzia genere neutro</label></p></div>
+		</div>
 	</header>
 	
-	<aside>
+	<aside><fieldset>
+		<legend>Opzioni</legend>
 		<!--<nav><p><a class="a" lang=tok href=./tomo/esempio-pona.html>lipu ni pi (toki-pona)</a></p></nav>-->
 		<p><input id="chiara" type="checkbox" />
 		<label for="chiara">Tema chiaro.</label>
 		(Attenzione: solo per questa pagina.)</p>
-	</aside>
+		<p><input id="loi" type="checkbox" />
+		<label for="loi">Evidenzia genere neutro</label></p>
+		<p><input id="corsivo" type="checkbox" />
+		<label for="corsivo">Corsivo</label></p></div>
+	</fieldset></aside>
 
-	<main class=scatola> 
+	<main class="scatola"> 
 		<h2>Tema: Una persona di cui ti fidi</h2>
-		<p>Mi fido di Ninni, perché sa sempre come risolvere tutto. Per esempio quando ho incontrato Giuli, <em>le</em> mi<em>e</em> migliore amich<em>e</em>.</p>
+		<div class="corsivo"><p>Mi fido di Ninni, perché sa sempre come risolvere tutto. Per esempio quando ho incontrato Giuli, <em>le</em> mi<em>e</em> migliore amich<em>e</em>.</p>
 		<p>Un giorno io e Ninni eravamo al parco giochi. E <em>un'</em>altr<em>e</em> bambin<em>e</em> si era fatt<em>e</em> male nello scivolo, e piangeva, e quindi io ho chiamato Ninni, perché Ninni porta sempre le cose per le ferite.</p>
 		<p>Non c'era l'acqua <ruby><rb><del>ossiggenata</del></rb> 
 			<rt><ins>ossigenata</ins></rt></ruby>, quindi ha usato la tintura di iodio, e Giuli ha smesso di piangere vedendo quanto era rossa e lucente, e io ho detto che sembrava un sacco di sangue, e <em>loi</em> si è messe a ridere. Io <em>le</em> guardavo, era spettacolare.</p>
-        <p>Avrei <ruby><rb><del>volevo</del></rb> 
-			<rt><ins>voluto</ins></rt></ruby> 
-			restare là con <em>loi</em> per sempre, ma dovevamo andare, quindi abbiamo promesso di incontrarci allo stesso parco l'indomani. E poi il giorno dopo. E quello dopo ancora. E Ninni ci portava le merendine e ha preso il numero dei genitori di Giuli per telefonare a casa sua.</p>
+        <p>Avrei <ruby><rb><del>volevo</del></rb> <rt><ins>voluto</ins></rt></ruby> restare là con <em>loi</em> per sempre, ma dovevamo andare, quindi abbiamo promesso di incontrarci allo stesso parco l'indomani. E poi il giorno dopo. E quello dopo ancora. E Ninni ci portava le merendine e ha preso il numero dei genitori di Giuli per telefonare a casa sua.</p>
 		<p>Quando ero piccole, non capivo ancora che "Ninni" non era il suo vero nome. Poi Ninni mi ha raccontato che io non riuscivo a dire "genitore", quindi ha semplificato a "ninnitore" e poi semplicemente "ninni". In realtà si chiama Valentì, ma io non <em>le</em> chiamo mai così, sembra troppo strano.</p>
         <p> Celeste Selenis 4A, 14 febbraio </p>
-
+			</div>
 		<h3>Voto: 8+</h3>
 		<p>Nota: Ripassa la coniugazione dei verbi e l'ortografia per il 9.</p>
 	</main>
