@@ -18,6 +18,7 @@
 	--scatola: rgba(0, 0, 0, 0.5);;
 	--allaccio: yellow;
 	--allaccio-v: orange;
+	--allaccio-r: red;
 	--verde-t: lightgreen;
 	--verde: darkgreen;
 	--azzurro-t: lightblue;
@@ -29,6 +30,7 @@
 	--scatola: rgba(250, 250, 255, 0.6);
 	--allaccio: blue;
 	--allaccio-v: purple;
+	--allaccio-r: red;
 	--verde-t: darkgreen;
 	--verde: lightgreen;
 	--azzurro-t: #056;
@@ -64,10 +66,14 @@
   
   /* link selezionato */
   a:active {
-	color: red;
+	color: (var(--allaccio-r));
 	text-decoration: none;
 	}
 
+del {text-decoration: wavy;
+color:  (var(--allaccio-r));
+text-decoration-line: underline;
+text-decoration-color: red;}
 	  
 	.html {
 	  background-color: var(--sfondo);
