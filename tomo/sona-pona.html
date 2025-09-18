@@ -16,8 +16,18 @@
   <body class=body>
 	<h1 class=h1 id="inizio" >Info</h1>
 
-	<div class=scatola> 
-	
+	<aside id="impostazioni"><fieldset><legend>ilo pi (lipu)</legend>
+		<nav><p><a lang=it class="a ju" href=../info.html>Leggi in italiano</a></nav>
+		<p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
+		<label for="chiara">kule walo</label>
+		<noscript>: lipu ni taso</noscript></p>
+		<p><input id="sitelen" type="checkbox" onclick="cliccaSitelen();"/>
+		<label for="sitelen">sitelen [LASINA]</label>
+		<noscript>: lipu ni taso</noscript></p>
+	</fieldset></aside>
+	<script src="../opzioni.js"></script> 
+
+	<main class=scatola> 
 	<h2>Informazioni sul sito</h2>
 	<p>Prismarcobaleno è il mio fantastico sito personale!</p>
 	<p>È fatto per essere visto anche senza CSS, o anche per non essere visto affatto, con un lettore di schermo o col braille, per quanto riesco. Se una parte del sito è rotta per te me la puoi segnalare con <a class="a" href="./index.html#contatti">i miei contatti</a>!</p>
@@ -32,8 +42,9 @@
 	<p>Quindi ho fatto per esempio una classe di nome "a" che devo aggiungere a tutti i link per fare in modo che viene giallo e arancione. E se la scordo, invece, viene blu su blu e non si legge una cippa.</p>
 	<p>Immediatamente dopo, mi serviva mettere uno stile verde ai dettagli, e l'ho messo direttamente senza classi perché <span lang=scn>mi siddìa</span>.</p></li>
 	<li><p>Se ispezioni sulla testa della pagina a volte vedrai due collegamenti allo stesso foglio di stile, perché uno non funziona offline, ma l'altro è assoluto e non si rompe se lo sposto, e quindi li metto tutti e due per comodità.</p></li>
-	</div>
 	</ul>
+	</main>
+	
 	<!--
 	<p>testo nascosto: 
 	 <span class=scuro > testo nascosto </span></p>

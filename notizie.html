@@ -20,12 +20,13 @@
 	<h1 class=h1 id="inizio">Notizie</h1>
 	<div class=scatolina> Notizie sul sito, in ordine cronologico inverso. </div></header>
 
-		<aside id="impostazioni"><fieldset><legend>Impostazioni pagina</legend>
-		<!-- <nav><p><a class="a" lang=tok href=./tomo/notizie-pona.html>lipu ni pi (toki-pona)</a></p></nav>-->
-		<p><input id="chiara" type="checkbox" />
-		<label for="chiara">Tema chiaro.</label>
-		(Attenzione: solo per questa pagina.)</p>
-		</fieldset></aside>
+		<aside>
+      <!--<nav><p><a class="a" lang=tok href=./tomo/pona.html>lipu ni pi (toki-pona)</a></p></nav>--> 
+      <p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
+      <label for="chiara">Tema chiaro</label>
+      <noscript>: Solo per questa pagina</noscript></p>
+    </aside>
+    	<script src="opzioni.js"></script>
 	
 	<!--
 	<div class=scatola> 
@@ -34,6 +35,15 @@
 	<p>Notizia</p>
 	</div>
 	-->
+
+	<main>
+	<div class=scatola> 
+	<h2>Tema chiaro funziona!</h2> 
+	<i>18 settembre 2025</i> <br>
+	<p>Adesso se vai in un'altra pagina salva il tema chiaro o scuro! Almeno per le pagine che ce l'hanno.</p>
+	<p>L'ho messo nel comesichiama locale con giavascrip. Odio giavascrip. Perché per prendere ogni cosa bisogna mettere universo.galassia.sistemaSolare.terra.continente.eccetera ? Vabbè funziona più o meno. Il codice sta su <a class="a" href="/opzioni.js">opzioni.js</a> e se qualcune sa sistemarlo meglio messaggiatemi.</p>
+	</div>
+
 	<div class=scatola> 
 	<h2>Nuova iconcina!</h2> 
 	<i>12 settembre 2025</i> <br>
@@ -93,7 +103,7 @@
 	<p>Addio NeoGities... ciao GitHub!!</p> 
 	<p>Nota: Il sito è un po' un macello in questo momento, quindi se trovi link rotti prova a cambiare l'indirizzo ché sicuramente ho sbagliato qualche barra, o qualche puntino, o non ho messo un ".html", o roba simile. I fogli di stile pure potrebbero essere rotti, ma dovrebbe essere tutto leggibile uguale...</p>
 
-</p>Ah e poi ci sono altre pagine che non ho ancora collegato bene, se guardi sulla repo di github direttamente le trovi.</p>
+	</p>Ah e poi ci sono altre pagine che non ho ancora collegato bene, se guardi sulla repo di github direttamente le trovi.</p>
 	</div>
 	
 	<div class=scatola id=24> 
@@ -107,7 +117,7 @@
 	<i>22 luglio 2023</i> <br>
 	<p>Inauguro la sezione notizie di questo sito. </p>
 	</div> 
-	
+	</main>
 	<!-- 
 	 <div class=scatolina> 
 	  <img
