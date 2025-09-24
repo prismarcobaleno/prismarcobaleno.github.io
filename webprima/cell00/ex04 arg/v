@@ -1,0 +1,50 @@
+#!/bin/bash
+
+n=1
+# $# prende il numero di parametri
+ if [ "$#" -lt 4 ]
+  then
+  
+	for arg in "$@"; 
+	# "$@" prende i parametri dal comando? credo?
+		do
+		echo "
+		Argomento $n: $arg
+		"
+		# stampa l'argomento (con due spazi perche' e' piu' bellino)
+
+	((n += 1))
+	#aumenta n
+	done #fine ciclo
+	
+  else 
+  	echo "
+	Troppi argomenti! Aa!
+  	" 
+  	sleep 1 #aspetta 1 secondo
+  	
+ 	echo "
+ 	Scherzavo. Eccoli qua:
+	"
+	sleep 1
+	
+	for arg in "$@"; 
+	# "$@" prende i parametri dal comando? credo?
+		do
+		echo "
+		Argomento $n: $arg
+		"
+		# stampa l'argomento (con due spazi perche' e' piu' bellino)
+
+	((n += 1))
+	#aumenta n
+	done #fine ciclo
+  	
+  fi #fine if
+
+
+
+
+
+
+

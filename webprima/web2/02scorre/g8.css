@@ -1,0 +1,111 @@
+
+
+html{ 
+      font-family: sans-serif;
+      font:  1.5em;
+      line-height: 1.5;
+      margin: 0%;
+      letter-spacing: 0.04em;
+      word-spacing: 0.04em;
+      
+      background: black;
+      color: white;
+      
+/*
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      */
+      }
+   
+h1 , h3{
+text-align: center ;}
+
+
+
+div{
+
+/*
+border-radius: 8px;
+border: 1px solid #001177;
+ */
+overflow: auto;
+margin-top: 1%;
+margin-bottom: 1%;
+margin: 1%;
+padding-left: 2%;
+padding-right: 2%; 
+
+width:94%;
+
+}
+
+
+
+.giotto1 , .giotto2, .giotto3 { 
+background:  url('./12g8.png');
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+height: 1000px;
+
+border: 4px solid gray;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center; 
+background-size: 100% 100%;
+}
+
+
+
+.giotto2 {background: url('./3g8.png');
+height: 1000px;
+
+border: 4px solid gray;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center; 
+background-size: 100% 100%;
+}
+
+.giotto3 {background: url('./4g8.png');
+height: 1000px;
+
+border: 4px solid gray;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center; 
+background-size: 100% 100%;
+}
+
+
+.v 
+{/*background: lightblue;*/
+color: #5577bb;}
+
+.mio
+{color: lightblue;}
+
+
+/* LINK SU SFONDO SCURO:  */
+
+.a:link{
+    color: lightblue;
+     
+    font-weight: bold;
+      border-bottom: 1px solid #ffff55; 
+    }
+
+.a:visited {
+ color: lavender;
+ text-decoration: none;
+}
+
+/* LINK SU SFONDO SCURO: class="a" */
+
+
+
+
+

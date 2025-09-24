@@ -1,0 +1,212 @@
+html{ 
+      font-family: sans-serif;
+      font:  1.5em
+      line-height: 1.5;
+      margin: 0%;
+      letter-spacing: 0.04em;
+      word-spacing: 0.04em;
+      background: lightgreen;
+      }
+   
+h1, h2, h3, h4, td{
+text-align: center ;}
+
+ /* link (copiato da SOGNO.CSS)*/
+  a:link{
+    color: darkblue;
+    text-decoration: none; 
+    font-weight: bold;
+      border-bottom: 1px solid #ffff55; 
+    }
+  
+  /* link visitato */
+  a:visited {
+    
+    text-decoration: none;
+    /*  border-bottom: 1px solid black; 
+   nasconde la sottolineatura per link gia'  cliccati
+    con una barra nera*/
+    }
+    
+  /* mouse sul link */
+  a:hover {
+   
+    text-decoration: none;
+    }
+  
+  /* link selezionato */
+  a:active {
+    
+     text-decoration: none;
+    }
+
+.v 
+{background: lightblue;
+color: darkgreen;}
+
+
+
+i {text-align: center;
+display:flex; 
+justify-content: center;
+align-items: center;
+margin: auto;
+}
+
+ul li {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;}
+
+li.s {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/wait.png);}
+
+li.c {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/star_2.png);}
+
+
+div{
+color:black ;
+background: lightgreen;
+border-radius: 8px;
+border: 3px solid darkgreen;
+
+margin: 10%;
+
+overflow: auto;
+margin-top: 1%;
+margin-bottom: 1%;
+padding: 1%;
+
+}
+
+.stretto
+{margin: 30%;
+background: #220033 ;
+color: lightpink;}
+
+.cento {
+text-align: center;
+display:flex; 
+justify-content: center;
+align-items: center;
+margin: auto;
+
+width: 150px;
+
+background: darkgreen ;
+color: lavender ;
+border-radius: 40px;
+border: 0px solid darkgreen;
+padding: 1%
+
+}
+
+.mio {
+background: #ccffff;
+color:purple;
+margin: 10%;
+border-radius: 8px;
+border: 3px solid darkgreen;
+overflow: auto;
+margin-top: 2%;
+margin-bottom: 2%;
+padding-left: 2%;
+padding-right: 2%}
+
+
+
+
+
+.hacker {
+background:  url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm373batch16-105-kpdboioj.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=544c87789dcac1b381716ceba9ffa981');
+
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center; 
+background-size: 100% 100%;
+}
+
+.sfondo {
+background:  url("https://www.publicdomainpictures.net/pictures/230000/t2/grey-mat-pattern-1505578238aXo.jpg");
+background-attachment: fixed;
+
+background-position: center; 
+}
+
+a { text-decoration: none;}
+
+.profilo
+{
+width: 300px;
+display:flex; 
+justify-content: center;
+align-items: center;
+margin: auto;}
+
+footer {
+    text-align: center;
+    bottom: 0;}
+
+hr {color: darkgreen}
+
+
+mono {font-family: monospace}
+
+
+
+
+
+/* CSS */
+.button-45 {
+  align-items: center;
+
+  color:darkgreen
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+ 
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.button-45:active,
+.button-45:hover,
+.button-45:focus {
+  outline: 0;
+}
+
+
+.button-45:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.button-45:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.button-45:active:hover,
+.button-45:focus:hover,
+.button-45:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}

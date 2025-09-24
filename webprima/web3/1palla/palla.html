@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palla</title>
+    
+    <meta property="og:description" content="ssfhsdhgfjhsd"> 
+    
+   <script src="./palla.js"></script> 
+    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/universal-signs-symbols/128/transgender-color-1024.png" >
+    <link href="../w3.css" rel="stylesheet" type="text/css" media="all">
+        <title></title>
+        <style>
+            html, body
+            {
+                margin: 0;
+                background: lightblue
+
+            } 
+            .d{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                  height:50%;
+                  width: 450px;
+              
+               display:inline-block;
+               vertical-align: middle; 
+            }
+
+            .O
+            {
+                width: 200px;
+                height: 200px;
+                background-color: darkred;
+                border-radius: 100%;
+                vertical-align: middle;
+                
+                
+                color:lightblue;
+                font-size: 3em
+            }
+        </style>        
+ 
+    </head>
+    <body id="inizio">
+    <header><div class="mio">
+    <h1>Simulatore di Palloncini</h1>
+    <h2>Clicca [tab] per navigare tra i due palloncini.</h2>
+    </div></header>
+    
+    <main> <center>  
+        <div class="d"><h3>Questo &egrave; un palloncino rosso.</h3>
+          <button id="palla" class="O" onclick="gonfia(palla)">palla</button>
+           <p>Clicca (col mouse o con accapo) per gonfiare, esci dal palloncino col mouse per sgonfiare.</p>
+        </div>   
+        
+        <div class="d"><h3>Questa &egrave; una roba assurda.</h3>
+          <button id="pallabrutta" class="O" onclick="modifica(pallabrutta)">palla brutta</button>
+            <p>Attenzione! Se spammi con la tastiera 'sto coso lampeggia e ti verr&agrave; un mal di testa!!!</p>
+	</div>  
+	
+
+     </center> </main>  
+        <script>
+            
+            var i = 1;
+            
+                const elemento = document.getElementById("palla");
+              
+                
+                elemento.addEventListener("mouseleave", () => {
+               
+             	    var inverted = true;
+                    console.log("mouseciao");
+                    var width = elemento.offsetWidth - 5;
+                    var height = elemento.offsetHeight - 5;
+                    if(width < 200 || height < 200)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                    elemento.style.width = width + "px";
+                    elemento.style.height = height + "px";   
+              
+              
+              
+               elemento.style.backgroundColor = colori[i];
+                            i -= 1;
+                            if(i < 0)
+                            i = 1;
+
+                });
+                
+               
+                var colori = ["#000000","#330000", "#440000", "#550000", "#660000", "#770000", "#880000", "#990000", "#aa0000", "#bb0000", "#cc0000", "#dd0000", "#ee0000", "#ff0000", "#ff1111", "#ff2222", "#ff3333", "#ff6666", "#ff7777",  "#ff9999", "#ffbbbb", "#ffdddd", "#ffeeee", ];
+                
+                var coloribrutti = ["red", "green", "blue"]; 
+              
+                function gonfia(elemento)
+                {
+                    
+                    elemento.style.backgroundColor = colori[i];
+                    if(!invertita)
+                        {
+                            i += 1;
+                            if(!(i < colori.length))
+                     
+                                i = 0;
+                        }
+                    else
+                        {
+                            i -= 1;
+                            if(!(i > colori.length))
+                                i = colori.length - 1;
+                        }
+                         var invertita = false;
+                    var width = elemento.offsetWidth + 10;
+                    var height = elemento.offsetHeight + 10;
+                    if(width > 420 || height > 420)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                    elemento.style.width = width + "px";
+                    elemento.style.height = height + "px";
+                    console.log("click: ", width, height)
+                    
+                     if(width < 200 || height < 200)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                }
+                
+                  // ADESSO LA PALLA BRUTTA!!!!
+                  
+                      // ADESSO LA PALLA BRUTTA!!!!
+                  
+         
+                var i = 1;
+            
+                const pallabrutta = document.getElementById("pallabrutta");
+              
+                
+                pallabrutta.addEventListener("mouseleave", () => {
+               
+             	    var inverted = true;
+                    console.log("mouseciao");
+                    var width = pallabrutta.offsetWidth - 5;
+                    var height = pallabrutta.offsetHeight - 5;
+                    if(width < 200 || height < 200)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                    pallabrutta.style.width = width + "px";
+                    pallabrutta.style.height = height + "px";   
+              
+              
+              
+               pallabrutta.style.backgroundColor = coloribrutti[i];
+                            i -= 1;
+                            if(i < 0)
+                            i = coloribrutti.length - 1;
+
+                });
+                
+  
+                
+                var coloribrutti = ["red", "green", "blue"]; 
+              
+                function modifica(pallabrutta)
+                {
+                   console.log("hello");
+                    pallabrutta.style.backgroundColor = coloribrutti[i];
+                    if(!inverted)
+                        {
+                            i += 1;
+                            if(!(i < coloribrutti.length))
+                     
+                                i = 0;
+                        }
+                    else
+                        {
+                            i -= 1;
+                            if(!(i > coloribrutti.length))
+                                i = coloribrutti.length - 1;
+                        }
+                         var inverted = false;
+                    var width = pallabrutta.offsetWidth + 10;
+                    var height = pallabrutta.offsetHeight + 10;
+                    if(width > 420 || height > 420)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                    pallabrutta.style.width = width + "px";
+                    pallabrutta.style.height = height + "px";
+                    console.log("click: ", width, height)
+                    
+                     if(width < 200 || height < 200)
+                    {
+                        width = 200;
+                        height = 200;
+                    }
+                }
+                
+                
+            </script> 
+        
+        
+        
+        
+          
+  <footer><div class="mio">
+ 	<br>
+	 <i> 2024</i>
+	<br>
+	 <a href="#inizio">Torna su</a>
+	<br>
+	 Torna a <a href="../../web2/01 dettagli/dettagli.html#">Casa</a>  
+	<br>
+ <br></div></footer>
+    </body>
+</html>

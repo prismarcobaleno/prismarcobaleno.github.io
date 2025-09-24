@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+for arg in "$@"; 
+# "$@" prende i parametri dal comando? 
+
+  do
+  mkdir ex$arg
+  # crea cartella col nome ex + quello che scrive l'utente
+
+
+done
+#fine ciclo
+
+

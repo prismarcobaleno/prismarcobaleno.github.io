@@ -1,0 +1,263 @@
+html{ 
+      font-family: sans-serif;
+      font:  1.5em
+      line-height: 1.5;
+      margin: 0%;
+      letter-spacing: 0.04em;
+      word-spacing: 0.04em;
+     
+      }
+   
+h1, h2, h3, h4, td{
+text-align: center ;}
+
+
+/* link (copiato da SOGNO.CSS)*/
+  a:link{
+    color: darkblue;
+    text-decoration: none; 
+    font-weight: bold;
+      border-bottom: 1px solid #ffff55; 
+    }
+  
+  /* link visitato */
+  a:visited {
+    
+    text-decoration: underline;
+    
+    }
+    
+  /* mouse sul link */
+  a:hover {
+   
+    text-decoration: none;
+    }
+  
+  /* link selezionato */
+  a:active {
+    
+     text-decoration: none;
+    }
+
+/* LINK SU SFONDO SCURO:  */
+
+.a:link{
+    color: lightblue;
+     
+    font-weight: bold;
+    border-bottom: 1px solid #ffff55;  text-decoration: none;
+    }
+
+.a:visited {
+ color: lavender;
+ text-decoration: none;
+}
+
+/* LINK SU SFONDO SCURO: class="a" */
+
+
+aside { 
+position: fixed;
+top: 0;
+float: left;
+width: 15%}
+
+
+footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 1px;
+	padding-bottom: 1px;		
+}
+
+input {
+width: 4em
+}
+
+
+i {text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+em {text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+ul li {
+
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;}
+
+li.o {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/page_white_world.png);}
+
+li.s {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/wait.png);}
+
+li.c {list-style-image: url(https://www.splitbrain.org/_static/ico/ledicons/ico/star_2.png);}
+
+
+div {
+border: 1px solid gray;
+
+margin: 5%;
+
+overflow: auto;
+margin-top: 1%;
+margin-bottom: 1%;
+padding-left: 1%;
+padding-right: 1%;
+}
+
+
+
+.v 
+{background: lightblue;
+color: purple;
+border: 3px solid purple;
+border-radius: 8px;}
+
+.d{
+color:black ;
+background: lightgreen;
+border: 3px solid darkgreen;
+border-radius: 8px;
+}
+
+.due{display: flex;}
+.menodue {display: auto;}
+
+
+.stretto
+{margin: 30%;
+background: #220033 ;
+color: lightpink;}
+
+.cento {
+text-align: center;
+display:flex; 
+justify-content: center;
+align-items: center;
+margin: auto;
+
+width: 150px;
+
+background: darkgreen ;
+color: lavender ;
+border-radius: 40px;
+border: 0px solid darkgreen;
+padding: 1%
+
+}
+
+.mio {
+background: #ccffff;
+color: darkgreen;
+border-radius: 8px;
+border: 3px solid darkgreen;
+}
+
+
+
+
+
+.hacker {
+background:  url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm373batch16-105-kpdboioj.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=544c87789dcac1b381716ceba9ffa981');
+
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center; 
+background-size: 100% 100%;
+}
+
+.sfondo {
+background:  url("https://www.publicdomainpictures.net/pictures/230000/t2/grey-mat-pattern-1505578238aXo.jpg");
+background-attachment: fixed;
+
+background-position: center; 
+}
+
+a { text-decoration: none;}
+
+.profilo
+{
+width: 300px;
+display:flex; 
+justify-content: center;
+align-items: center;
+margin: auto;}
+
+footer {
+    text-align: center;
+    bottom: 0;}
+
+hr {color: darkgreen}
+
+
+.codice {
+font-family: monospace;
+color: white;
+background: #222222 ;
+padding: 2%;
+
+}
+
+
+
+/* CSS */
+.button-45 {
+  align-items: center;
+
+  color:darkgreen
+  background-position: 0 0;
+  border: 5px solid darkgreen;
+  border-radius: 16px;
+  box-sizing: border-box;
+ 
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.button-45:active,
+.button-45:hover,
+.button-45:focus {
+  outline: 0;
+}
+
+
+.button-45:active {
+  background-color: gray;
+  box-shadow: black 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.button-45:hover {
+  background-color: #55aa66;
+  border-color: #77ff77;
+}
+
+.button-45:active:hover,
+.button-45:focus:hover,
+.button-45:focus {
+  background-color: #002200;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
