@@ -17,13 +17,16 @@
 	--testo-sel: #024;
 	--sfondo: #002;
 	--sfondo-sel: #eff;
-	--scatola: rgba(0, 0, 0, 0.5);;
+
+	--scatola: rgba(0, 0, 0, 0.5);
+	--scatola-verde: rgba(0, 20, 0, 0.5);
 	--allaccio: yellow;
 	--allaccio-v: orange;
 	--allaccio-r: red;
 	--verde-t: lightgreen;
 	--verde: darkgreen;
 	--azzurro-t: lightblue;
+	--azzurro: #056 ;
 	}
 
 :root:has(#chiara:checked) {
@@ -31,13 +34,17 @@
 	--testo-sel: #eef;
 	--sfondo: #eec;
 	--sfondo-sel: #024;
+
 	--scatola: rgba(250, 250, 255, 0.6);
+	--scatola-verde: rgba(210, 220, 210, 0.5);
 	--allaccio: blue;
 	--allaccio-v: purple;
 	--allaccio-r: red;
 	--verde-t: darkgreen;
-	--verde: lightgreen;
+	--verde: rgb(180, 230, 180);
 	--azzurro-t: #056;
+	--azzurro: lightblue;
+
 }
 
 /* commenti! */
@@ -333,10 +340,10 @@ margin: 1%;
 
 .verdolina
 	{
-	background: var(--verde); 
+	background: var(--scatola-verde) ; 
 	padding: 4px;
 	border-radius: 5px;
-	border: 2px solid rgba(00, 50, 00, 50);}
+	border: 2px solid var(--verde);}
 
 input , textarea {
 background: var(--sfondo);
@@ -356,8 +363,7 @@ border: 2px solid red;
 }
 
 .campo {
-	background: rgba(00, 20, 00, 0.5);
-	border: 1px solid rgba(00, 50, 00, 50);
+	border: 1px solid var(--verde-t);
 	margin: 0.4%;
 	flex-grow: 1;flex-grow: 1;
 }
