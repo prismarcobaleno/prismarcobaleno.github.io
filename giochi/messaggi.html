@@ -10,13 +10,13 @@
     <meta property="og:description" content=" "> 
     <link rel="icon" type="image/png" href="cuore.png" >
     <meta property="og:image" content="cuore.png">
-    
- 
-    <link href="https://caleidoscopio.neocities.org/stile.css" rel="stylesheet" type="text/css" media="all">-->
+    -->
+    <link href="/stile.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../stile.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
   <style>
-body {background: black; color: lightyellow ;}
+
 .bottoni {
 	margin: 1%;
 	 }
@@ -41,10 +41,9 @@ p {margin: 1%}
 
 span {cursor: pointer;}
 
-.gri {color: gray;
-     background: black;
+.gri {
       display: inline;
-      filter: brightness(10%);
+      filter:contrast(50%);
       transition: 1s;}
 
 .gri:hover{
@@ -54,13 +53,20 @@ span {cursor: pointer;}
       }
 </style>
 
-<h1>Messaggi non letti</h1> <div class="scatola">
+<h1 class="h1">Messaggi non letti</h1>
+
+  <aside>
+    <!--<p><a class="a" lang=tok href=./pona.html>lipu ni pi (toki-pona)</a></p>-->
+      <p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
+      <label for="chiara">Tema chiaro</label>
+      <noscript>: Solo per questa pagina</noscript></p>
+    </aside>
 
 <div class="scatolina fissa" id="fine">
-<p> <span title="[01/01/20023]"> <strong>ry:</strong> > buon anno!<span class='gri'> [01/01/20023]</span></p>
+<p> <span title="[01/01/20023]"> <strong>ry:</strong> buon anno!<span class='gri'> [01/01/20023]</span></p>
 </div>
 
-</div>
+
 <br>
 <p class="bottoni"> 
 <button id="bottone" onclick="avanti()">Ignora (<span id="note">0</span>)</button>
@@ -82,7 +88,7 @@ var conta = Math.floor((Math.random() * a));
 		return "!!"
 		}
 		else if (conta == 2) { 
-		return "! :3"
+		return "! <abbr title='emoji gatto'>:3</abbr>"
 		}
 		else if (conta == 3){
 		return "!!!"
@@ -98,14 +104,14 @@ var miao = con(6)
 
 let p1 = document.createElement("p");
 		if (avanza == 0) {
-		  p1.innerHTML = ("<hr><br><strong>ry:</strong> > buon anno"+ miao + "<span class='gri'> [01/01/"+ anno +"]</span>");
+		  p1.innerHTML = ("<hr><br><strong>ry:</strong> buon anno"+ miao + "<span class='gri'> [01/01/"+ anno +"]</span>");
 		  avanza = 1 ;
 			notif += 1 ; document.getElementById("note").innerHTML = notif;
 			anno += 1;}
 			
 
 		else if (avanza == 1 ){
-		  p1.innerHTML = ("<strong>ry:</strong> > buon compleanno" + miao + "<span class='gri'> [25/02/"+ anno +"]</span>");
+		  p1.innerHTML = ("<strong>ry:</strong> buon compleanno" + miao + "<span class='gri'> [25/02/"+ anno +"]</span>");
 		  avanza = 0;
 			notif += 1 ; document.getElementById("note").innerHTML = (notif);
 			}
@@ -117,6 +123,7 @@ let p1 = document.createElement("p");
 }
 
 </script>
-
+<script src="../opzioni.js"></script>
+	  <script src="/opzioni.js"></script>
 </body>
 </html>
