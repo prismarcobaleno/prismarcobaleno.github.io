@@ -257,7 +257,8 @@ pre {
   }
   
   .fotoblu {
-  background: black; color:aqua;
+  background-color: var(--scatola);
+  color: var(--testo);
   overflow: auto;
   
   margin: auto;
@@ -268,13 +269,20 @@ pre {
   border-radius: 5px;
   border: 1px solid cyan;
    max-width: 90%;
-   max-width: 800px
+   max-width: 800px;
 	}
 	
-   
+.cartinca {	
+	flex-grow: 1;
+	max-width: 99%;
+
+	margin: auto;
+	align-content:center;
+	}
+
  .forma {
-  background: var(--scatola);
-  color: var(--azzurro-t);
+  background-color: var(--scatola);
+  color: var(--testo);
   overflow: auto;
   
   margin: auto;
