@@ -245,8 +245,8 @@ pre {
   
 
   .grigio {
-   background: #222222; 
-  color: white;
+   background: var(--sfondo); 
+  color: var(--testo);
   border-radius: 5px;
   border: 3px solid red;
   overflow: auto;
@@ -257,7 +257,7 @@ pre {
   }
   
   .fotoblu {
-  background: black;
+  background: black; color:aqua;
   overflow: auto;
   
   margin: auto;
@@ -325,14 +325,14 @@ margin: 1%;
 
 .verdolina
 	{
-	background: rgba(0, 30, 0, 0.5); 
+	background: var(--verde); 
 	padding: 4px;
 	border-radius: 5px;
 	border: 2px solid rgba(00, 50, 00, 50);}
 
 input , textarea {
-background: black;
-color: inherit;
+background: var(--sfondo);
+color: var(--testo);
 font-weight: bold;
 }
 
