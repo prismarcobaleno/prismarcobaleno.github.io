@@ -15,9 +15,9 @@
 <body id="inizio">
 <style type="text/css">
   #workskin {
-  background: #000000;
+  background: var(--scatola);
   font-family: "Courier New", monospace, Arial, Helvetica, sans-serif;
-  color: #eeeeee;
+  color: var(--testo);
   padding: 2%
 }
 
@@ -25,14 +25,12 @@ h1 { text-align: center
   }
 
 #workskin .la {
-  background: #010101;
-  color: #aaffff;
+  color: var(--azzurro-t);
   padding-left: 10%;
 }
 
 #workskin .lb {
-  background: #010101;
-  color: #8b8bFF;
+  color: var(--verde-t);
   padding-left: 25%;
 }
 
@@ -45,6 +43,14 @@ h1 { text-align: center
 	<h1>
 	Rotta
 	</h1>
+
+<aside>
+      <!--<nav><p><a class="a" lang=tok href=./tomo/pona.html>lipu ni pi (toki-pona)</a></p></nav>--> 
+      <p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
+      <label for="chiara">Tema chiaro</label>
+      <noscript>: Solo per questa pagina</noscript></p>
+    </aside>
+    <script src="opzioni.js"></script>
 
 	</div>
 <div id="chapters">
