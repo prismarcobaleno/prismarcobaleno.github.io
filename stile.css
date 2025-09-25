@@ -289,8 +289,7 @@ pre {
 
 .segno img {
 	width:max-content;
-	align-self:center;
-	}
+	align-self:center; }
 
 abbr.dattil {text-decoration: none;}
 .dattil .segno {flex-direction: row;}
@@ -350,6 +349,12 @@ margin-left: -1em;}
 /*.diam details[open] > .diam ul {					list-style-type: '🔹 ';}*/
 .diam ul li:hover, .diam ul li:focus, .diam ul li:active { list-style-type: '🔹 ';}
 
+
+.gnrCounterx { justify-content: center ;
+	align-items: center ;
+	text-align: center ; 
+	width:fit-content;} 
+.gnrCounter-boldx {font-weight: bold ;}
 
 
 .pad {

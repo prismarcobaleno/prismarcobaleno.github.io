@@ -20,12 +20,14 @@
 		<img src="cuore.png" alt="logo ma [Kiku]" style="float: right;"></div>
 	</header>	
 
-		<aside id="impostazioni"><fieldset><legend>Impostazioni pagina</legend>
+		<aside id="impostazioni" class="flex">
+		<fieldset style="flex-grow: 2"><legend>Impostazioni pagina</legend>
 		<nav><p><a class="a" lang=tok href=./tomo.html>lipu ni pi (toki-pona)</a></p></nav>
 		<p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
 		<label for="chiara">Tema chiaro.</label>
 		<noscript>: Solo per questa pagina</noscript></p>
-		</fieldset></aside>
+		</fieldset>
+		</aside>
     	<script src="opzioni.js"></script>
 
 		<main role="directory" class="scatola flex">
@@ -91,14 +93,14 @@
 		<p>Casa vecchia.</p></li>
 		</ul>
 		</div>
-	</main>
-	<aside class=scatola>
+	
+	<div class=scatola>
 	<p>Nota: Il sito è un po' un macello in questo momento, quindi se trovi link rotti prova a cambiare l'indirizzo ché sicuramente ho sbagliato qualche barra, o qualche puntino, o non ho messo un ".html", o roba simile. I fogli di stile pure potrebbero essere rotti, ma dovrebbe essere tutto leggibile uguale...</p>
 	<p>Ah e poi ci sono altre pagine che non ho ancora collegato bene, se guardi sulla <a class="a" href="https://github.com/prismarcobaleno/prismarcobaleno.github.io" target="_blank" rel="noopener noreferrer">repo di github</a> direttamente le trovi.</p>
-	</aside>
-	
-	<footer><div class="scatola"><br>
-	<details open id=contatti><summary>Contatti</summary>
+	</div></main>
+
+	<div class="scatola">
+	<details open id=contatti><summary  style="text-align: center;">Contatti</summary>
 			<ul class=diam>
 			<li><a class="a" href="https://discord.com/channels/@me/383296195331620864" target="_blank" rel="noopener noreferrer">
 			Discord: eris.1468</a></li>
@@ -113,17 +115,66 @@
 			</ul>
 	</details>
 
-		<details><summary>Anello ita💍🇮🇹</summary>
+		<details style="text-align: center;"><summary>Anello ita💍🇮🇹</summary>
 		
 		<p><a class="a" href="https://itawebring.altervista.org/" role="button"  target="_blank" rel="noopener noreferrer">itawebring.altervista.org</a><p>
 		<p><a class="a" href="https://itawebring.altervista.org/anello?d=prev&url=https://prismarcobaleno.github.io/" target="_blank" role="button">sito precedente</a>, <br>
 		<a class="a" href="https://itawebring.altervista.org/anello?d=rand" target="_blank" role="button">sito casuale</a>, <br>
 		<a class="a" href="https://itawebring.altervista.org/anello?d=next&url=https://prismarcobaleno.github.io/" target="_blank" role="button">sito successivo</a>.</p>
-		</details><br>
+		</details>
 	</div>
-	
-	<p>🏳️‍🌈  2025  🏳️‍⚧️</p>
-	<nav> <a class="a" href=#inizio> Torna su</a> </nav>
-		</footer>
-	</div>
+	<footer>
+		<aside><center>
+	<!-- Default gnrcounter.com code for https://prismarcobaleno.github.io/ -->
+			<script language="JavaScript" type="text/javascript" src="./programmi/visite.js"></script>
+			<noscript>Contatore visite: più di una</noscript>
+		<!-- End of gnrcounter.com Code --> 
+	</aside></center>
+		<p id="data"></p><noscript>2025</noscript>
+		<p>🏳️‍🌈🏳️‍⚧️</p>
+		<nav> <a class="a" href=#inizio> Torna su</a> </nav>
+	</footer>
 </body> 
+
+<script language="Javascript">
+<!--
+data = new Date();
+ora = data.getHours();
+minuti=data.getMinutes();
+secondi=data.getSeconds();
+giorno = data.getDay();
+mese = data.getMonth();
+date = data.getDate();
+year = data.getFullYear();
+
+if(minuti < 10) minuti="0"+minuti;
+if(secondi < 10) secondi="0"+secondi;
+//if(ora <10) ora="0"+ora;
+
+if(giorno == 0) giorno = "Domenica";
+if(giorno == 1) giorno = "Lunedì";
+if(giorno == 2) giorno = "Martedì";
+if(giorno == 3) giorno = "Mercoledì";
+if(giorno == 4) giorno = "Giovedì";
+if(giorno == 5) giorno = "Venerdì";
+if(giorno == 6) giorno = "Sabato";
+
+if(mese == 0) mese = "gennaio";
+if(mese == 1) mese = "febbraio";
+if(mese == 2) mese = "marzo";
+if(mese == 3) mese = "aprile";
+if(mese == 4) mese = "maggio";
+if(mese == 5) mese = "giugno";
+if(mese == 6) mese = "luglio";
+if(mese == 7) mese = "agosto";
+if(mese == 8) mese = "settembre";
+if(mese == 9) mese = "ottobre";
+if(mese == 10) mese = "novembre";
+if(mese == 11) mese = "dicembre";
+
+
+
+let p1 = document.getElementById("data");
+p1.innerHTML = (giorno+" "+date+" "+mese+" "+year+", ore "+ora+":"+minuti+"");
+//-->
+</script>
