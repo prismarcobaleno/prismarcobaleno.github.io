@@ -287,6 +287,22 @@ pre {
 	align-content:center;
 	}
 
+.segno img {
+	width:max-content;
+	align-self:center;
+	}
+
+.dattil .segno {flex-direction: row;}
+
+p.segno {display:flex;
+flex-direction: column;
+flex-wrap: wrap;
+background-color: white;
+border-left: 1px solid var(--testo);
+border-right: 1px solid var(--testo);
+width: max-content;
+max-height: 100%;}
+
  .forma {
   background-color: var(--scatola);
   color: var(--testo);
