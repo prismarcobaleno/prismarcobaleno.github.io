@@ -292,9 +292,14 @@ pre {
 	align-self:center;
 	}
 
+abbr.dattil {text-decoration: none;}
 .dattil .segno {flex-direction: row;}
+.segno hr {
+  display: inline;
+  width: 80%
+}
 
-p.segno {display:flex;
+p.segno, div.segno {display:flex;
 flex-direction: column;
 flex-wrap: wrap;
 background-color: white;
@@ -302,6 +307,9 @@ border-left: 1px solid var(--testo);
 border-right: 1px solid var(--testo);
 width: max-content;
 max-height: 100%;}
+
+.traspa {width:0px; height: 0px;
+		overflow: hidden;}
 
  .forma {
   background-color: var(--scatola);
