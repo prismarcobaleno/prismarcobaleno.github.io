@@ -27,6 +27,8 @@
 	--verde: darkgreen;
 	--azzurro-t: lightblue;
 	--azzurro: #056 ;
+
+	--dettagli: rgba(00, 100, 50, 0.5);
 	}
 
 :root:has(#chiara:checked) {
@@ -44,6 +46,8 @@
 	--verde: rgb(180, 230, 180);
 	--azzurro-t: #056;
 	--azzurro: lightblue;
+
+	--dettagli: rgba(50, 200, 90, 0.5);
 
 }
 
@@ -334,12 +338,12 @@ max-height: 100%;}
 
 
   summary {
-	background: rgba(00, 100, 50, 0.5);
+	background-color: var(--dettagli);
 	font-weight: bold;
 	}
 	
   details {
-  	border: 1px solid rgba(00, 100, 50, 0.5);
+  	border: 1px solid var(--dettagli);
   	border-radius: 3px;
   	margin: 1px;
 	}
