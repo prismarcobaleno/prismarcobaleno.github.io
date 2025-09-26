@@ -69,10 +69,11 @@
 	 <span class=scuro > testo nascosto </span></p>
 	-->
 	
-  <footer> 
+  <footer>
+	<?php include("./programmi/visite.php"); ?>  
 	<p> 29 agosto 2025 </p>
 	<p> <a class="a" href=#inizio> Torna su </a> </p>
-	<p> <i><a class="a" href=index.html> Casa. </a></i> </p> 
+	<p> <i><a class="a" href="/"> Casa. </a></i> </p> 
   </footer>
 	
   </body>

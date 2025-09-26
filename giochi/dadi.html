@@ -22,8 +22,8 @@
   
     <h1 id="inizio" class="h1">Dadi</h1>
    <div class=scatolina> 
-    <h2>Dadi particolari per un gioco di ruolo chiamato <a class="a" href="https://possumcreekgames.itch.io/7-part-pact" target="_blank" rel="noopener noreferrer">"Patto in Sette Parti"</a>.</h2> 
-        <p>Clicca sui dadi per lanciarli. Creati con <a class="a" href="https://flipsimu.com/embed-tutorial/"  target="_blank" rel="noopener noreferrer">Flipsimu</a>. (Se non funzionano, prova a cambiare lo zoom.)</p>
+    <h2>Dadi per il <a class="a" href="https://possumcreekgames.itch.io/7-part-pact" target="_blank" rel="noopener noreferrer">"Patto in Sette Parti"</a>.</h2> 
+        <p>Clicca sui dadi per lanciarli, e appariranno i risultati nel <a class=a href="#lanci">registro dei lanci</a> qua sotto. Oppure lancia dei dadi visivi con flipsimu!</p>
    </div> 
 
    <aside>
@@ -43,75 +43,144 @@
     overflow: hidden;"> 
     <iframe src="https://flipsimu.com/emb/d4?id=6iQKE"></iframe>
     </div> -->
-<div  style="display: flex; flex-wrap: wrap;">
-  
+<main  style="display: flex; flex-wrap: wrap;">
+  <style> .scatola {flex-grow: 1; margin: 1%}
+    button {background-color: var(--sfondo);
+              color: var(--testo)}
+  </style>
    <div class="scatola">
     <h3>Personale</h3> 
-    D6 (+, ♃, ♃, ♃, ♂, ♀). Niente ☿, ☾, ♄, ♆, ☉, o 🜍.⠀⠀⠀
-    <div style="position: relative;
-    padding-bottom: 20%;
-    padding-top: 35px;
-    height: 30%;
-    min-width: 450px;
-    overflow: hidden;">
-     <iframe src="https://flipsimu.com/emb/dice?id=BAtWK" width="100%" height="430px"></iframe>
-    </div> 
+     <p><button onclick="personale()">Lancia personale</button> <span id="personale"></span></p>
+
+     <p>D6: + (sale), ♃ (3 giove), ♂ (marte), ♀ (venere).</p>
+     <a class=a href="https://flipsimu.com/emb/dice?id=x2Hgn">Dado personale flipsimu</a>
+
    </div>
    
   <div class="scatola" >
     <h3>Arcano</h3> 
-    D8 (+, ♃, ♃, ♃, ♂, ♀, ☿, ☾). Niente ♄, ♆, ☉, o 🜍.⠀⠀⠀
-    <div style="position: relative;
-    padding-bottom: 20%;
-    padding-top: 35px;
-    height: 30%;
-    min-width: 450px;
-    overflow: hidden;"> 
-     <iframe src="https://flipsimu.com/emb/d8?id=zDKgT" width="100%" height="430px" frameborder="0"></iframe>
-    </div> 
+    <p><button onclick="arcano()">Lancia arcano</button> <span id="arcano"></span></p>
+    <p>D8: come sopra, più ☿ (mercurio) e ☾ (luna). </p>
+     <a class=a href="https://flipsimu.com/emb/d8?id=zDKgT">Dado arcano flipsimu</a>
+     
   </div>
 
   <div class="scatola" >
     <h3>Magistrale</h3> 
-    D10 (+, ♃, ♃, ♃, ♂, ♀, ☿, ☾, ♄, ♆). Niente ☉ o 🜍.⠀⠀⠀
-     <div style="position: relative;
-    padding-bottom: 20%;
-    padding-top: 35px;
-    height: 30%;
-    min-width: 450px;
-    overflow: hidden;"> 
-     <iframe src="https://flipsimu.com/emb/d10?id=ggi5C" width="100%" height="430px"></iframe>
-    </div> 
+    <p><button onclick="magistrale()">Lancia magistrale</button> <span id="magistrale"></span></p>
+  
+    <p>D10: come sopra, più ♄(saturno) e ♆(nettuno).</p>
+     <a class=a href="https://flipsimu.com/emb/d10?id=ggi5C">Dado magistrale flipsimu</a>
+     
   </div> 
    
   <div class="scatola" > 
     <h3>Mitico</h3>
-    D12 (+, ♃, ♃, ♃, ♂, ♀, ☿, ☾, ♄, ♆, ☉, 🜍). Ogni simbolo.
-     <div style="position: relative;
-    padding-bottom: 20%;
-    padding-top: 35px;
-    height: 30%;
-    min-width: 450px;
-    overflow: hidden;"> 
-     <iframe src="https://flipsimu.com/emb/d12?id=MUV5s" width="100%" height="430px"></iframe>
+  <p><button onclick="mitico()">Lancia mitico</button> <span id="mitico"></span></p>
+    <p>D12: come sopra, più ☉(sole) e 🜍(zolfo). <br>Ogni simbolo.</p>
+    <p>(So che il simbolo dello zolfo è rotto.)</p>
+     <a class=a href="https://flipsimu.com/emb/d12?id=MUV5s">Dado mitico flipsimu</a>
     </div> 
-  </div>  
-</div>  
-    <!-- 
-    <p>testo nascosto: 
-     <span class=scuro > testo nascosto </span></p>
- 
-    <img
-      src="LINK.png"
-      alt="" > 
-        <details> <summary class="sfondo"> Immagine </summary>
-         <figcaption> Descrizione </figcaption> 
-        </details>
-    -->
+  </main>  
+
+<aside><div class="scatolina" id="lanci"><h3>Risultati:</h3>
+  <ul class="fissa" id="finestra">
+  </ul>
+  <br>
+  <button onclick="cancella()">Cancella registro lanci</button>
+</div></aside>
+    
+
+
+   <script> 
+
+    function scrivi(tiro) { 
+      if (tiro === "+") {return (tiro + " (sale)")}
+      if (tiro === "♃") {return (tiro + " (giove)")}
+      if (tiro === "♂") {return (tiro + " (marte)")}
+      if (tiro === "♀") {return (tiro +=" (venere)")}
+      if (tiro === "☿") {return (tiro +=" (mercurio)")}
+      if (tiro === "☾") {return (tiro +=" (luna)")}
+      if (tiro === "♄") {return (tiro +=" (saturno)")}
+      if (tiro === "♆") {return (tiro +=" (nettuno)")}
+      if (tiro === "☉") {return (tiro +=" (sole)")}
+      if (tiro === "🜍") {return (tiro +=" (zolfo)")}
+      else {return (tiro +=" (zolfo)")}
+    }
+
+    function personale(){    
+        var quante = 6,
+        facce = '+♃♃♃♂♀',
+        stringa = '';
+        nome= "Personale";
+      for (var i = 0; i < 1; i++) {
+        var tiro = facce.charAt(Math.floor(Math.random() * facce.length));
+      stringa += tiro; tiro = scrivi(tiro);
+      let d = new Date();
+      document.getElementById("personale").innerHTML = tiro ;
+    registra(tiro);}
+    }
+
+    function arcano(){    
+        var quante = 8,
+        facce = '+♃♃♃♂♀☿☾',
+        stringa = '';
+        nome = "Arcano";
+      for (var i = 0; i < 1; i++) {
+        var tiro = facce.charAt(Math.floor(Math.random() * facce.length));
+      stringa += tiro; tiro = scrivi(tiro);
+      let d = new Date();
+      document.getElementById("arcano").innerHTML = tiro ;
+    registra(tiro);}
+    }
+
+    function magistrale(){    
+        var quante = 10,
+        facce = '+♃♃♃♂♀☿☾♄♆',
+        stringa = '';
+        nome = "Magistrale";
+      for (var i = 0; i < 1; i++) {
+        var tiro = facce.charAt(Math.floor(Math.random() * facce.length));
+      stringa += tiro; tiro = scrivi(tiro);
+      let d = new Date();
+      document.getElementById("magistrale").innerHTML = tiro;
+      registra(tiro);}
+    }
+    function mitico(){    
+        var quante = 12,
+        facce = '+♃♃♃♂♀☿☾♄♆☉🜍',
+        stringa = '';
+        nome = "Mitico";
+      for (var i = 0; i < 1; i++) {
+        var tiro = facce.charAt(Math.floor(Math.random() * facce.length));
+        stringa += tiro;
+        console.log(tiro); 
+        tiro = scrivi(tiro); 
+        let d = new Date();
+        document.getElementById("mitico").innerHTML = tiro ;
+        registra(tiro);
+        }
+      }
+
+    const finestra = document.getElementById("finestra");
+
+    function registra(tiro) {
+      var l1 = document.createElement("li");
+
+      l1.innerHTML = ( tiro + " (" + nome + ")");
+    finestra.appendChild(l1);      
+    finestra.scrollBy({ top: 1000, behavior: "smooth" });}
+
+    function cancella() {
+      finestra.innerHTML = ("Registro cancellato");
+    }
+
+    </script>
     
   <footer> 
     <p> 2024 </p>
     <p> <a class="a" href=#inizio> Torna su </a> </p>
+    <p> <a class="a" href="../giochi.html"> giochi </a> </p>
     <p> <i><a class="a" href=/> Casa. </a></i> </p> 
   </footer>
     

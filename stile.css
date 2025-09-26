@@ -234,10 +234,17 @@ pre {
   border: 1px solid var(--azzurro-t);
   overflow: auto;
   
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1px;
+  margin-bottom: 1px;
 	padding: 1%
   } 
+
+  .fissa{
+	border: 2px solid var(--azzurro);
+  	border-radius: 5px;
+  max-height: 18em;
+  overflow: scroll;
+	background-color: rgba(63, 124, 124, 0.082);}
   
 .scatola { 
 	background: var(--scatola);
