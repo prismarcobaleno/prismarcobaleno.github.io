@@ -446,7 +446,7 @@ border: 2px solid red;
 td, table, th, caption {border:1px solid var(--azzurro) ;}
  th, caption{ background-color: var(--sfondo); border: 1px solid var(--azzurro);}
 /*13kart*/
-.tabella {max-width:100%; overflow: scroll;}
+.tabella {max-width:100%; overflow: auto;}
 
 /* [lang="en"] {
  font-family: "seli kiwen juniko", sans-serif;
