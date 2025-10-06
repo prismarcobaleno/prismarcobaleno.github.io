@@ -443,6 +443,10 @@ border: 2px solid red;
 	/*display: flex;*/
 	justify-content: flex-end;}
 
+td, table, th, caption {border:1px solid var(--azzurro) ;}
+ th, caption{ background-color: var(--sfondo); border: 1px solid var(--azzurro);}
+/*13kart*/
+.tabella {max-width:100%; overflow: scroll;}
 
 /* [lang="en"] {
  font-family: "seli kiwen juniko", sans-serif;
