@@ -448,6 +448,9 @@ td, table, th, caption {border:1px solid var(--azzurro) ;}
 /*13kart*/
 .tabella {max-width:100%; overflow: auto;}
 
+dt {font-weight:bold; margin-top: 1em}
+dt, dd {background-color: var(--scatola-verde); color: var(--testo)}
+
 /* [lang="en"] {
  font-family: "seli kiwen juniko", sans-serif;
   	font-size: inherit;
