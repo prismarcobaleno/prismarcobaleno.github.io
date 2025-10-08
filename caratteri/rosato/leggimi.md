@@ -1,0 +1,1 @@
+Rosato fatto con pentacom.jp/pentacom/bitfontmaker2
