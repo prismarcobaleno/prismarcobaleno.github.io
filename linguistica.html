@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class=html lang=it>
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Linguistica - Caleidoscopio</title>
+	<meta property="og:title" content="Linguistica - Caleidoscopio">
+	<link rel="icon" type="image/png" href="cuore.png" >
+	<!--<meta property="og:image" content="cuore.png">
+	<meta property="og:description" content=" ">
+	-->
+	<link href="./stile.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/stile.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body class=body>
+	<header>
+		<h1 class=h1 id="inizio">Linguistica</h1>
+		<!-- <div class=scatolina>Sottotitolo</div> -->
+	</header>
+	
+	<aside>
+		<!--<nav><p><a class="a" lang=tok href=./tomo/esempio-pona.html>lipu ni pi (toki-pona)</a></p></nav>-->
+		<p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
+		<label for="chiara">Tema chiaro</label>
+		<noscript>: Solo per questa pagina</noscript></p>
+	</aside>
+	<script src="opzioni.js"></script>
+
+	<main class=scatola> 
+		<h2 class="v">Sotto-pagine</h2>
+		
+		<ul>
+		<li><a class="a" href="./linguistica/sestimale.html">sestimale</a>
+			<p>Come leggere un sistema di numerazione in base 6.</p>
+		</li>
+		
+		<li><a class="a" href="./linguistica/nembo.html">nembo</a>
+			<p>I miei compiti</p>
+		</li>
+		
+		<li><del class="a" href="./linguistica/parisina.html">parisina</del>
+			<p>Dizionario segreto.</p>
+		</li>
+		
+		
+		</ul>
+		
+		<h2 class="v">Scritture diverse</h2>
+		<label for="sitelen">Scrivi in sitelen pona:</label><br>
+		<textarea lang="tok" class="textarea" id="sitelen" placeholder="o sitelen" 
+		contenteditable=""></textarea>
+		
+		<hr>
+		<h3 id="rosato">Testo rosato</h3>
+		<p><span class="rosato">kwesto 'e testo roSato</span></p>
+		<label for="rosata">Scrivi in rosato:</label><br>
+		<textarea class="textarea rosato" id="rosata" placeholder="prova" 
+		contenteditable=""></textarea>
+		<p><a class="a" href="./caratteri/rosato/rosato.ttf">Scarica carattere rosato (tff)</a>, o
+		<a class="a" href="./caratteri/rosato/rosato_20251008-.txt">importa rosato</a> con  <a class="a" href="https://www.pentacom.jp/pentacom/bitfontmaker2/#">pentacom.jp</a></p>
+		<br>
+		
+		<hr>
+		<h3>Testo in Lingua Italiana dei Segni</h3>
+		<p>Nota: se il sito è in modalità notte, i colori sono invertiti, e il dorso della mano è bianco.</p>
+	<div class="colonne">		
+		<div class="segno" lang="sgn">
+			<img src="https://swis.wmflabs.org/glyphogram.php?text=M21x57S30004n18xn17S34400n18xn17S11502n11x23S26606n9x41&pad=10&name=nome" class="segno" alt="nome">
+			
+			<img src="https://swis.wmflabs.org/glyphogram.php?text=M21x70S34400n17xn17S36d00n21x23S100110x31S20600n14x59&pad=10&name=" 
+			class="segno" alt="mio">
+			<span role="img" aria-label="ABCD" class="dattil">
+				<img class="segno" src="./caratteri/LIS/a.png" 
+				role="presentation" alt="A">
+				<img class="segno" src="./caratteri/LIS/b.png" 
+				role="presentation" alt="B">
+				<img class="segno" src="./caratteri/LIS/c.png" 
+				role="presentation" alt="C">
+				<img class="segno" src="./caratteri/LIS/d.png" 
+				role="presentation" alt="D"></span>
+			<hr>
+		</div>
+		<div class="segno" lang="sgn">
+			<img src="https://swis.wmflabs.org/glyphogram.php?text=M21x57S30004n18xn17S34400n18xn17S11502n11x23S26606n9x41&pad=10&name=nome" class="segno" alt="nome">
+			
+			<img src="https://swis.wmflabs.org/glyphogram.php?text=M21x70S34400n17xn17S36d00n21x23S100110x31S20600n14x59&pad=10&name=" 
+			class="segno" alt="mio">
+			<span role="img" aria-label="ADA" class="dattil">
+				<img class="segno" src="./caratteri/LIS/a.png" 
+				role="presentation" alt="A">
+				<img class="segno" src="./caratteri/LIS/d.png" 
+				role="presentation" alt="D">
+				<img class="segno" src="./caratteri/LIS/a.png" 
+				role="presentation" alt="A"></span>
+			<hr>
+		</div>
+	</div>	
+ 
+		
+		<!--
+		<p>testo nascosto: 
+		 <span class=scuro > testo nascosto </span></p>
+		-->
+	</main>
+	
+	<footer> 
+	<p> 2025 </p>
+	<p> <a class="a" href="#inizio"> Torna su </a> </p>
+	<p> <i><a class="a" href="/"> Casa. </a></i> </p> 
+	</footer>
+	
+  </body>
+</html>
