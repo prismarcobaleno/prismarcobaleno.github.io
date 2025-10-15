@@ -1,0 +1,157 @@
+:root {
+  --sfondo-testo: black;
+  --sfondo-nero: black;
+  --s0: white;
+  --s1: black;
+  --s2: black;
+  --s3: black;
+  --s4: black;
+  --s5: black;
+  --s6: black;
+  --s7: black;
+  --s8: black;
+  --s9: black;
+  --sx: black;
+  --sy: black;
+  --sz: black;
+
+  --n0: black;
+  --n1: white;
+  --n2: #0ee;
+  --n3: #f66;
+  --n4: #4af;
+  --n5: #f5e;
+  --n6: #c9a;
+  --n7: #4f4;
+  --n8: #48f;
+  --n9: #d66;
+  --nx: #fae;
+  --ny: #ee0;
+  --nz: #a9b;
+	}
+
+:root:has(#chiara:checked) {
+  --sfondo-testo: white;
+--sfondo-nero: rgb(199, 199, 199);
+  --n0: white;
+  --n1: black;
+  --n2: black;
+  --n3: black;
+  --n4: black;
+  --n5: black;
+  --n6: black;
+  --n7: black;
+  --n8: black;
+  --n9: black;
+  --nx: black;
+  --ny: black;
+  --nz: black;
+
+  --s0: black;
+  --s1: white;
+  --s2: #0ee; 
+  --s3: #F66;
+  --s4: #4af;
+  --s5: #f5e;
+  --s6: #c9a;
+  --s7: #4f4;
+  --s8: #6bf;
+  --s9: #d66;
+  --sx: #fae;
+  --sy: #ee0;
+  --sz: #a9b;
+}
+
+:root:has(#grigia:checked) .vuoto b{
+ color: var(--testo);
+ background-color: var(--sfondo-testo);
+}
+:root:has(#grigia:checked) .vuoto {
+  background-color: var(--sfondo-testo);
+}
+
+b {font-weight: normal;}
+
+.vuoto {
+  background: var(--sfondo-nero);
+}
+
+.vuoto b{ 
+  padding: 2px;
+}
+
+p:has(.n1), p:has(.n0) {text-align: center;}
+ .n0 {text-align: center;
+  background: var(--n1);
+  color: var(--sfondo-nero);
+}
+ .n1 {text-align: center;
+  background: var(--s1);
+  color: var(--n1);
+}
+
+ .n2 {
+  background: var(--s2);
+  color: var(--n2);
+  margin-left: 45%;
+}
+
+ .n3 {
+  background: var(--s3);
+  color: var(--n3);
+  margin-left: 33%;
+}
+
+ .n4 {
+  background: var(--s4);
+  color: var(--n4);
+  margin-left: 25%;
+}
+
+ .n5 {
+  background: var(--s5);
+  color: var(--n5);
+  margin-left: 20%;
+}
+
+ .n6 {
+    background: var(--s6);
+  color: var(--n6);
+  margin-left: 17%;
+}
+
+ .n7 {
+  margin-left: 14%;
+  background: var(--s7);
+  color: var(--n7);
+}
+
+ .n8 {
+  background: var(--s8);
+  color: var(--n8);
+  margin-left: 12%;
+}
+
+ .n9 {
+  background: var(--s9);
+  color: var(--n9);
+  margin-left: 11%;
+}
+
+ .nx {
+  background: var(--sx);
+  color: var(--nx);
+  margin-left: 10%;
+}
+
+ .ny {
+  background: var(--sy);
+  color: var(--ny);
+  margin-left: 9%;
+}
+
+ .nz {
+  background: var(--sz);
+  color: var(--nz);
+  margin-left: 8%;
+}

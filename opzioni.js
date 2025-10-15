@@ -20,6 +20,23 @@ function cliccaChiara(){
 	console.log("temaSalvatoLS " + localStorage.getItem("temaSalvato"));
 	}
 
+
+/*  Modalità in bianco e nero */
+let grigioSalvato = localStorage.getItem("grigioSalvato");
+function caricaTema () {
+	if(grigioSalvato == "true"){ 
+		document.getElementById("grigia").checked = true;}
+	else {document.getElementById("grigia").checked = false;};
+	console.log("grigioSalvatoLS " + localStorage.getItem("grigioSalvato"));
+	}
+
+function cliccaGrigia(){
+	let grigio = document.getElementById("grigia").checked;
+	localStorage.setItem("grigioSalvato", grigio);
+	console.log("grigio " + grigio)
+	console.log("grigioSalvatoLS " + localStorage.getItem("grigioSalvato"));
+	}
+
 /* Questo qua sotto fa la stessa cosa ma non col tema,
  con la casella dei simboletti sitelen pona.*/
 let sitelenAwen = localStorage.getItem("sitelenAwen");
