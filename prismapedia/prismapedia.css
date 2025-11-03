@@ -141,3 +141,19 @@ hr{color: var(--azzurro); width:99% }
 .grigino {filter:brightness(30)}
 
 .contenuto-sinistro {float: left; flex-grow: 1; width: 49%; padding:1%}
+
+
+
+.figurapedia {
+	background-color: var(--tavola-centro);
+	padding: 1%;
+	border: 1px solid var(--tavola-bordo);
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.figurapedia img {
+	border:  1px solid var(--tavola-bordo);
+	max-width: 100%;
+}
