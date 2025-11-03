@@ -1,0 +1,159 @@
+:root {
+	--testo: white;
+	--testo-sel: #024;
+	--sfondo: rgb(37, 37, 43);
+	--sfondo-sel: antiquewhite;
+
+	--tavola: rgb(16, 16, 17);
+	--tavola-bordo: rgb(58, 62, 75);
+    --tavola-centro: #323335;
+
+    --azzurro: #2b3d50;
+
+    --articolo-s:black;
+
+	--allaccio: yellow;
+	--allaccio-v: orange;
+	--allaccio-r: red;
+
+	--dettagli: rgba(00, 100, 50, 0.5);
+	}
+
+:root:has(#chiara:checked) {
+	--testo: black;
+	--testo-sel: antiquewhite;
+	--sfondo: #e3e8f1;
+	--sfondo-sel: #024;
+
+	--tavola: rgb(249, 251, 253);
+	--tavola-bordo: rgb(175, 184, 211);
+    --tavola-centro: #e3e8f1;
+
+    --azzurro: #b9cee7;
+
+    --articolo-s: white;
+
+	--allaccio: blue;
+	--allaccio-v: purple;
+	--allaccio-r: red;
+	
+
+	--dettagli: rgba(50, 200, 90, 0.5);
+
+}
+
+  a:link{
+	color: var(--allaccio);
+	text-decoration: none; 
+	font-weight: bold;
+	border-bottom: 1px solid var(--allaccio);
+	}
+  
+  /* link visitato */
+  a:visited {
+	color: var(--allaccio-v);
+	text-decoration: none;
+	/* nasconde la sottolineatura per link già cliccati*/
+	}
+	
+  /* mouse sul link */
+  a:hover {
+	color: var(--allaccio-v);
+	text-decoration: none;
+	}
+  
+  /* link selezionato */
+  a:active {
+	color: (var(--allaccio-r));
+	text-decoration: none;
+	}
+
+    ::selection {
+  color: var(--testo-sel);
+  background: var(--sfondo-sel);
+}
+
+
+
+
+
+
+html {font-family: Arial, sans-serif, serif;
+		font-size: 12pt; 
+        background-color: var(--sfondo);
+        color: var(--testo)}
+
+
+		h2.cjk { font-family: "Noto Serif CJK SC" }
+		h2.ctl { font-family: "Noto Sans Devanagari" }
+
+.tutto { display:flex; flex-wrap: wrap; flex-direction: row-reverse;}
+
+.slogan{color: #3d495a; padding-top: 0%; }
+.titolo-art{font-family: serif; margin-bottom: 0;padding-left:0.5%;}
+.sottotitolo{padding-left: 0.5%;}
+summary{cursor: pointer;}
+
+
+
+.tablizza{float:right; flex-grow: 1; width: 49%;}
+table{max-width:100%;
+			height: fit-content;
+		border-collapse: collapse;
+		background-color: var(--tavola); 
+		border: 2px solid var(--tavola-bordo)}
+th, .th {background: var(--azzurro); text-align: center;
+		padding:4px;}
+
+.centro {background: var(--tavola-centro); padding: 5px; margin:1px;}
+
+td { border: 1px solid var(--azzurro); padding-left: 4px;}
+td li {margin-left: -1.5em ;}
+
+
+main{ padding:0.5%; 
+			border: 1px solid var(--azzurro);
+			background-color: var(--articolo-s)}
+h1, .titolino{font-size: 20px; font-family: serif; 
+			padding-bottom: 0%; padding-top: 0%;
+			margin-top: 0%; margin-bottom: 0%;
+			padding-left: 3px;}
+a.prismapedia {text-decoration: none;}
+
+h3 {padding-bottom: 0%;  margin-bottom: 0%; display:inline; font-family: serif;}
+
+
+
+.dintra{display: inline;}
+
+hr{color: var(--azzurro); width:99% }
+
+.citazione::after{ content: " ...";} 
+.puntini[open] .citazione::after{ content: "";} 		
+
+.nota:active, .nota:focus{
+    background: var(--testo-sel);
+    color: var(--sfondo-sel);}
+
+
+.collega-destra{text-align: right; float: right; margin:2%;}
+
+.grigino {filter:brightness(30)}
+
+.contenuto-sinistro {float: left; flex-grow: 1; width: 49%; padding:1%}
+
+
+
+.figurapedia {
+	background-color: var(--tavola-centro);
+	padding: 1%;
+	border: 1px solid var(--tavola-bordo);
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.figurapedia img {
+	border:  1px solid var(--tavola-bordo);
+	max-width: 100%;
+}
