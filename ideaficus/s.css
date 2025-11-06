@@ -21,43 +21,85 @@
 }
 
 
+:root {
+	--testo: white;
+	--testo-sel: #024;
+	--sfondo: #002;
+	--sfondo-sel: #eff;
+
+	--scatola: rgba(0, 0, 0, 0.5);
+	--scatola-verde: rgba(0, 20, 0, 0.5);
+	--allaccio: yellow;
+	--allaccio-v: orange;
+	--allaccio-r: red;
+	--verde-t: lightgreen;
+	--verde: darkgreen;
+	--azzurro-t: lightblue;
+	--azzurro: #056 ;
+
+	--dettagli: rgba(00, 100, 50, 0.5);
+	}
+
+:root:has(#chiara:checked) {
+	--testo: black;
+	--testo-sel: #eef;
+	--sfondo: #eec;
+	--sfondo-sel: #024;
+
+	--scatola: rgba(250, 250, 255, 0.6);
+	--scatola-verde: rgba(210, 220, 210, 0.5);
+	--allaccio: blue;
+	--allaccio-v: purple;
+	--allaccio-r: red;
+	--verde-t: darkgreen;
+	--verde: rgb(180, 230, 180);
+	--azzurro-t: #056;
+	--azzurro: lightblue;
+
+	--dettagli: rgba(50, 200, 90, 0.5);
+
+}
+
+/* link (copiato da SOGNO.CSS)*/
+  a:link{
+	color: var(--allaccio);
+	text-decoration: none; 
+	font-weight: bold;
+	border-bottom: 1px solid var(--allaccio);
+	}
+  
+  /* link visitato */
+  a:visited {
+	color: var(--allaccio-v);
+	text-decoration: none;
+	/* nasconde la sottolineatura per link già cliccati*/
+	}
+	
+  /* mouse sul link */
+  a:hover {
+	color: var(--allaccio-v);
+	text-decoration: none;
+	}
+  
+  /* link selezionato */
+  a:active {
+	color: (var(--allaccio-r));
+	text-decoration: none;
+	}
+
+
 .centro{
   text-align:center;
 }
 
 html	{
-	background: black;
-	color: white;
+	background: var(--sfondo);
+	color: var(--testo);
 	font-family: "Adys", sans-serif;
 	}
 html.greca{font-family: sans-serif;}
 
-/* link (copiato da SOGNO.CSS)*/
-  a:link{
-	color: yellow;
-	text-decoration: none;
-	font-weight: bold;
-	border-bottom: 1px solid #ffff55;
-	}
 
-  /* link visitato */
-  a:visited {
-	color: orange;
-	text-decoration: none;
-	/* nasconde la sottolineatura per link già cliccati*/
-	}
-
-  /* mouse sul link */
-  a:hover {
-	color: lightyellow;
-	text-decoration: none;
-	}
-
-  /* link selezionato */
-  a:active {
-	color: pink;
-	 text-decoration: none;
-	}
 
 
 /* a {
