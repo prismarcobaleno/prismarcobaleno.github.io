@@ -105,7 +105,8 @@ table{max-width:100%;
 th, .th {background: var(--azzurro); text-align: center;
 		padding:4px;}
 
-.centro {background: var(--tavola-centro); padding: 5px; margin:1px;}
+.centro {background: var(--tavola-centro); padding: 5px; margin:1px;
+max-width: 50%}
 
 td { border: 1px solid var(--azzurro); padding-left: 4px;}
 td li {margin-left: -1.5em ;}
