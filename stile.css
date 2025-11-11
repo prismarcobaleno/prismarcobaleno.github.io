@@ -443,6 +443,10 @@ border: 2px solid red;
  	font-size: larger; font-weight: normal;
  	letter-spacing: 0;
  }
+.ju {
+	font-family:  sans-serif;
+ 	letter-spacing: 0;
+ }
  
 
 @font-face {
@@ -452,10 +456,6 @@ border: 2px solid red;
 .rosato {font-family: "rosato", sans-serif; letter-spacing: 0;
 	font-size: larger; font-weight: normal;}
 
- .ju {
-	font-family:  sans-serif;
- 	letter-spacing: 0;
- }
 
  #impostazioni {
 	/*display: flex;*/

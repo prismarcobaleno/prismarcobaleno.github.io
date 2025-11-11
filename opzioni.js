@@ -23,7 +23,7 @@ function cliccaChiara(){
 
 /*  Modalità in bianco e nero */
 let grigioSalvato = localStorage.getItem("grigioSalvato");
-function caricaTema () {
+function caricaGrigia () {
 	if(grigioSalvato == "true"){ 
 		document.getElementById("grigia").checked = true;}
 	else {document.getElementById("grigia").checked = false;};
@@ -59,5 +59,6 @@ function basta() {localStorage.clear();}
 
 /* Chiama le funzioni */
 caricaTema();	
+caricaGrigia();
 caricaSitelen();	
 

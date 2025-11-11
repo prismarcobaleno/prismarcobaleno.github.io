@@ -158,3 +158,30 @@ hr{color: var(--azzurro); width:99% }
 	border:  1px solid var(--tavola-bordo);
 	max-width: 100%;
 }
+
+.categorie {padding: 1%;
+		border: 1px solid var(--azzurro);}
+		
+		
+
+@font-face {
+	font-family: "seli kiwen asuki";
+	src: url(../caratteri/sitelenselikiwen/sitelenselikiwenasuki.eot);
+	src: url(../caratteri/sitelenselikiwen/sitelenselikiwenasuki.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "seli kiwen juniko";
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenjuniko.eot);
+	src: url(./caratteri/sitelenselikiwen/sitelenselikiwenjuniko.ttf) format("truetype");
+}
+
+ :not(:root:has(#sitelen:checked))  [lang="tok"] {
+ font-family: "seli kiwen asuki", sans-serif;
+ 	font-size: larger; font-weight: normal;
+ 	letter-spacing: 0;
+ }
+.ju {
+	font-family:  sans-serif;
+ 	letter-spacing: 0;
+ }

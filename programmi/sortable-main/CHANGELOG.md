@@ -1,0 +1,247 @@
+<!-- markdownlint-disable MD024 -->
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [4.1.7] - 2025-10-26
+
+### Fixed
+
+- Removed a `console.log` from **updateSortableAriaLabel.ts** 🤦
+
+## [4.1.6] - 2025-10-21
+
+### Fixed
+
+- The a11y module no longer marks columns with class="no-sort" as sortable
+
+## [4.1.5] - 2025-10-16
+
+### Changed
+
+- Minor improvements, slightly smaller file size and better logic
+
+## [4.1.4] - 2025-10-15
+
+### Fixed
+
+- Null last had stopped working. Without the test picking it up. 🤨
+
+## [4.1.3] - 2025-09-27
+
+### Fixed
+
+- Improved sorting logic to handle `<time>`, `<data>`, `<meter>`, `<progress>`, and `<abbr>` tags correctly.
+
+## [4.1.2] - 2025-09-24
+
+### Fixed
+
+- Trimmed whitespace inside `<td>` tags before comparison to prevent mismatches.
+
+## [4.1.1] - 2025-08-24
+
+### Removed
+
+- removed `"postinstall": "pnpm exec playwright install --with-deps"` from package.json.
+
+## [4.1.0] - 2025-08-24
+
+### Added
+
+- Added the full featured `sortable.auto.js` flavour, which contains accessibility, auto-initialization, and a mutation observer that sorts `.sortable` tables when they are added to the DOM.
+
+## [4.0.2] - 2025-05-10
+
+### Added
+
+- Handles empty `tr` by returning an empty string.
+
+## [4.0.1] - 2025-02-26
+
+### Fixed
+
+- [Issue #79](https://github.com/tofsjonas/sortable/issues/79) **alt/shift+click** generates javascript error: `Uncaught TypeError: x is undefined`.
+
+## [4.0.0] - 2024-11-15
+
+### Breaking Changes
+
+- Built files are now located in the `/dist` directory
+- Update your references from:
+  - `sortable.min.js` to `dist/sortable.min.js`
+  - `sortable.a11y.min.js` to `dist/sortable.a11y.min.js`
+  - etc.
+
+### Added
+
+- `setTimeout` lets double-click "re-sort" the table only once
+- `sort-start` and `sort-end` events
+- `dist/standalone` folder where all files are inlined, in case you want the functions to be available in the global scope
+
+## [3.2.3] - 2024-05-08
+
+### Changed
+
+- Unary(+) instead of `Number` and `parseInt`
+
+## [3.2.2] - 2024-02-14
+
+### Fixed
+
+- Correct path for `sass` field in `package.json`.
+
+## [3.2.1] - 2024-02-14
+
+### Added
+
+- Introduced `style` and `sass` fields in `package.json` to enhance compatibility with modern JavaScript tooling and environments.
+
+## [3.2.0] - 2024-02-14
+
+### Added
+
+- Introduced `main` and `module` fields in `package.json` to enhance compatibility with modern JavaScript tooling and environments.
+
+## [3.1.0] - 2023-11-16
+
+### Changed
+
+- Using `rollup` instead of `tsc` to generate javascript files.
+- `src/` folder now included in npm package, so that `enhanceSortableAccessibility` can be used in TypeScript projects.
+
+### Added
+
+- Test minified files also.
+- Added `focus` eventListener to `enhanceSortableAccessibility`, so that the `aria-label` is kept up to date.
+
+## [3.0.0] - 2023-10-17
+
+### Changed
+
+- `aria-sort="ascending|descending"` used instead of `class="dir-d|dir-up"` to keep track of direction.
+
+### Breaking Changes
+
+- `class="dir-d|dir-up"` removed.
+
+## [2.4.0] - 2023-10-17
+
+### Added
+
+- Simple accessibility introduced with **sortable.a11y.js**. `enhanceSortableAccessibility` adds `aria-label` to the headers of an array of tables.
+
+## [2.3.2] - 2023-08-22
+
+### Fixed
+
+- `parseFloat()` turned time values like **12:11:11** and **12:23:56** into **12**, sorting them incorrectly. Enter: `Number()`! 🦸‍♂️️
+
+## [2.3.1] - 2023-08-19
+
+### Fixed
+
+- `data-sort-alt` and `data-sort` were ignored if empty. No longer! 🦸‍♂️️
+
+## [2.3.0] - 2023-08-13
+
+### Added
+
+- `class="n-last"` places empty cells always last, similar to what SQL does with ORDER BY foo NULLS LAST.
+
+## [2.2.0] - 2023-06-30
+
+### Changed
+
+- `th` clicks only triggered in `thead`, not in `tbody` or `tfoot`
+- `class="no-sort"` is now part of core JavaScript functionality, not CSS only like before
+
+## [2.1.3] - 2023-03-24
+
+### Fixed
+
+- sortable-base.\* back in npm package
+
+## [2.1.2] - 2023-03-24
+
+### Changed
+
+- Code quality bump
+
+## [2.1.1] - 2023-03-24
+
+### Fixed
+
+- Bugfix tiebreaker column = 0
+
+## [2.1.0] - 2023-03-23
+
+### Added
+
+- Tiebreaker/secondary sort
+
+## [2.0.1] - 2023-03-21
+
+### Fixed
+
+- Bugfix dataset
+
+## [2.0.0] - 2023-02-24
+
+### Removed
+
+- IE9 support dropped
+
+## [1.80.1] - 2023-02-08
+
+### Fixed
+
+- Bugfix
+
+## [1.80.0] - 2023-02-07
+
+### Changed
+
+- Typescript in src
+
+## [1.70] - 2023-02-06
+
+### Added
+
+- First release
+
+[4.1.7]: https://github.com/tofsjonas/sortable/releases/tag/4.1.7
+[4.1.6]: https://github.com/tofsjonas/sortable/releases/tag/4.1.6
+[4.1.5]: https://github.com/tofsjonas/sortable/releases/tag/4.1.5
+[4.1.4]: https://github.com/tofsjonas/sortable/releases/tag/4.1.4
+[4.1.3]: https://github.com/tofsjonas/sortable/releases/tag/4.1.3
+[4.1.2]: https://github.com/tofsjonas/sortable/releases/tag/4.1.2
+[4.1.1]: https://github.com/tofsjonas/sortable/releases/tag/4.1.1
+[4.1.0]: https://github.com/tofsjonas/sortable/releases/tag/4.1.0
+[4.0.2]: https://github.com/tofsjonas/sortable/releases/tag/4.0.2
+[4.0.1]: https://github.com/tofsjonas/sortable/releases/tag/4.0.1
+[4.0.0]: https://github.com/tofsjonas/sortable/releases/tag/4.0.0
+[3.2.3]: https://github.com/tofsjonas/sortable/releases/tag/3.2.3
+[3.2.2]: https://github.com/tofsjonas/sortable/releases/tag/3.2.2
+[3.2.1]: https://github.com/tofsjonas/sortable/releases/tag/3.2.1
+[3.2.0]: https://github.com/tofsjonas/sortable/releases/tag/3.2.0
+[3.1.0]: https://github.com/tofsjonas/sortable/releases/tag/3.1.0
+[3.0.0]: https://github.com/tofsjonas/sortable/releases/tag/3.0.0
+[2.4.0]: https://github.com/tofsjonas/sortable/releases/tag/2.4.0
+[2.3.2]: https://github.com/tofsjonas/sortable/releases/tag/2.3.2
+[2.3.1]: https://github.com/tofsjonas/sortable/releases/tag/2.3.1
+[2.3.0]: https://github.com/tofsjonas/sortable/releases/tag/2.3.0
+[2.2.0]: https://github.com/tofsjonas/sortable/releases/tag/2.2.0
+[2.1.3]: https://github.com/tofsjonas/sortable/releases/tag/2.1.3
+[2.1.2]: https://github.com/tofsjonas/sortable/releases/tag/2.1.2
+[2.1.1]: https://github.com/tofsjonas/sortable/releases/tag/2.1.1
+[2.1.0]: https://github.com/tofsjonas/sortable/releases/tag/2.1.0
+[2.0.1]: https://github.com/tofsjonas/sortable/releases/tag/2.0.1
+[2.0.0]: https://github.com/tofsjonas/sortable/releases/tag/2.0.0
+[1.80.1]: https://github.com/tofsjonas/sortable/releases/tag/1.80.1
+[1.80.0]: https://github.com/tofsjonas/sortable/releases/tag/1.80.0
+[1.70]: https://github.com/tofsjonas/sortable/releases/tag/1.70
