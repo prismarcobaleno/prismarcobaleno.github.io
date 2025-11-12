@@ -256,6 +256,20 @@ max-width:100%;
   border: 1px solid lightblue;
 }
 
+.anan {
+	border: 2px solid darkorange;
+	background: rgba(200, 150, 20, 0.1);
+}
+
+.asso {
+	border: 1px solid darkorange;
+	background: rgba(200, 150, 20, 0.1);}
+
+.asso:hover, .asso:focus, .asso:active {
+  border: 1px solid orange;
+  background: rgba(200, 150, 20, 0.2);
+}
+
 .v {
 border: 2px solid purple;
 background: rgba(200, 20, 70, 0.1);
