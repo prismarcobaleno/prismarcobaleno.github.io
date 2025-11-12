@@ -257,16 +257,16 @@ max-width:100%;
 }
 
 .anan {
-	border: 2px solid darkorange;
+	border: 2px solid #A9C400;
 	background: rgba(200, 150, 20, 0.1);
 }
 
 .asso {
-	border: 1px solid darkorange;
+	border: 1px solid green;
 	background: rgba(200, 150, 20, 0.1);}
 
 .asso:hover, .asso:focus, .asso:active {
-  border: 1px solid orange;
+  border: 1px solid #21FF00;
   background: rgba(200, 150, 20, 0.2);
 }
 
