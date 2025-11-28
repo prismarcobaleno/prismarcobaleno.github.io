@@ -132,7 +132,7 @@ hr{color: var(--azzurro); width:99% }
 .citazione::after{ content: " ...";} 
 .puntini[open] .citazione::after{ content: "";} 		
 
-.nota:active, .nota:focus{
+.nota:active, .nota:focus {
     background: var(--testo-sel);
     color: var(--sfondo-sel);}
 
@@ -185,3 +185,8 @@ hr{color: var(--azzurro); width:99% }
 	font-family:  sans-serif;
  	letter-spacing: 0;
  }
+
+ del {text-decoration: wavy;
+color:  (var(--allaccio-r));
+text-decoration-line: underline;
+text-decoration-color: red;}
