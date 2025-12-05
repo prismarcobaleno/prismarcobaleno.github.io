@@ -24,7 +24,7 @@
 :root {
 	--testo: white;
 	--testo-sel: #024;
-	--sfondo: #002;
+	--sfondo: #111;
 	--sfondo-sel: #eff;
 
 	--scatola: rgba(0, 0, 0, 0.5);
@@ -43,7 +43,7 @@
 :root:has(#chiara:checked) {
 	--testo: black;
 	--testo-sel: #eef;
-	--sfondo: #eec;
+	--sfondo: #eee;
 	--sfondo-sel: #024;
 
 	--scatola: rgba(250, 250, 255, 0.6);
