@@ -235,7 +235,7 @@ details[open] > .lib {list-style-type: '📖 ';}
 
 
 /*ho fatto troppe classi... 3 per ogni pagina*/
-.v, .gri, .s, .g, .z, .az {
+.v, .gri, .s, .g, .z, .az, .anan {
   overflow: auto;
   padding: 0.5%;
   margin: 1px;
@@ -357,14 +357,21 @@ background: rgba(0, 50, 0, 0.1);
 /* gi è parente di giallo, ma deve stare sotto ve per 
 far funzionare il trucchetto di tmoi.html con quell'unica canzone dorata*/
 
-
+.allerta {
+	font-size: larger;
+	border: 3px solid darkred;
+	padding: 1%;
+	background: rgba(250, 70, 70, 0.1);
+	}
+.allerta:hover, .allerta:focus, .allerta:active
+	{border: 3px solid red;
+		background: rgba(250, 70, 70, 0.3);}
 
 h1 {text-align:center;}
 
 .bordo {border: 1px solid gray}
 
-hr {color: darkgreen}
-
+hr {color: var(--allaccio-v);}
 
 .codice {
 font-family: monospace;
