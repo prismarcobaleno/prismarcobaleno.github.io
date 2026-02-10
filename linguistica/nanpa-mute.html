@@ -4,8 +4,8 @@
   <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>nanpa mute - ma Kiku</title>
-	<meta property="og:title" content=">nanpa mute - ma Kiku">
+	<title>nanpa mute : ma Kiku</title>
+	<meta property="og:title" content="nanpa mute : ma Kiku">
 	<link rel="icon" type="image/png" href="cuore.png" >
 	<!--<meta property="og:image" content="cuore.png">
 	<meta property="og:description" content=" ">
@@ -13,22 +13,39 @@
 	<link href="../stile.css" rel="stylesheet" type="text/css" media="all">
 	<link href="/stile.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body class=body>
-	<header>
-		<h1 class=h1 id="inizio">nanpa mute</h1>
-		<div class=scatolina>nanpa li mute</div>
-	</header>
+  <body class=body lang="tok">
+	<h1 class=h1 id="inizio">nanpa mute</h1>
+	<div class=scatolina>nanpa mute</div>
 	
-	<aside>
-	    <nav><p><a class="a" lang=tok href=./nanpa-mute.html>lipu ni pi (toki-pona)</a></p></nav>
+	<aside id="impostazioni"><fieldset><legend>ilo pi (lipu)</legend>
+		<p><a lang=it class="a ju" href=../linguistica.html>Leggi in italiano</a>
 		<p><input id="chiara" type="checkbox" onclick="cliccaChiara();"/>
-		<label for="chiara">Tema chiaro</label>
-		<noscript>: Solo per questa pagina</noscript></p>
-	</aside>
-	<script src="opzioni.js"></script>
+		<label for="chiara">kule walo</label>
+		<noscript>: lipu ni taso</noscript></p>
+		<p><input id="sitelen" type="checkbox" onclick="cliccaSitelen();"/>
+		<label for="sitelen">sitelen [LASINA]</label>
+		<noscript>: lipu ni taso</noscript></p>
+	</fieldset></aside>
+    <script src="/opzioni.js"></script>
+	<script src="../opzioni.js"></script> 
 
-<!--	<main class=scatola> 
+<main class=scatola> 
 
+	<ol class="diam"><li> <p>S 0 : ala</p>	</li>
+	<li> <p>S 1 : wan</p>	</li>
+	<li> <p>S 2 : tu</p>	</li>
+	<li> <p>S 3 : sike </p>	</li>
+	<li> <p>S 4 : sike wan </p>	</li>
+	<li> <p>S 5 : sike tu </p>	</li>
+	<li> <p>S 10 : tomo</p>	</li>
+	<li> <p>S 11 : tomo wan </p>	</li>
+	<li> <p>S 12 : tomo tu</p>	</li>
+	<li> <p>S 13 : tomo sike</p>	</li>
+	<li> <p>S 14 : tomo sike wan </p>	</li>
+	<li> <p>S 15 : tomo sike tu </p>	</li>
+	<li> <p>S 20 : tu tomo </p>	</li>
+</ul></details>
+<!--
         <p>Ho trovato un sito che parla del sistema sestimale, che si chiama appunto <a class="a" target="_blank" href="https://www.seximal.net">www.seximal.net</a>, e c'era una sezione con proposte di implementazione in varie lingue. Purtroppo però, la <a class="a" target="_blank" href="https://www.seximal.net/italian">proposta italiana sul sito</a> ha vari problemi, quindi ho deciso di cercare di correggerli, e nel frattempo ho anche adattato la mia proposta in siciliano.</p>
 
         <p>Siccome "10" significa cose diverse nelle due basi, userò la X (come il numero romano) per parlare del numero dieci e del sistema decimale, e la S per parlare del sei e del sestimale. Quindi, per esempio, X 10 è dieci, mentre S 10 è sei.</p>
@@ -304,3 +321,4 @@
 	
   </body>
 </html>
+
