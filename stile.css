@@ -357,6 +357,9 @@ max-height: 100%;}
   	margin: 1px;
 	}
 	
+.puntini summary::after{ content: " ...";} 
+.puntini[open] summary::after{ content: "";} 
+	
 .diam {list-style-type: '🔶 ';
 margin-left: -1em;}
 

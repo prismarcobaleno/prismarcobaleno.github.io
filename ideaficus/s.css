@@ -135,6 +135,7 @@ summary {
   border: 1px solid rgba(100, 100, 100, 0.2);
 }
 
+
 .niente {list-style-type: ' ';}
 details[open] > .niente {
   list-style-type: inherit;
@@ -146,6 +147,12 @@ filter: contrast(170%);
 filter: drop-shadow(1px);
 border: 1px solid gray;
 }
+
+.puntini {padding: 0px; border: 0px}
+.puntini summary {  padding: 0px;}
+.puntini summary:hover, .puntini summary:focus, .puntini summary:active {}
+.puntini summary::after{ content: " ...";} 
+.puntini[open] summary::after{ content: "";} 
 
 .mini {
 display: block;
