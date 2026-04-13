@@ -40,8 +40,8 @@ void aiuto(int aiuto)
 int main()
 	{
 	unsigned int	glicemia = 100;
-	unsigned int	iper = 150;
-	unsigned int	ipo = 50;
+	unsigned int	iper = 180;
+	unsigned int	ipo = 65;
 	char c;
 	unsigned int	riserva = 10;
 	int ai = 33;
@@ -50,7 +50,7 @@ int main()
 	int problemi = 5;
 	long long int turno = 0;
 	
-	printf("Inizi con %d glicemia e %d riserve di grassi, %d/10 di malattia.\n", glicemia, riserva, problemi);
+	printf("Inizi con %d mg/dL di glicemia e %d in riserve di grassi, %d/10 di malattia.\n", glicemia, riserva, problemi);
 	stampa("Ogni mossa simula circa un'ora. Molto vagamente. Molto molto vagamente.\n", 0);
 	aiuto(ai);
 	while(glicemia > 0 && glicemia < 300 && problemi < 50)
