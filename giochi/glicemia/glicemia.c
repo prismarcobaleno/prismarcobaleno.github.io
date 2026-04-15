@@ -4,7 +4,9 @@
 #ifndef COLORI
 #define COLORI 1
 #endif
-//fallo diventare 0 se il terminale tuo non supporta i colori
+// fallo diventare 0 se il terminale tuo non supporta i colori
+// compilando con 
+// cc glicemia.c -o glicemia --define COLORI=0
 
 void stampa(char *a, int colore)
 	{
@@ -17,23 +19,28 @@ void stampa(char *a, int colore)
 	else
 		printf("%s", a);
 	}
+// 0 - torna normale
+// 1 - 
+// 2 - grigio
 // 3 - inclinato
+// 4 -
 // 30 - nera
+// 31 - rossa
+// 32 - verde
 // 33 - beige
 // 34 - blu
-// 31 -rossa
-// 0 - torna normale
 
-void aiuto(int aiuto)
+
+void aiuto(char ai, int ipo, int iper)
 	{
-	printf("Devi mantenerti tra 50 e 150 per stare bene, e tra 0 e 300 per sopravvivere.\n");
+	printf("Devi mantenerti tra %d e %d per stare bene, e tra 0 e 300 per sopravvivere.\n", ipo, iper);
 	printf("Usa queste lettere come comandi:\n");
-	stampa("* [C]arboidrati (+30/+20);\n", aiuto);
-	stampa("* [Z]uccheri (+50);\n", aiuto);
-	stampa("* [G]rassi (+20/+30);\n", aiuto);
-	stampa("* [P]roteine (+5/+20);\n", aiuto);
-	stampa("* [F]ibre (-5/+5);\n", aiuto);
-	stampa("* [D]igiuno (-10)\n", aiuto);
+	stampa("* [C]arboidrati (+30/+20);\n", ai);
+	stampa("* [Z]uccheri (+50);\n", ai);
+	stampa("* [G]rassi (+20/+30);\n", ai);
+	stampa("* [P]roteine (+5/+20);\n", ai);
+	stampa("* [F]ibre (-5/+5);\n", ai);
+	stampa("* [D]igiuno (-10)\n", ai);
 	stampa("([A]iuto stampa di nuovo questa lista)\n", 3);
 	}
 
@@ -44,15 +51,14 @@ int main()
 	unsigned int	ipo = 65;
 	char c;
 	unsigned int	riserva = 10;
-	int ai = 33;
-	int blu = 35;
-	int err = 31;
+	char ai = 33;
+	char stat = 2;
+	char err = 31;
 	int problemi = 5;
 	long long int turno = 0;
 	
-	printf("Inizi con %d mg/dL di glicemia e %d in riserve di grassi, %d/10 di malattia.\n", glicemia, riserva, problemi);
-	stampa("Ogni mossa simula circa un'ora. Molto vagamente. Molto molto vagamente.\n", 0);
-	aiuto(ai);
+	printf("Inizi con %d mg/dL di glicemia e %d in riserve di grassi, %d/50 di malattia.\n", glicemia, riserva, problemi);
+	aiuto(ai, ipo, iper);
 	while(glicemia > 0 && glicemia < 300 && problemi < 50)
 		{
 		turno++;
@@ -60,66 +66,70 @@ int main()
 			{
 			printf("\nTurno n.%lld: %d glicemia. %d riserve. Malattie %d/50.\n", turno, glicemia, riserva, problemi);
 			if (glicemia > iper)
+				{
 				stampa("\n\tIperglicemia!!\n", err);
-			if (glicemia < ipo)
-				stampa("\n\tIpoglicemia!!\n", err);
-			if (glicemia > iper || glicemia < ipo)
 				problemi++;
+				}
+			if (glicemia < ipo)
+				{
+				stampa("\n\tIpoglicemia!!\n", err);
+				problemi += 2;
+				}
 			if (problemi > 40)
 				{
-				stampa("\nTi stai ammalando.\n", err);
+				stampa("\tTi stai ammalando.\n", err);
 				}
 			printf("Mangi: ");
 			}
-			c = getchar();
+		c = getchar();
 		if (c == 'Z' || c == 'z')
 			{
-			stampa("\tZuccheri! +50 glicemia\n", blu);
+			stampa("\tZuccheri! +50 glicemia\n", stat);
 			glicemia = glicemia + 50;
 			}
 		else if (c == 'C' || c == 'c')
 			{
-			stampa("\tCarboidrati! +30 glicemia, +20 riserva\n", blu);
+			stampa("\tCarboidrati! +30 glicemia, +20 riserva\n", stat);
 			glicemia = glicemia + 30;
 			riserva = riserva + 20;
 			}
 		else if (c == 'G'|| c == 'g')
 			{
-			stampa("\tGrassi! +20 glicemia, +30 riserva\n", blu);
+			stampa("\tGrassi! +20 glicemia, +30 riserva\n", stat);
 			glicemia = glicemia + 20;
 			riserva = riserva + 30;
 			}
 		else if (c == 'P' || c == 'p')
 			{
-			stampa("\tProteine! +5 glicemia, +10 riserva\n", blu);
+			stampa("\tProteine! +5 glicemia, +10 riserva\n", stat);
 			riserva = riserva + 10;
 			glicemia = glicemia + 5;
 			}
 		else if (c == 'F' || c == 'f')
 			{
-			stampa("\tFibre! -5 glicemia, +5 riserva\n", blu);
+			stampa("\tFibre! -5 glicemia, +5 riserva\n", stat);
 			glicemia = glicemia - 5;
 			riserva = riserva + 5;
 			}
 		else if (c == 'a' || c == 'A')
 			{
-			aiuto(ai);
+			aiuto(ai, ipo, iper);
 			}
 		else if (c == 'd' || c == 'D')
 			{
-			stampa("\tDigiuno! - 15 glicemia\n", blu);
+			stampa("\tDigiuno! - 15 glicemia\n", stat);
 			glicemia = glicemia - 15;
 			if (riserva > 10 && glicemia < ipo)
 				{
 				glicemia = glicemia + 10;
 				riserva = riserva - 10;
-				stampa("\t+10 glicemia dalle riserve!\n", blu);
+				stampa("\t+10 glicemia dalle riserve!\n", stat);
 				}
 			else if (glicemia < iper && riserva >= 5)
 				{
 				glicemia = glicemia + 5;
 				riserva = riserva - 5;
-				stampa("\t+5 glicemia dalle riserve!\n", blu);
+				stampa("\t+5 glicemia dalle riserve!\n", stat);
 				}
 			}
 		else if ((c >= 'a' && c <= 'z') || ((c >= 'A' && c <= 'Z')))
@@ -134,9 +144,9 @@ int main()
 			}
 		}
 	if (problemi >= 50)
-		printf("\nHai perso al turno %lld: Troppe malattie! (%d/50)\n", turno, problemi);
+		printf("\nHai perso al turno %lld: Troppe malattie (%d/50)! Ospedale.\n", turno, problemi);
 	if (glicemia <= 0 || glicemia >= 999999)
-		printf("\nHai perso al turno %lld: Glicemia troppo bassa! (%d)\n", turno, glicemia);
+		printf("\nHai perso al turno %lld: Glicemia troppo bassa (%d)! Ospedale.\n", turno, glicemia);
 	else if (glicemia >= 300)
-		printf("\nHai perso al turno %lld: Glicemia troppo alta! (%d)\n", turno, glicemia);
+		printf("\nHai perso al turno %lld: Glicemia troppo alta (%d)! Coma e ospedale. \n", turno, glicemia);
 }
