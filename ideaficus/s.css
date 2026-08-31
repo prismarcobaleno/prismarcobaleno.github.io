@@ -20,13 +20,23 @@
 	src: url(../caratteri/open_dyslexic/OpenDyslexic-Regular.otf);
 }
 
-
 :root {
-	--testo: white;
-	--testo-sel: #024;
-	--sfondo: #111;
-	--sfondo-sel: #eff;
+  color-scheme: light dark;
+	--testo: light-dark(#000, #FFF);
+	--testo-sel: light-dark(#eef, #024);
+	--sfondo: light-dark (#111,#eee);
+	--sfondo-sel: light-dark(#024, #eff);
+	}
 
+:root:has(#chiara:checked) {
+    color-scheme: light;
+  }
+:root:has(#chiara:not(:checked))
+  {
+    color-scheme: dark;
+  }
+
+:root{
 	--scatola: rgba(0, 0, 0, 0.5);
 	--scatola-verde: rgba(0, 20, 0, 0.5);
 	--allaccio: yellow;
@@ -41,10 +51,6 @@
 	}
 
 :root:has(#chiara:checked) {
-	--testo: black;
-	--testo-sel: #eef;
-	--sfondo: #eee;
-	--sfondo-sel: #024;
 
 	--scatola: rgba(250, 250, 255, 0.6);
 	--scatola-verde: rgba(210, 220, 210, 0.5);
