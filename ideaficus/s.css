@@ -22,49 +22,38 @@
 
 :root {
   color-scheme: light dark;
-	--testo: light-dark(#000, #FFF);
-	--testo-sel: light-dark(#eef, #024);
+	--testo: light-dark(#100, #FFF);
+		--testo-sel: light-dark(#eef, #024);
 	--sfondo: light-dark (#111,#eee);
-	--sfondo-sel: light-dark(#024, #eff);
+		--sfondo-sel: light-dark(#024, #eff);
+	
+	--scatola: light-dark(rgba(250, 250, 255, 0.6), rgba(0, 0, 0, 0.5));
+		--scatola-verde: light-dark(rgba(210, 220, 210, 0.5),rgba(0, 20, 0, 0.5));
+	
+	--allaccio: light-dark(blue, yellow);
+		--allaccio-v: light-dark(purple, orange);
+		--allaccio-r: red;
+	--dettagli: light-dark(rgba(50, 200, 90, 0.5), rgba(00, 100, 50, 0.5));
+	
+	--verde-t: light-dark(darkgreen, lightgreen);
+		--verde: light-dark(rgb(70, 200, 70), darkgreen);
+		--verde-bg: light-dark();
+		
+	--azzurro-t: light-dark(#056, lightblue);
+		--azzurro: light-dark(lightblue, #056);
+		
+	--rosso-t: light-dark(darkred, red);
+		--rosso: light-dark(red, darkred);
+	
+	--blu-t: light-dark(darkblue, #44f);
+		--blu: light-dark(#44f, darkblue);
+		--blu-bg: 		light-dark(rgba(20, 50, 200, 0.1), rgba(0, 50, 100, 0.1));
+		--blu-bg-hover: light-dark(rgba(20, 50, 200, 0.2), rgba(0, 50, 100, 0.2));
 	}
 
-:root:has(#chiara:checked) {
-    color-scheme: light;
-  }
-:root:has(#chiara:not(:checked))
-  {
-    color-scheme: dark;
-  }
+:root:has(#chiara:checked)			{color-scheme: light;}
+:root:has(#chiara:not(:checked))	{color-scheme: dark;}
 
-:root{
-	--scatola: rgba(0, 0, 0, 0.5);
-	--scatola-verde: rgba(0, 20, 0, 0.5);
-	--allaccio: yellow;
-	--allaccio-v: orange;
-	--allaccio-r: red;
-	--verde-t: lightgreen;
-	--verde: darkgreen;
-	--azzurro-t: lightblue;
-	--azzurro: #056 ;
-
-	--dettagli: rgba(00, 100, 50, 0.5);
-	}
-
-:root:has(#chiara:checked) {
-
-	--scatola: rgba(250, 250, 255, 0.6);
-	--scatola-verde: rgba(210, 220, 210, 0.5);
-	--allaccio: blue;
-	--allaccio-v: purple;
-	--allaccio-r: red;
-	--verde-t: darkgreen;
-	--verde: rgb(180, 230, 180);
-	--azzurro-t: #056;
-	--azzurro: lightblue;
-
-	--dettagli: rgba(50, 200, 90, 0.5);
-
-}
 
 /* link (copiato da SOGNO.CSS)*/
   a:link{
@@ -242,7 +231,7 @@ text-decoration-color: red;}
 
 
 /*ho fatto troppe classi... 3 per ogni pagina*/
-.v, .gri, .s, .g, .z, .az, .anan {
+.v, .gri, .s, .g, .z, .az, .anan, .bl{
   overflow: auto;
   padding: 0.5%;
   margin: 1px;
@@ -260,9 +249,25 @@ background: rgba(100, 200, 230, 0.1);
 max-width:100%;
 }
 
+
 .az:hover, .az:focus, .az:active {
   border: 1px solid lightblue;
 }
+
+.bl {
+	border: 2px solid var(--blu);
+	background: var(--blu-bg);
+}
+
+.blu {
+	border: 1px solid var(--blu);
+	background: var(--blu-bg);
+	max-width:100%;
+	}
+	.blu:hover, blu:focus, blu:active {
+		border: 1px solid var(--blu-t);
+		background: var(--blu-bg-hover);}
+	}
 
 .anan {
 	border: 2px solid #A9C400;
@@ -342,12 +347,12 @@ background: rgba(200, 200, 100, 0.2);
 
 
 .g {
-border: 2px solid darkgreen;
+border: 2px solid var(--verde);
 background: rgba(0, 50, 0, 0.1);
 }
 
 .ve {
- border: 1px solid darkgreen;
+ border: 1px solid var(--verde);
  background: rgba(0, 50, 0, 0.05);
 }
 
