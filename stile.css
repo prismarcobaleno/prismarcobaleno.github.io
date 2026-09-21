@@ -52,7 +52,7 @@
 }
 
 
-:root:not(:has(#esp:checked)) > .esp
+:root:not(:has(#esp:checked)) .esp
       {display: none;}
 
 :root:not(:has(#russ:checked)) > .russ
