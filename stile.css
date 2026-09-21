@@ -51,6 +51,13 @@
 
 }
 
+
+:root:not(:has(#esp:checked)) > .esp
+      {display: none;}
+
+:root:not(:has(#russ:checked)) > .russ
+      {display: none;}
+
 /* commenti! */
  .oriz {
 	display: flex;
@@ -103,9 +110,6 @@ del::after {
 del::before {
   content: "[cancellato:] ";
 }
-
-:root:not(:has(#esp:checked)) > .esp
-      {display: none;}
 
 ins {text-decoration: none;
 color: var(--allaccio-r);}
