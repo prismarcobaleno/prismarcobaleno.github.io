@@ -106,7 +106,8 @@ del::before {
 
 .root:not(:has(#esp:checked)) > .esp
       {display: none;}
-.root:not(:has(#esp:checked)) { 
+
+.root:has(#esp:checked) { 
 --testo: red;
 } 
 
