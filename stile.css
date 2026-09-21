@@ -104,6 +104,11 @@ del::before {
   content: "[cancellato:] ";
 }
 
+.esp {display: none;} 
+.esp:has(#esp:checked) 
+     {display: unset;}
+
+
 ins {text-decoration: none;
 color: var(--allaccio-r);}
 ins::before,
@@ -196,6 +201,8 @@ pre {
   color:white;
   display: inline;
   }	 
+
+
 
 .b {
  color: skyblue
