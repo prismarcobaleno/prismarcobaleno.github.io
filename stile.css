@@ -104,7 +104,7 @@ del::before {
   content: "[cancellato:] ";
 }
 
-root:not(:has(#esp:checked)) > .esp
+:root:not(:has(#esp:checked)) > .esp
       {display: none;}
 
 ins {text-decoration: none;
